@@ -226,7 +226,7 @@ function initDispatchNetwork() {
 
         return {
             x: (rx * scale) + (width / 2),
-            y: (yRot * scale) + (height / 2) + 100, // Shift center down slightly for framing
+            y: (yRot * scale) + (height / 2) + 20, // Centered with minor offset for visual balance
             scale: scale
         };
     }

@@ -5,6 +5,30 @@ const path = require('path');
 const PORT = 3000;
 const DIR = __dirname;
 
+// Load environment variables from .env file if it exists
+try {
+    const envPath = path.join(DIR, '.env');
+    if (fs.existsSync(envPath)) {
+        const envContent = fs.readFileSync(envPath, 'utf-8');
+        envContent.split(/\r?\n/).forEach(line => {
+            const trimmedLine = line.trim();
+            if (trimmedLine && !trimmedLine.startsWith('#')) {
+                const eqIdx = trimmedLine.indexOf('=');
+                if (eqIdx > 0) {
+                    const key = trimmedLine.substring(0, eqIdx).trim();
+                    const val = trimmedLine.substring(eqIdx + 1).trim().replace(/^["']|["']$/g, '');
+                    if (key && val) {
+                        process.env[key] = val;
+                    }
+                }
+            }
+        });
+        console.log('Loaded environment variables from .env');
+    }
+} catch (e) {
+    console.error('Failed to load .env file:', e);
+}
+
 const mimeTypes = {
     '.html': 'text/html',
     '.js': 'text/javascript',
@@ -23,7 +47,92 @@ const server = http.createServer((req, res) => {
     if (urlPath !== '/' && urlPath.endsWith('/')) {
         urlPath = urlPath.slice(0, -1);
     }
-    
+
+    // Handle api/chat endpoint
+    if (urlPath === '/api/chat') {
+        if (req.method === 'OPTIONS') {
+            res.writeHead(200, {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type'
+            });
+            res.end();
+            return;
+        }
+
+        if (req.method === 'POST') {
+            let body = '';
+            req.on('data', chunk => {
+                body += chunk.toString();
+            });
+            req.on('end', async () => {
+                try {
+                    req.body = JSON.parse(body);
+                } catch (e) {
+                    req.body = {};
+                }
+
+                // Mock Vercel response helper methods
+                res.status = (code) => {
+                    res.statusCode = code;
+                    return res;
+                };
+                res.json = (data) => {
+                    res.writeHead(res.statusCode || 200, { 
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    });
+                    res.end(JSON.stringify(data));
+                };
+
+                try {
+                    const handler = require('./api/chat.js');
+                    await handler(req, res);
+                } catch (err) {
+                    console.error('Error running API handler:', err);
+                    res.status(500).json({ error: 'Failed to execute local API handler. Make sure you set OPENAI_API_KEY environment variable.' });
+                }
+            });
+            return;
+        }
+    }
+
+    if (urlPath === '/api/leads') {
+        if (req.method === 'OPTIONS') {
+            res.writeHead(200, {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type'
+            });
+            res.end();
+            return;
+        }
+        if (req.method === 'POST') {
+            let body = '';
+            req.on('data', chunk => { body += chunk.toString(); });
+            req.on('end', async () => {
+                try { req.body = JSON.parse(body); } catch (e) { req.body = {}; }
+                res.status = (code) => { res.statusCode = code; return res; };
+                res.json = (data) => {
+                    res.writeHead(res.statusCode || 200, {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    });
+                    res.end(JSON.stringify(data));
+                };
+                try {
+                    delete require.cache[require.resolve('./api/leads.js')];
+                    const handler = require('./api/leads.js');
+                    await handler(req, res);
+                } catch (err) {
+                    console.error('Error running leads API handler:', err);
+                    res.status(500).json({ error: 'Failed to execute local leads API handler.' });
+                }
+            });
+            return;
+        }
+    }
+
     let filePath = path.join(DIR, urlPath);
     let extname = String(path.extname(filePath)).toLowerCase();
 

@@ -160,5 +160,105 @@ function calculateQuote() {
         alert("Please enter valid Pickup and Delivery ZIP codes to calculate distance.");
         return;
     }
+
+    const transportType = document.getElementById('transportType').value;
+    const vehicleType = document.getElementById('vehicleType').value;
+    const condition = document.getElementById('condition').value;
+
+    // Base rates calculation
+    let ratePerMile = 0.85;
+    if (distance < 500) ratePerMile = 1.30;
+    else if (distance < 1000) ratePerMile = 1.05;
+    else if (distance < 1500) ratePerMile = 0.95;
+
+    let base = distance * ratePerMile;
+
+    // Adjustments
+    if (transportType === 'enclosed') base += 250;
+    if (condition === 'inop') base += 150;
+    if (vehicleType === 'truck') base += 100;
+    else if (vehicleType === 'suv') base += 50;
+
+    const estimatedPrice = Math.round(base);
+    const estField = document.getElementById('estimatedPriceField');
+    if (estField) estField.value = estimatedPrice;
 }
+
+// Intercept form submission to save to Neon CRM database
+document.addEventListener('DOMContentLoaded', () => {
+    const calcForm = document.getElementById('advancedCalcForm');
+    if (!calcForm) return;
+
+    calcForm.addEventListener('submit', async (e) => {
+        // Prevent default submission only to make the CRM API call first
+        e.preventDefault();
+
+        const pickupZip = document.getElementById('pickupZip').value;
+        const deliveryZip = document.getElementById('deliveryZip').value;
+        const vehicleYear = document.getElementById('vehicleYear').value;
+        const vehicleMake = document.getElementById('vehicleMake').value;
+        const vehicleModel = document.getElementById('vehicleModel').value;
+        const vehicleType = document.getElementById('vehicleType').value;
+        const transportType = document.getElementById('transportType').value;
+        const condition = document.getElementById('condition').value;
+        const pickupDate = document.getElementById('pickupDate').value;
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const estimatedPrice = document.getElementById('estimatedPriceField').value;
+
+        const payload = {
+            fields: {
+                firstName,
+                lastName,
+                email,
+                phone,
+                vehicleYear,
+                vehicleMake,
+                vehicleModel,
+                vehicleType,
+                vehicleCondition: condition === 'run' ? 'Running' : 'Non-Running',
+                pickupZip,
+                deliveryZip,
+                desiredPickupDate: pickupDate,
+                transportType: transportType === 'enclosed' ? 'Enclosed' : 'Open'
+            }
+        };
+
+        // Post to local storage (for dashboard compatibility)
+        try {
+            const existing = localStorage.getItem('neon_ai_leads');
+            const leads = existing ? JSON.parse(existing) : [];
+            leads.unshift({
+                id: 'lead_' + Date.now(),
+                createdAt: new Date().toISOString(),
+                status: 'New Lead',
+                leadScore: '🔥 Hot',
+                source: '/quote/',
+                dispatcherNotes: '',
+                aiNotes: 'Lead captured via Quote Calculator form.',
+                fields: payload.fields
+            });
+            localStorage.setItem('neon_ai_leads', JSON.stringify(leads));
+        } catch (err) {
+            console.error('LocalStorage save error:', err);
+        }
+
+        // Post to custom CRM database
+        try {
+            await fetch('/api/leads', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            console.log('Calculator lead sent to Neon CRM database');
+        } catch (err) {
+            console.error('Calculator CRM database submission failed:', err);
+        }
+
+        // Now manually submit form to send Web3Forms notification after API finishes
+        calcForm.submit();
+    });
+});
 

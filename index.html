@@ -387,8 +387,16 @@
             </div>
             
             <!-- The Nationwide Dispatch Network Canvas -->
-            <div class="w-full h-[350px] md:h-[500px] relative mt-10 overflow-hidden pointer-events-none mix-blend-screen">
-                <canvas id="dispatchNetwork" class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-full max-w-[1200px] h-full opacity-0 transition-opacity duration-1000 ease-in-out"></canvas>
+            <div class="w-full h-[400px] md:h-[550px] relative mt-6 overflow-hidden pointer-events-none mix-blend-screen flex items-center justify-center">
+                <!-- Top fade overlay -->
+                <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#0a2540] to-transparent z-10"></div>
+                <!-- Bottom fade overlay -->
+                <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0a2540] to-transparent z-10"></div>
+                <!-- Subtle radial glow behind the map -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-[80%] h-[70%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(99,91,255,0.08)_0%,transparent_70%)]"></div>
+                </div>
+                <canvas id="dispatchNetwork" class="w-full max-w-[1200px] h-full opacity-0 transition-opacity duration-1000 ease-in-out"></canvas>
             </div>
         </section>
 
@@ -1123,5 +1131,10 @@
             }
         });
     </script>
+
+<!-- Neon AI Chat Widget -->
+    <link rel="stylesheet" href="/css/chatbot.css">
+    <script src="/js/chatbot.js"></script>
+
 </body>
 </html>
