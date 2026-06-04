@@ -1,0 +1,30 @@
+RewriteEngine On
+
+# Ensure HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 1. Enforce Trailing Slash for virtual slugs
+# If request is not an actual file and doesn't end with a slash
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+
+# 2. Redirect raw .html requests to clean URLs
+# This prevents duplicate content (e.g., /about.html -> /about/)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+)/([^.]+)\.html\ HTTP [OR]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP
+RewriteRule ^(.*)\.html$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
+# 3. Handle mapping of Virtual Slugs to Physical Files
+# Check if it's a route page
+RewriteCond %{DOCUMENT_ROOT}/routes/$1.html -f
+RewriteRule ^(.*)/$ routes/$1.html [L]
+
+# Check if it's a service page
+RewriteCond %{DOCUMENT_ROOT}/services/$1.html -f
+RewriteRule ^(.*)/$ services/$1.html [L]
+
+# Check if it's a root page (like contact, why-neon)
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.*)/$ $1.html [L]

@@ -1,0 +1,19 @@
+# Neon Auto Transport — robots.txt
+User-agent: *
+Allow: /
+
+# Block utility/generator scripts from crawlers
+Disallow: /routes/generate-routes.js
+Disallow: /routes/generate-routes-v2.js
+Disallow: /services/generate-services.js
+Disallow: /services/generate-services-v2.js
+Disallow: /seo-inject.js
+Disallow: /optimize.js
+Disallow: /node_modules/
+Disallow: /privacy.html
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://neonautotransport.com/sitemap.xml

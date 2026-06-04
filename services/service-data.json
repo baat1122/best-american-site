@@ -1,0 +1,128 @@
+{
+  "Snow Bird Car Shipping": {
+    "audience": "snowbirds heading south for the winter",
+    "benefit": "escaping the harsh winter weather without the exhausting multi-day drive",
+    "feature": "flexible seasonal scheduling",
+    "tip": "Book at least 3-4 weeks early during the fall to beat the seasonal rush."
+  },
+  "Military Car Shipping": {
+    "audience": "active-duty military personnel and veterans",
+    "benefit": "stress-free PCS moves so you can focus on your new assignment",
+    "feature": "exclusive military discounts",
+    "tip": "Have your PCS orders ready, as some shipments may be partially reimbursable."
+  },
+  "College Car Shipping": {
+    "audience": "students and parents managing out-of-state tuition",
+    "benefit": "safely getting your car to campus without adding miles or wear-and-tear",
+    "feature": "campus-friendly door-to-door delivery",
+    "tip": "Coordinate with dorm move-in dates to ensure you are available for delivery."
+  },
+  "Luxury / Exotic Car Shipping Services": {
+    "audience": "collectors and owners of high-value vehicles",
+    "benefit": "peace of mind knowing your prized possession is handled with white-glove care",
+    "feature": "fully enclosed trailers with hydraulic lift gates",
+    "tip": "Always opt for enclosed transport to protect against road debris and weather."
+  },
+  "Car Shipping to Another State": {
+    "audience": "families and professionals relocating cross-country",
+    "benefit": "seamlessly moving your vehicle alongside your household goods",
+    "feature": "nationwide interstate carrier networks",
+    "tip": "Remove all personal items from the vehicle to comply with DOT regulations."
+  },
+  "Truck Shipping Services": {
+    "audience": "owners of lifted trucks, duallys, and oversized vehicles",
+    "benefit": "specialized handling for larger dimensions that standard carriers can't fit",
+    "feature": "heavy-duty flatbed and step-deck trailers",
+    "tip": "Provide exact dimensions and weight to avoid delays at pickup."
+  },
+  "Door to Door Car Transport": {
+    "audience": "anyone looking for maximum convenience",
+    "benefit": "having your car picked up and dropped off exactly where you want it",
+    "feature": "direct residential neighborhood access",
+    "tip": "Ensure your street is wide enough for a large 18-wheeler to navigate."
+  },
+  "Enclosed Transport": {
+    "audience": "owners of classic, vintage, or brand-new cars",
+    "benefit": "100% protection from rain, snow, dust, and highway debris",
+    "feature": "hard-sided trailers and higher insurance coverage",
+    "tip": "While it costs 30-40% more, it is essential for vehicles valued over $50,000."
+  },
+  "Open Transport": {
+    "audience": "budget-conscious shippers and daily drivers",
+    "benefit": "the most affordable and fastest way to move a standard vehicle",
+    "feature": "industry-standard multi-car open trailers",
+    "tip": "Expect a quick wash upon arrival, as cars will be exposed to normal road dust."
+  },
+  "Car Buyer Auto Transport": {
+    "audience": "online car buyers purchasing from out-of-state",
+    "benefit": "safely bringing your new purchase home without flying out to drive it back",
+    "feature": "dealership and private seller coordination",
+    "tip": "Ask the seller to take timestamped photos before the carrier arrives."
+  },
+  "Expedited Auto Transport": {
+    "audience": "customers with strict, urgent deadlines",
+    "benefit": "bumping your vehicle to the front of the dispatch line for rapid pickup",
+    "feature": "guaranteed pickup windows",
+    "tip": "Be prepared to pay a premium for expedited dispatch, usually within 24-48 hours."
+  },
+  "Car Resellers Auto Transport": {
+    "audience": "independent auto brokers and flippers",
+    "benefit": "maintaining your profit margins with reliable, low-cost transport",
+    "feature": "volume-based pricing and B2B support",
+    "tip": "Build a relationship with a single broker for better long-term rates."
+  },
+  "Car Dealer Shipping": {
+    "audience": "dealerships managing inventory and lot transfers",
+    "benefit": "streamlining inventory logistics across state lines",
+    "feature": "multi-vehicle bulk discounts",
+    "tip": "Consolidate shipments to maximize space on a single 9-car hauler."
+  },
+  "Auto Auction Shipping": {
+    "audience": "dealers sourcing vehicles from Manheim, Copart, or IAAI",
+    "benefit": "rapid retrieval from auction lots before storage fees accumulate",
+    "feature": "auction-certified carriers and gate pass handling",
+    "tip": "Ensure the vehicle runs and drives, as inoperable cars require special winches."
+  },
+  "Rental Car Shipping": {
+    "audience": "rental agencies balancing seasonal fleet demands",
+    "benefit": "rapidly shifting inventory to high-demand tourist markets",
+    "feature": "large-scale fleet relocation logistics",
+    "tip": "Plan fleet moves weeks in advance of major tourist seasons."
+  },
+  "Corporate Relocation": {
+    "audience": "HR departments and transferring executives",
+    "benefit": "a seamless transition for employees moving for work",
+    "feature": "direct billing and dedicated account managers",
+    "tip": "Check if your company's relocation package covers auto transport."
+  },
+  "Fleet Management Transportation Services": {
+    "audience": "companies managing dozens or hundreds of company cars",
+    "benefit": "centralized logistics for deploying vehicles to remote employees",
+    "feature": "customized B2B logistics planning",
+    "tip": "Standardize your vehicle types to make bulk shipping more predictable."
+  },
+  "Motorcycle Shipping": {
+    "audience": "bikers attending rallies or buying out-of-state",
+    "benefit": "specialized tie-downs and crating to keep bikes perfectly upright",
+    "feature": "custom motorcycle pallets and enclosed transport",
+    "tip": "Drain the fuel tank to a quarter full and remove all loose saddlebags."
+  },
+  "Alaska Auto Transport": {
+    "audience": "residents moving to or from the Last Frontier",
+    "benefit": "navigating complex port-to-port logistics seamlessly",
+    "feature": "direct sailings from the Port of Seattle to Anchorage",
+    "tip": "Vehicles must be completely empty of all personal items for maritime shipping."
+  },
+  "Hawaii Auto Transport": {
+    "audience": "mainlanders moving to the islands",
+    "benefit": "safe overseas transit across the Pacific Ocean",
+    "feature": "Matson and Pasha port coordination",
+    "tip": "Ensure your vehicle has less than a quarter tank of gas before arriving at the port."
+  },
+  "International Overseas Car Shipping Services": {
+    "audience": "expats and international buyers",
+    "benefit": "handling complex customs, tariffs, and maritime shipping",
+    "feature": "RoRo (Roll-on/Roll-off) and container shipping options",
+    "tip": "Start the customs paperwork process at least a month in advance."
+  }
+}
