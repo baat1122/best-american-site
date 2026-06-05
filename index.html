@@ -531,22 +531,17 @@
         <!-- Cinematic Sticky Scroll "Poster" Section                      -->
         <!-- Inspired by trucknroll.com — adapted for Neon Auto Transport  -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <section id="poster-scroll" style="position: relative; height: 400vh; background-color: #0a0a0a;">
+        <section id="poster-scroll" style="position: relative; height: 350vh; background-color: #0a0a0a;">
             <!-- Sticky viewport lock -->
             <div id="poster-sticky" style="position: sticky; top: 0; height: 100vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center;">
 
                 <!-- Background Images (crossfade on scroll) -->
                 <div class="poster-bg" id="poster-bg-1" style="position: absolute; inset: 0; z-index: 1; opacity: 1; transition: opacity 0.6s ease;">
-                    <img src="https://trucknroll.com/uploads/uploads/_full/2369/SHOT05_251111_Truck_n_Roll_0558-Edit.webp"
-                         alt="Auto transport trucks lined up"
-                         style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.35);">
-                </div>
-                <div class="poster-bg" id="poster-bg-2" style="position: absolute; inset: 0; z-index: 1; opacity: 0; transition: opacity 0.6s ease;">
                     <img src="https://trucknroll.com/uploads/uploads/_header/2320/SHOT01_251111_Truck_n_Roll_0090_shot01_v1.webp"
                          alt="Car carrier truck on highway"
                          style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.3);">
                 </div>
-                <div class="poster-bg" id="poster-bg-3" style="position: absolute; inset: 0; z-index: 1; opacity: 0; transition: opacity 0.6s ease;">
+                <div class="poster-bg" id="poster-bg-2" style="position: absolute; inset: 0; z-index: 1; opacity: 0; transition: opacity 0.6s ease;">
                     <img src="https://trucknroll.com/uploads/uploads/_w1200/2326/SHOT06_251111_Truck_n_Roll_0646-Edit.webp"
                          alt="Close up of transport logistics"
                          style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.25);">
@@ -558,16 +553,9 @@
                 <!-- Text Lines Container -->
                 <div id="poster-text-container" style="position: relative; z-index: 3; text-align: center; padding: 0 2rem; max-width: 1400px; width: 100%;">
 
-                    <!-- Line 1: WE -->
-                    <div class="poster-line" id="poster-line-1" style="overflow: hidden; margin-bottom: 0.25rem;">
+                    <!-- Line 1: MOVE (with inline image) -->
+                    <div class="poster-line" id="poster-line-1" style="overflow: hidden; margin-bottom: 0.25rem; display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
                         <span style="display: block; font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(4rem, 12vw, 12rem); line-height: 1.05; color: #ffffff; letter-spacing: -0.04em; text-transform: uppercase; transform: translateY(110%); opacity: 0; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), opacity 0.7s ease;" id="poster-word-1">
-                            We
-                        </span>
-                    </div>
-
-                    <!-- Line 2: MOVE (with inline image) -->
-                    <div class="poster-line" id="poster-line-2" style="overflow: hidden; margin-bottom: 0.25rem; display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-                        <span style="display: block; font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(4rem, 12vw, 12rem); line-height: 1.05; color: #ffffff; letter-spacing: -0.04em; text-transform: uppercase; transform: translateY(110%); opacity: 0; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), opacity 0.7s ease;" id="poster-word-2">
                             Move
                         </span>
                         <!-- Inline reveal image (like trucknroll) -->
@@ -578,16 +566,16 @@
                         </div>
                     </div>
 
-                    <!-- Line 3: VEHICLES -->
-                    <div class="poster-line" id="poster-line-3" style="overflow: hidden; margin-bottom: 0.25rem;">
-                        <span style="display: block; font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(4rem, 12vw, 12rem); line-height: 1.05; color: transparent; letter-spacing: -0.04em; text-transform: uppercase; -webkit-text-stroke: 2px rgba(255,255,255,0.6); transform: translateY(110%); opacity: 0; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), opacity 0.7s ease;" id="poster-word-3">
+                    <!-- Line 2: VEHICLES -->
+                    <div class="poster-line" id="poster-line-2" style="overflow: hidden; margin-bottom: 0.25rem;">
+                        <span style="display: block; font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(4rem, 12vw, 12rem); line-height: 1.05; color: transparent; letter-spacing: -0.04em; text-transform: uppercase; -webkit-text-stroke: 2px rgba(255,255,255,0.6); transform: translateY(110%); opacity: 0; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), opacity 0.7s ease;" id="poster-word-2">
                             Vehicles
                         </span>
                     </div>
 
-                    <!-- Line 4: FORWARD. -->
-                    <div class="poster-line" id="poster-line-4" style="overflow: hidden;">
-                        <span style="display: block; font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(4rem, 12vw, 12rem); line-height: 1.05; letter-spacing: -0.04em; text-transform: uppercase; transform: translateY(110%); opacity: 0; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), opacity 0.7s ease; background: linear-gradient(90deg, #635bff, #00d4ff, #39FF14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" id="poster-word-4">
+                    <!-- Line 3: FORWARD. -->
+                    <div class="poster-line" id="poster-line-3" style="overflow: hidden;">
+                        <span style="display: block; font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(4rem, 12vw, 12rem); line-height: 1.05; letter-spacing: -0.04em; text-transform: uppercase; transform: translateY(110%); opacity: 0; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), opacity 0.7s ease; background: linear-gradient(90deg, #635bff, #00d4ff, #39FF14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" id="poster-word-3">
                             Forward.
                         </span>
                     </div>
@@ -618,8 +606,7 @@
             const words = [
                 document.getElementById('poster-word-1'),
                 document.getElementById('poster-word-2'),
-                document.getElementById('poster-word-3'),
-                document.getElementById('poster-word-4')
+                document.getElementById('poster-word-3')
             ];
             const inlineImg = document.getElementById('poster-inline-img');
             const caption = document.getElementById('poster-caption');
@@ -627,8 +614,7 @@
             const progress = document.getElementById('poster-progress');
             const bgs = [
                 document.getElementById('poster-bg-1'),
-                document.getElementById('poster-bg-2'),
-                document.getElementById('poster-bg-3')
+                document.getElementById('poster-bg-2')
             ];
 
             function onScroll() {
@@ -640,8 +626,8 @@
                 // Progress bar
                 if (progress) progress.style.width = (p * 100) + '%';
 
-                // Word reveal thresholds
-                const thresholds = [0.08, 0.22, 0.42, 0.58];
+                // Word reveal thresholds (3 words now)
+                const thresholds = [0.10, 0.35, 0.55];
                 words.forEach(function(word, i) {
                     if (!word) return;
                     if (p >= thresholds[i]) {
@@ -653,9 +639,9 @@
                     }
                 });
 
-                // Inline image reveal (appears with word 2)
+                // Inline image reveal (appears shortly after "Move")
                 if (inlineImg) {
-                    if (p >= 0.28) {
+                    if (p >= 0.20) {
                         inlineImg.style.transform = 'scaleX(1)';
                         inlineImg.style.opacity = '1';
                     } else {
@@ -666,7 +652,7 @@
 
                 // Caption and side text
                 if (caption) {
-                    if (p >= 0.68) {
+                    if (p >= 0.70) {
                         caption.style.opacity = '1';
                         caption.style.transform = 'translateY(0)';
                     } else {
@@ -675,7 +661,7 @@
                     }
                 }
                 if (side) {
-                    if (p >= 0.5) {
+                    if (p >= 0.50) {
                         side.style.opacity = '1';
                         side.style.transform = 'translateY(0)';
                     } else {
@@ -684,13 +670,11 @@
                     }
                 }
 
-                // Background crossfade
-                if (p < 0.33) {
-                    bgs[0].style.opacity = '1'; bgs[1].style.opacity = '0'; bgs[2].style.opacity = '0';
-                } else if (p < 0.66) {
-                    bgs[0].style.opacity = '0'; bgs[1].style.opacity = '1'; bgs[2].style.opacity = '0';
+                // Background crossfade (2 images now)
+                if (p < 0.50) {
+                    bgs[0].style.opacity = '1'; bgs[1].style.opacity = '0';
                 } else {
-                    bgs[0].style.opacity = '0'; bgs[1].style.opacity = '0'; bgs[2].style.opacity = '1';
+                    bgs[0].style.opacity = '0'; bgs[1].style.opacity = '1';
                 }
             }
 
