@@ -603,6 +603,7 @@
             const section = document.getElementById('poster-scroll');
             if (!section) return;
 
+            const header = document.getElementById('global-header');
             const words = [
                 document.getElementById('poster-word-1'),
                 document.getElementById('poster-word-2'),
@@ -617,11 +618,30 @@
                 document.getElementById('poster-bg-2')
             ];
 
+            // Add smooth transition to header if not already present
+            if (header) {
+                header.style.transition = 'transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease';
+            }
+
             function onScroll() {
                 const rect = section.getBoundingClientRect();
                 const sectionHeight = section.offsetHeight - window.innerHeight;
                 const scrolled = -rect.top;
                 const p = Math.max(0, Math.min(1, scrolled / sectionHeight));
+
+                // Hide header when poster section is in view
+                if (header) {
+                    // Section is active when its top edge is near/above viewport top
+                    if (rect.top <= 80 && rect.bottom > window.innerHeight) {
+                        header.style.transform = 'translateY(-100%)';
+                        header.style.opacity = '0';
+                        header.style.pointerEvents = 'none';
+                    } else {
+                        header.style.transform = 'translateY(0)';
+                        header.style.opacity = '1';
+                        header.style.pointerEvents = '';
+                    }
+                }
 
                 // Progress bar
                 if (progress) progress.style.width = (p * 100) + '%';
