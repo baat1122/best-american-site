@@ -9,295 +9,295 @@
   "rewrites": [
     {
       "source": "/alabama-car-shipping/",
-      "destination": "/routes/alabama-car-shipping.html"
+      "destination": "/routes/alabama-car-shipping/"
     },
     {
       "source": "/alaska-car-shipping/",
-      "destination": "/routes/alaska-car-shipping.html"
+      "destination": "/routes/alaska-car-shipping/"
     },
     {
       "source": "/arizona-car-shipping/",
-      "destination": "/routes/arizona-car-shipping.html"
+      "destination": "/routes/arizona-car-shipping/"
     },
     {
       "source": "/arkansas-car-shipping/",
-      "destination": "/routes/arkansas-car-shipping.html"
+      "destination": "/routes/arkansas-car-shipping/"
     },
     {
       "source": "/california-car-shipping/",
-      "destination": "/routes/california-car-shipping.html"
+      "destination": "/routes/california-car-shipping/"
     },
     {
       "source": "/colorado-car-shipping/",
-      "destination": "/routes/colorado-car-shipping.html"
+      "destination": "/routes/colorado-car-shipping/"
     },
     {
       "source": "/connecticut-car-shipping/",
-      "destination": "/routes/connecticut-car-shipping.html"
+      "destination": "/routes/connecticut-car-shipping/"
     },
     {
       "source": "/delaware-car-shipping/",
-      "destination": "/routes/delaware-car-shipping.html"
+      "destination": "/routes/delaware-car-shipping/"
     },
     {
       "source": "/florida-car-shipping/",
-      "destination": "/routes/florida-car-shipping.html"
+      "destination": "/routes/florida-car-shipping/"
     },
     {
       "source": "/georgia-car-shipping/",
-      "destination": "/routes/georgia-car-shipping.html"
+      "destination": "/routes/georgia-car-shipping/"
     },
     {
       "source": "/hawaii-car-shipping/",
-      "destination": "/routes/hawaii-car-shipping.html"
+      "destination": "/routes/hawaii-car-shipping/"
     },
     {
       "source": "/idaho-car-shipping/",
-      "destination": "/routes/idaho-car-shipping.html"
+      "destination": "/routes/idaho-car-shipping/"
     },
     {
       "source": "/illinois-car-shipping/",
-      "destination": "/routes/illinois-car-shipping.html"
+      "destination": "/routes/illinois-car-shipping/"
     },
     {
       "source": "/indiana-car-shipping/",
-      "destination": "/routes/indiana-car-shipping.html"
+      "destination": "/routes/indiana-car-shipping/"
     },
     {
       "source": "/iowa-car-shipping/",
-      "destination": "/routes/iowa-car-shipping.html"
+      "destination": "/routes/iowa-car-shipping/"
     },
     {
       "source": "/kansas-car-shipping/",
-      "destination": "/routes/kansas-car-shipping.html"
+      "destination": "/routes/kansas-car-shipping/"
     },
     {
       "source": "/kentucky-car-shipping/",
-      "destination": "/routes/kentucky-car-shipping.html"
+      "destination": "/routes/kentucky-car-shipping/"
     },
     {
       "source": "/louisiana-car-shipping/",
-      "destination": "/routes/louisiana-car-shipping.html"
+      "destination": "/routes/louisiana-car-shipping/"
     },
     {
       "source": "/maine-car-shipping/",
-      "destination": "/routes/maine-car-shipping.html"
+      "destination": "/routes/maine-car-shipping/"
     },
     {
       "source": "/maryland-car-shipping/",
-      "destination": "/routes/maryland-car-shipping.html"
+      "destination": "/routes/maryland-car-shipping/"
     },
     {
       "source": "/massachusetts-car-shipping/",
-      "destination": "/routes/massachusetts-car-shipping.html"
+      "destination": "/routes/massachusetts-car-shipping/"
     },
     {
       "source": "/michigan-car-shipping/",
-      "destination": "/routes/michigan-car-shipping.html"
+      "destination": "/routes/michigan-car-shipping/"
     },
     {
       "source": "/minnesota-car-shipping/",
-      "destination": "/routes/minnesota-car-shipping.html"
+      "destination": "/routes/minnesota-car-shipping/"
     },
     {
       "source": "/mississippi-car-shipping/",
-      "destination": "/routes/mississippi-car-shipping.html"
+      "destination": "/routes/mississippi-car-shipping/"
     },
     {
       "source": "/missouri-car-shipping/",
-      "destination": "/routes/missouri-car-shipping.html"
+      "destination": "/routes/missouri-car-shipping/"
     },
     {
       "source": "/montana-car-shipping/",
-      "destination": "/routes/montana-car-shipping.html"
+      "destination": "/routes/montana-car-shipping/"
     },
     {
       "source": "/nebraska-car-shipping/",
-      "destination": "/routes/nebraska-car-shipping.html"
+      "destination": "/routes/nebraska-car-shipping/"
     },
     {
       "source": "/nevada-car-shipping/",
-      "destination": "/routes/nevada-car-shipping.html"
+      "destination": "/routes/nevada-car-shipping/"
     },
     {
       "source": "/new-hampshire-car-shipping/",
-      "destination": "/routes/new-hampshire-car-shipping.html"
+      "destination": "/routes/new-hampshire-car-shipping/"
     },
     {
       "source": "/new-jersey-car-shipping/",
-      "destination": "/routes/new-jersey-car-shipping.html"
+      "destination": "/routes/new-jersey-car-shipping/"
     },
     {
       "source": "/new-mexico-car-shipping/",
-      "destination": "/routes/new-mexico-car-shipping.html"
+      "destination": "/routes/new-mexico-car-shipping/"
     },
     {
       "source": "/new-york-car-shipping/",
-      "destination": "/routes/new-york-car-shipping.html"
+      "destination": "/routes/new-york-car-shipping/"
     },
     {
       "source": "/north-carolina-car-shipping/",
-      "destination": "/routes/north-carolina-car-shipping.html"
+      "destination": "/routes/north-carolina-car-shipping/"
     },
     {
       "source": "/north-dakota-car-shipping/",
-      "destination": "/routes/north-dakota-car-shipping.html"
+      "destination": "/routes/north-dakota-car-shipping/"
     },
     {
       "source": "/ohio-car-shipping/",
-      "destination": "/routes/ohio-car-shipping.html"
+      "destination": "/routes/ohio-car-shipping/"
     },
     {
       "source": "/oklahoma-car-shipping/",
-      "destination": "/routes/oklahoma-car-shipping.html"
+      "destination": "/routes/oklahoma-car-shipping/"
     },
     {
       "source": "/oregon-car-shipping/",
-      "destination": "/routes/oregon-car-shipping.html"
+      "destination": "/routes/oregon-car-shipping/"
     },
     {
       "source": "/pennsylvania-car-shipping/",
-      "destination": "/routes/pennsylvania-car-shipping.html"
+      "destination": "/routes/pennsylvania-car-shipping/"
     },
     {
       "source": "/rhode-island-car-shipping/",
-      "destination": "/routes/rhode-island-car-shipping.html"
+      "destination": "/routes/rhode-island-car-shipping/"
     },
     {
       "source": "/route-template/",
-      "destination": "/routes/route-template.html"
+      "destination": "/routes/route-template/"
     },
     {
       "source": "/south-carolina-car-shipping/",
-      "destination": "/routes/south-carolina-car-shipping.html"
+      "destination": "/routes/south-carolina-car-shipping/"
     },
     {
       "source": "/south-dakota-car-shipping/",
-      "destination": "/routes/south-dakota-car-shipping.html"
+      "destination": "/routes/south-dakota-car-shipping/"
     },
     {
       "source": "/tennessee-car-shipping/",
-      "destination": "/routes/tennessee-car-shipping.html"
+      "destination": "/routes/tennessee-car-shipping/"
     },
     {
       "source": "/texas-car-shipping/",
-      "destination": "/routes/texas-car-shipping.html"
+      "destination": "/routes/texas-car-shipping/"
     },
     {
       "source": "/utah-car-shipping/",
-      "destination": "/routes/utah-car-shipping.html"
+      "destination": "/routes/utah-car-shipping/"
     },
     {
       "source": "/vermont-car-shipping/",
-      "destination": "/routes/vermont-car-shipping.html"
+      "destination": "/routes/vermont-car-shipping/"
     },
     {
       "source": "/virginia-car-shipping/",
-      "destination": "/routes/virginia-car-shipping.html"
+      "destination": "/routes/virginia-car-shipping/"
     },
     {
       "source": "/washington-car-shipping/",
-      "destination": "/routes/washington-car-shipping.html"
+      "destination": "/routes/washington-car-shipping/"
     },
     {
       "source": "/washington-dc-car-shipping/",
-      "destination": "/routes/washington-dc-car-shipping.html"
+      "destination": "/routes/washington-dc-car-shipping/"
     },
     {
       "source": "/west-virginia-car-shipping/",
-      "destination": "/routes/west-virginia-car-shipping.html"
+      "destination": "/routes/west-virginia-car-shipping/"
     },
     {
       "source": "/wisconsin-car-shipping/",
-      "destination": "/routes/wisconsin-car-shipping.html"
+      "destination": "/routes/wisconsin-car-shipping/"
     },
     {
       "source": "/wyoming-car-shipping/",
-      "destination": "/routes/wyoming-car-shipping.html"
+      "destination": "/routes/wyoming-car-shipping/"
     },
     {
       "source": "/alaska-auto-transport/",
-      "destination": "/services/alaska-auto-transport.html"
+      "destination": "/services/alaska-auto-transport/"
     },
     {
       "source": "/auto-auction-shipping/",
-      "destination": "/services/auto-auction-shipping.html"
+      "destination": "/services/auto-auction-shipping/"
     },
     {
       "source": "/car-buyer-auto-transport/",
-      "destination": "/services/car-buyer-auto-transport.html"
+      "destination": "/services/car-buyer-auto-transport/"
     },
     {
       "source": "/car-dealer-shipping/",
-      "destination": "/services/car-dealer-shipping.html"
+      "destination": "/services/car-dealer-shipping/"
     },
     {
       "source": "/car-resellers-auto-transport/",
-      "destination": "/services/car-resellers-auto-transport.html"
+      "destination": "/services/car-resellers-auto-transport/"
     },
     {
       "source": "/car-shipping-to-another-state/",
-      "destination": "/services/car-shipping-to-another-state.html"
+      "destination": "/services/car-shipping-to-another-state/"
     },
     {
       "source": "/college-car-shipping/",
-      "destination": "/services/college-car-shipping.html"
+      "destination": "/services/college-car-shipping/"
     },
     {
       "source": "/corporate-relocation/",
-      "destination": "/services/corporate-relocation.html"
+      "destination": "/services/corporate-relocation/"
     },
     {
       "source": "/door-to-door-car-shipping/",
-      "destination": "/services/door-to-door-car-shipping.html"
+      "destination": "/services/door-to-door-car-shipping/"
     },
     {
       "source": "/enclosed-auto-transport/",
-      "destination": "/services/enclosed-auto-transport.html"
+      "destination": "/services/enclosed-auto-transport/"
     },
     {
       "source": "/expedited-auto-transport/",
-      "destination": "/services/expedited-auto-transport.html"
+      "destination": "/services/expedited-auto-transport/"
     },
     {
       "source": "/fleet-management-transportation-services/",
-      "destination": "/services/fleet-management-transportation-services.html"
+      "destination": "/services/fleet-management-transportation-services/"
     },
     {
       "source": "/hawaii-auto-transport/",
-      "destination": "/services/hawaii-auto-transport.html"
+      "destination": "/services/hawaii-auto-transport/"
     },
     {
       "source": "/international-overseas-car-shipping-services/",
-      "destination": "/services/international-overseas-car-shipping-services.html"
+      "destination": "/services/international-overseas-car-shipping-services/"
     },
     {
       "source": "/luxury-car-shipping/",
-      "destination": "/services/luxury-car-shipping.html"
+      "destination": "/services/luxury-car-shipping/"
     },
     {
       "source": "/military-car-shipping/",
-      "destination": "/services/military-car-shipping.html"
+      "destination": "/services/military-car-shipping/"
     },
     {
       "source": "/motorcycle-shipping/",
-      "destination": "/services/motorcycle-shipping.html"
+      "destination": "/services/motorcycle-shipping/"
     },
     {
       "source": "/open-auto-transport/",
-      "destination": "/services/open-auto-transport.html"
+      "destination": "/services/open-auto-transport/"
     },
     {
       "source": "/rental-car-shipping/",
-      "destination": "/services/rental-car-shipping.html"
+      "destination": "/services/rental-car-shipping/"
     },
     {
       "source": "/snow-bird-car-shipping/",
-      "destination": "/services/snow-bird-car-shipping.html"
+      "destination": "/services/snow-bird-car-shipping/"
     },
     {
       "source": "/truck-shipping-services/",
-      "destination": "/services/truck-shipping-services.html"
+      "destination": "/services/truck-shipping-services/"
     }
   ]
 }
