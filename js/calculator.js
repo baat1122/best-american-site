@@ -222,7 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 pickupZip,
                 deliveryZip,
                 desiredPickupDate: pickupDate,
-                transportType: transportType === 'enclosed' ? 'Enclosed' : 'Open'
+                transportType: transportType === 'enclosed' ? 'Enclosed' : 'Open',
+                source: 'Quote Calculator'
             }
         };
 

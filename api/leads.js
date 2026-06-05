@@ -34,7 +34,7 @@ module.exports = async function handler(req, res) {
     const {
       firstName, lastName, email, phone,
       vehicleYear, vehicleMake, vehicleModel, vehicleType, vehicleCondition,
-      pickupZip, deliveryZip, desiredPickupDate, transportType
+      pickupZip, deliveryZip, desiredPickupDate, transportType, source
     } = fields;
 
     // Build the customer name
@@ -49,7 +49,7 @@ module.exports = async function handler(req, res) {
       transportType ? `Transport: ${transportType} Transport` : null,
       vehicleType ? `Vehicle Type: ${vehicleType}` : null,
       desiredPickupDate ? `Desired Pickup Date: ${desiredPickupDate}` : null,
-      'Source: AI Chat Widget (neonautotransport.com)'
+      `Source: ${source || 'AI Chat Widget'} (neonautotransport.com)`
     ].filter(Boolean).join(' | ');
 
     // ---- Step 1: Auto-save customer if not already in CRM ----
@@ -77,10 +77,10 @@ module.exports = async function handler(req, res) {
       vehicle_name: vehicleName,
       pickup_location: pickupZip ? `Zip: ${pickupZip}` : 'Unknown',
       dropoff_location: deliveryZip ? `Zip: ${deliveryZip}` : 'Unknown',
-      est_pickup_date: null, // Date parsing can be added later
+      est_pickup_date: desiredPickupDate || null,
       est_delivery_date: null,
       estimated_price: 0, // No price yet — specialist will quote
-      source: 'AI Chat Widget',
+      source: source || 'AI Chat Widget',
       status: 'New',
       notes: notes,
       is_archived: false

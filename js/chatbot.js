@@ -278,10 +278,11 @@
 
     // Submit directly to custom CRM endpoint
     try {
+      const fieldsToSend = { ...extractedFields, source: 'AI Chatbot' };
       await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fields: extractedFields })
+        body: JSON.stringify({ fields: fieldsToSend })
       });
       console.log('Lead successfully submitted to Neon CRM Database');
     } catch (e) {
