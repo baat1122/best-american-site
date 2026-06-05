@@ -386,17 +386,101 @@
                 </div>
             </div>
             
-            <!-- The Nationwide Dispatch Network Canvas -->
-            <div class="w-full h-[400px] md:h-[550px] relative mt-6 overflow-hidden pointer-events-none mix-blend-screen flex items-center justify-center">
-                <!-- Top fade overlay -->
-                <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#0a2540] to-transparent z-10"></div>
-                <!-- Bottom fade overlay -->
-                <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0a2540] to-transparent z-10"></div>
-                <!-- Subtle radial glow behind the map -->
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="w-[80%] h-[70%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(99,91,255,0.08)_0%,transparent_70%)]"></div>
+            <!-- The Nationwide Dispatch Network Canvas (Replaced with lightweight CSS animation for performance) -->
+            <div class="w-full h-[300px] md:h-[450px] relative mt-6 overflow-hidden flex items-center justify-center">
+                <!-- Glowing Highway -->
+                <div class="absolute bottom-[20%] left-0 w-full h-[2px] bg-[#635bff] shadow-[0_0_15px_#635bff]"></div>
+                <div class="absolute bottom-[20%] left-0 w-full h-[1px] bg-[#00d4ff] shadow-[0_0_20px_#00d4ff] opacity-80"></div>
+
+                <!-- Animated Truck Wrapper -->
+                <div class="absolute bottom-[20%] left-0 w-full h-full pointer-events-none">
+                    <div class="truck-container absolute bottom-0 left-[-300px]">
+                        <!-- High-Tech Neon Car Carrier SVG -->
+                        <svg width="280" height="140" viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Glow Filters -->
+                            <defs>
+                                <filter id="neonGlowBlue" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="4" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                                <filter id="neonGlowCyan" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="5" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+
+                            <!-- Trailer Frame -->
+                            <path d="M 10,120 L 10,50 L 180,50 L 180,120 Z" fill="rgba(99,91,255,0.1)" stroke="#635bff" stroke-width="3" filter="url(#neonGlowBlue)" />
+                            
+                            <!-- Trailer Deck & Pillars -->
+                            <path d="M 10,85 L 180,85 M 65,50 L 65,120 M 125,50 L 125,120" stroke="#00d4ff" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
+                            
+                            <!-- Car 1 (Top Left) -->
+                            <path d="M 15,80 L 15,65 L 30,55 L 55,55 L 60,65 L 60,80 Z" fill="#00d4ff" opacity="0.8" filter="url(#neonGlowCyan)" />
+                            <circle cx="25" cy="80" r="4" fill="#0a2540" stroke="#00d4ff" stroke-width="1.5" />
+                            <circle cx="50" cy="80" r="4" fill="#0a2540" stroke="#00d4ff" stroke-width="1.5" />
+
+                            <!-- Car 2 (Top Right) -->
+                            <path d="M 70,80 L 70,65 L 85,55 L 110,55 L 115,65 L 115,80 Z" fill="#39FF14" opacity="0.8" filter="url(#neonGlowCyan)" />
+                            <circle cx="80" cy="80" r="4" fill="#0a2540" stroke="#39FF14" stroke-width="1.5" />
+                            <circle cx="105" cy="80" r="4" fill="#0a2540" stroke="#39FF14" stroke-width="1.5" />
+
+                            <!-- Car 3 (Bottom) -->
+                            <path d="M 130,115 L 130,100 L 145,90 L 170,90 L 175,100 L 175,115 Z" fill="#635bff" opacity="0.8" filter="url(#neonGlowBlue)" />
+                            <circle cx="140" cy="115" r="4" fill="#0a2540" stroke="#635bff" stroke-width="1.5" />
+                            <circle cx="165" cy="115" r="4" fill="#0a2540" stroke="#635bff" stroke-width="1.5" />
+
+                            <!-- Truck Cab -->
+                            <path d="M 190,120 L 190,60 L 220,60 L 245,85 L 265,85 L 265,120 Z" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="3" filter="url(#neonGlowCyan)" />
+                            <!-- Window -->
+                            <path d="M 220,60 L 240,85 L 220,85 Z" fill="#635bff" opacity="0.7" />
+
+                            <!-- Exhaust Pipe -->
+                            <path d="M 195,60 L 195,35" stroke="#a1b0c0" stroke-width="3" />
+                            <circle cx="195" cy="30" r="2" fill="#fff" class="smoke-puff" opacity="0" />
+
+                            <!-- Truck Wheels -->
+                            <circle cx="40" cy="120" r="14" fill="#0a2540" stroke="#635bff" stroke-width="3" />
+                            <circle cx="90" cy="120" r="14" fill="#0a2540" stroke="#635bff" stroke-width="3" />
+                            <circle cx="160" cy="120" r="14" fill="#0a2540" stroke="#635bff" stroke-width="3" />
+                            <circle cx="215" cy="120" r="14" fill="#0a2540" stroke="#00d4ff" stroke-width="3" />
+                            <circle cx="245" cy="120" r="14" fill="#0a2540" stroke="#00d4ff" stroke-width="3" />
+
+                            <!-- Wheel Hubs (Spinning) -->
+                            <circle cx="40" cy="120" r="5" fill="#00d4ff" class="spinning-hub" />
+                            <circle cx="90" cy="120" r="5" fill="#00d4ff" class="spinning-hub" />
+                            <circle cx="160" cy="120" r="5" fill="#00d4ff" class="spinning-hub" />
+                            <circle cx="215" cy="120" r="5" fill="#39FF14" class="spinning-hub" />
+                            <circle cx="245" cy="120" r="5" fill="#39FF14" class="spinning-hub" />
+                        </svg>
+                    </div>
                 </div>
-                <canvas id="dispatchNetwork" class="w-full max-w-[1200px] h-full opacity-0 transition-opacity duration-1000 ease-in-out"></canvas>
+
+                <style>
+                    .truck-container {
+                        animation: driveAcross 18s linear infinite;
+                    }
+                    .spinning-hub {
+                        transform-origin: center;
+                        transform-box: fill-box;
+                        animation: spinWheel 1s linear infinite;
+                    }
+                    .smoke-puff {
+                        animation: smokeRise 2s ease-out infinite;
+                    }
+                    @keyframes driveAcross {
+                        0% { transform: translateX(-300px); }
+                        100% { transform: translateX(calc(100vw + 300px)); }
+                    }
+                    @keyframes spinWheel {
+                        from { transform: rotate(0deg); }
+                        to { transform: rotate(360deg); }
+                    }
+                    @keyframes smokeRise {
+                        0% { transform: translateY(0) scale(1); opacity: 0.8; }
+                        100% { transform: translateY(-30px) scale(3); opacity: 0; }
+                    }
+                </style>
             </div>
         </section>
 
