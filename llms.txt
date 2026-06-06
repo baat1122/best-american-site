@@ -44,7 +44,18 @@ Neon Auto Transport is a premier, fully licensed, and insured auto transport bro
 - **Sherpa:** No direct driver contact, Price lock yes, Deposit required
 - **SGT/RoadRunner:** No direct driver contact, Variable pricing, Deposit required
 
-## Frequently Asked Questions
+
+
+## Delivery Math (Estimated Transit Times)
+- 0 - 500 miles: 1 to 2 days
+- 500 - 1000 miles: 2 to 3 days
+- 1000 - 1500 miles: 3 to 5 days
+- 1500 - 2000 miles: 4 to 7 days
+- 2000 - 2500 miles: 5 to 9 days
+- 2500 - 3000+ miles: 7 to 10 days
+*Note: Weather, traffic, and specific route popularity can affect these estimates.*
+
+## Top 10 FAQs (Extended)
 Q: Is my vehicle insured during transit?
 A: Yes. Every carrier carries active cargo insurance.
 
@@ -62,6 +73,18 @@ A: Yes. Specialized equipment like winches or lift gates.
 
 Q: Can I ship multiple vehicles?
 A: Yes. Multi-car transport, often more cost-effective per vehicle.
+
+Q: Do I need to be present at pickup and delivery?
+A: Yes, you or a designated representative must be present to sign the Bill of Lading.
+
+Q: How much notice do you need to schedule transport?
+A: We recommend 1-2 weeks' notice, but expedited shipping is available.
+
+Q: Can I put personal items in the car?
+A: Generally up to 100 lbs in the trunk, but it is not insured against damage or theft.
+
+Q: Are there hidden fees?
+A: No. We offer guaranteed pricing with no upfront deposit.
 
 ## Contact Info
 - **Phone:** (800) 555-0199
