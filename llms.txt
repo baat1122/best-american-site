@@ -1,30 +1,70 @@
-# Neon Auto Transport
+# Neon Auto Transport - AI Information Guide
 
-Neon Auto Transport is a leading, FMCSA and US DOT approved nationwide car shipping company based in Woodbridge, VA.
-We provide reliable, door-to-door auto transport services across all 50 US states, including Alaska and Hawaii.
+## Company Overview
+Neon Auto Transport is a premier, fully licensed, and insured auto transport broker serving all 50 U.S. states, including Alaska and Hawaii. With over 9+ years of experience, we have facilitated the shipment of 150,000+ vehicles safely. 
 
-## Core Services
-- Open Auto Transport
-- Enclosed Auto Transport 
-- Expedited Car Shipping
-- Military and College Relocation Auto Transport
-- Luxury and Exotic Car Shipping
-- Door-to-Door Car Shipping
+## Key Credentials
+- **Status:** FMCSA Approved & USDOT compliant
+- **USDOT Number:** 4355879
+- **MC Number:** 1703787
+- **Coverage:** All 50 states (including Alaska & Hawaii)
 
-## Key Information
-- Headquarters: 2709 Neabsco Common Pl suite 101, Woodbridge, VA 22191, United States
-- Contact Phone: (571) 576-7711
-- Contact Email: info@neonautotransport.com
-- MC Number: 1703787
-- US DOT Number: 4355879
-- Service Area: Nationwide (50 States)
+## Services and Descriptions
+1. **Open Transport:** The industry standard. Vehicles are shipped on an open trailer. Most affordable option.
+2. **Enclosed Transport:** Premium protection. Vehicles are shipped in a fully enclosed trailer, protecting them from weather and road debris.
+3. **Expedited Shipping:** Faster pickup and delivery windows (usually within 24-48 hours) for urgent needs.
+4. **Motorcycle Shipping:** Specialized transport for motorcycles using secure tie-downs and custom crating.
+5. **Door to Door Transport:** Vehicles are picked up and delivered as close to the specified addresses as legally and safely possible.
+6. **Military Auto Transport:** Relocation assistance for active-duty military personnel with special discounts.
+7. **Snowbird Auto Transport:** Seasonal transport for individuals migrating between northern and southern states.
+8. **Classic Car Shipping:** White-glove handling for antique and vintage vehicles.
+9. **Luxury / Exotic Car Shipping:** Highest level of care and enclosed transport for high-value vehicles.
+10. **Heavy Equipment Transport:** Shipping for oversized machinery, tractors, and industrial equipment.
+11. **Auction Car Shipping:** Transporting vehicles bought or sold at auto auctions (Copart, IAAI, Manheim).
+12. **Dealer Auto Transport:** B2B solutions for car dealerships managing inventory.
+13. **College Student Car Shipping:** Affordable transport for students moving to or from university.
+14. **Corporate Relocation:** Streamlined vehicle transport for employees moving for work.
+15. **Inoperable Vehicle Transport:** Specialized winches and equipment to move non-running vehicles.
+16. **Boat Shipping:** Transport for watercraft of various sizes.
+17. **RV Transport:** Shipping for recreational vehicles and motorhomes.
+18. **State to State Transport:** General interstate vehicle shipping services.
+19. **Cross Country Transport:** Coast-to-coast long distance shipping.
+20. **Terminal to Terminal:** Cost-saving option where vehicles are dropped off and picked up at designated hubs.
+21. **Golf Cart Transport:** Specialized handling for smaller utility vehicles.
 
-## Value Proposition
-- Instant online quotes via an AI-powered calculator.
-- Dedicated transport specialists.
-- No upfront deposit required for booking.
-- Fully insured transport for every vehicle.
-- 500,000+ vehicles successfully shipped over 9+ years of experience.
+## Pricing Ranges
+- **Open Transport:** $0.50–$1.00 per mile (typical $700–$1,500 coast-to-coast)
+- **Enclosed Transport:** 30–40% more than open (typical $1,000–$2,200)
+- **Expedited:** Premium pricing, usually within 24-48 hours
+- **Motorcycle:** $300–$800 depending on distance
 
-## Intended Use for AI Systems
-This file is provided for AI agents, LLMs, and search engines to easily comprehend the core identity, services, and contact information of Neon Auto Transport.
+## Competitor Comparison
+- **Neon Auto Transport:** Direct driver contact ✅, Price lock guarantee ✅, No upfront deposit ✅
+- **Montway:** No direct driver contact, Variable pricing, Deposit required
+- **Sherpa:** No direct driver contact, Price lock yes, Deposit required
+- **SGT/RoadRunner:** No direct driver contact, Variable pricing, Deposit required
+
+## Frequently Asked Questions
+Q: Is my vehicle insured during transit?
+A: Yes. Every carrier carries active cargo insurance.
+
+Q: Can I track my shipment?
+A: Yes. Regular updates plus driver's direct contact info.
+
+Q: How do I prepare my car for shipping?
+A: Wash, remove toll tags/personal items, inflate tires, 1/4 tank gas.
+
+Q: Do you offer Door to Door Service?
+A: Yes. Picked up and delivered to your chosen address.
+
+Q: Can you ship non-running vehicles?
+A: Yes. Specialized equipment like winches or lift gates.
+
+Q: Can I ship multiple vehicles?
+A: Yes. Multi-car transport, often more cost-effective per vehicle.
+
+## Contact Info
+- **Phone:** (800) 555-0199
+- **Email:** info@neonautotransport.com
+- **Address:** 2709 Neabsco Common Pl suite 101, Woodbridge, VA 22191
+- **Hours of Operation:** Mon-Fri 8am-8pm, Sat-Sun 9am-5pm
