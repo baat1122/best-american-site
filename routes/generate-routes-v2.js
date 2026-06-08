@@ -382,6 +382,11 @@ statesData.forEach(state => {
             `For pickups and drop-offs in ${state.name}, choose a location near major highways. Spots close to ${sData.highway} or near ${sData.hub} attract more carriers`
         );
 
+        // 5. Replace cities section BEFORE component shuffling (shuffle breaks the regex order)
+        const originalCitiesRegex = /<div class="stripe-card p-8 lg:p-10 bg-white">[\s\S]*?<!-- FAQs -->/m;
+        const newCitiesHTML = generateCitiesHTML(state.name, state.cities) + "\n\n                    <!-- FAQs -->";
+        content = content.replace(originalCitiesRegex, newCitiesHTML);
+
         // Component Shuffling
         const factorsRegex = /(<!-- Factors Impacting Costs -->[\s\S]*?)<!-- TIPS & TRICKS -->/;
         const tipsRegex = /(<!-- TIPS & TRICKS -->[\s\S]*?)<!-- Cities We Serve -->/;
@@ -422,10 +427,7 @@ statesData.forEach(state => {
     const popularRoutesHTML = generatePopularRoutesHTML(state.name) + "\n\n                    <!-- Two Column Layout for the Rest -->";
     content = content.replace(routesRegex, popularRoutesHTML);
 
-    // 5. Replace cities section
-    const originalCitiesRegex = /<div class="stripe-card p-8 lg:p-10 bg-white">[\s\S]*?<!-- FAQs -->/m;
-    const newCitiesHTML = generateCitiesHTML(state.name, state.cities) + "\n\n                    <!-- FAQs -->";
-    content = content.replace(originalCitiesRegex, newCitiesHTML);
+    // (Cities replacement moved before component shuffle above)
 
     fs.writeFileSync(outputPath, content);
     console.log(`Generated ${slug}-car-shipping.html`);
