@@ -284,6 +284,9 @@ statesData.forEach(state => {
     // 2. Replace "VA" abbreviations
     content = content.replace(/\bVA\b/g, state.abbr);
     
+    // 2.1 Restore provider.address.addressRegion to VA (company is in Woodbridge, VA)
+    content = content.replace(/"addressRegion":\s*"[^"]*"/, '"addressRegion": "VA"');
+    
     // 3. Replace Richmond, Norfolk
     content = content.replace(/Richmond, Norfolk/g, state.cities.slice(0, 2).join(', '));
 
