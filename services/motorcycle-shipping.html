@@ -38,114 +38,47 @@
     <!-- JSON-LD: Service -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Motorcycle Shipping",
-      "description": "Ship your motorcycle safely across the country with Neon Auto Transport. Palletized or crated transport, fully insured, FMCSA approved. Get a free motorcycle shipping quote.",
-      "serviceType": "Motorcycle Shipping",
-      "provider": {
-        "@type": "MovingCompany",
-        "name": "Neon Auto Transport",
-        "telephone": "+15715767711",
-        "url": "https://neonautotransport.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "2709 Neabsco Common Pl suite 101",
-          "addressLocality": "Woodbridge",
-          "addressRegion": "VA",
-          "postalCode": "22191",
-          "addressCountry": "US"
-        }
-      },
-      "areaServed": { "@type": "Country", "name": "United States" },
-      "url": "https://neonautotransport.com/services/motorcycle-shipping/",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "Neon Auto Transport" }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "1247",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://neonautotransport.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://neonautotransport.com/services/" },
-        { "@type": "ListItem", "position": 3, "name": "Motorcycle Shipping", "item": "https://neonautotransport.com/services/motorcycle-shipping/" }
-      ]
-    }
-    </script>
-
-    <!-- JSON-LD: FAQPage -->
-    <script type="application/ld+json">
-{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I prepare my vehicle for transit with this service?",
+      "name": "How is my motorcycle secured during transport?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Remove personal belongings and document existing damage with photos. Ensure your gas tank is about a quarter full, disable alarms, and ensure the vehicle is operational unless stated otherwise."
+        "text": "Your motorcycle is loaded onto the trailer using a ramp, then secured with soft-loop straps around the handlebars and frame to prevent scratches. The bike is held upright in a motorcycle cradle or wheel chock to prevent tipping during transit."
       }
     },
     {
       "@type": "Question",
-      "name": "Is my vehicle insured during transport?",
+      "name": "Can I ship a motorcycle with personal items in the saddlebags?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, your vehicle is insured during transport. Every carrier in our network is required to carry active cargo insurance to cover any damage that may occur in transit."
+        "text": "We strongly recommend removing all personal items, loose accessories, and aftermarket parts before shipping. Saddlebags should be empty and unlocked. Carriers are not responsible for items left on or in the motorcycle during transport."
       }
     },
     {
       "@type": "Question",
-      "name": "How far out should I schedule my pickup service ?",
+      "name": "Does my motorcycle need to be in running condition to ship?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most shipments, we recommend booking at least 1–2 weeks in advance. During peak summer and snowbird seasons, booking 2–4 weeks ahead helps lock in preferred dates."
+        "text": "No, we can ship non-running motorcycles using a winch system. However, non-running bikes may incur a $75-$150 surcharge. The motorcycle should at least roll freely on its wheels for safe loading."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I pay for my auto transport?",
+      "name": "How much does it cost to ship a motorcycle cross-country?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No payment is due at the time of booking. You provide a payment method to secure a carrier. The balance can be paid in full by card, or you can pay the remaining balance to the driver on delivery day using cash or a certified check."
+        "text": "Motorcycle shipping costs between $300-$700 for cross-country transport, depending on distance, bike size, and transport type (open or enclosed). Smaller bikes and shorter distances cost less due to lower weight and space requirements."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I pack personal items inside my vehicle?",
+      "name": "Should I choose open or enclosed transport for my motorcycle?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your shipment generally includes up to 100 lbs of personal items stored in the trunk area or secured below the window line. Note that carriers are not responsible for personal items left inside the vehicle."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to be present at both pickup and delivery?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, it is important that you or a trusted adult is present for pickup and delivery to inspect the vehicle and sign the Bill of Lading, which acts as a receipt of the vehicle's condition."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's the difference between Open vs Enclosed Auto Transport?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open transport is the most affordable and common method, where your car rides on an open-air carrier. Enclosed transport shields your vehicle from weather and road debris in a covered trailer, ideal for luxury or classic cars, but typically costs 30-40% more."
+        "text": "Open transport works well for standard and cruiser motorcycles. Enclosed transport is recommended for high-value bikes like Harley-Davidsons, Ducatis, or any custom motorcycle where paint and chrome protection is critical."
       }
     }
   ]
@@ -177,7 +110,7 @@
         
     <section class="relative pt-32 pb-48 flex items-center justify-center border-b-[8px] border-[#39FF14]">
         <div class="absolute inset-0 w-full h-full">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=60" alt="Motorcycle Shipping" class="w-full h-full object-cover">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=60" alt="Motorcycle shipping service with secure cradle transport for safe door-to-door bike delivery" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-[#0a2540]/85"></div>
         </div>
         <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center relative z-10">
@@ -330,77 +263,51 @@
                             <!-- FAQ 1 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    How do I prepare my vehicle for transit with this service?
+                                    How is my motorcycle secured during transport?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Remove personal belongings and document existing damage with photos. Ensure your gas tank is about a quarter full, disable alarms, and ensure the vehicle is operational unless stated otherwise.
+                                    Your motorcycle is loaded onto the trailer using a ramp, then secured with soft-loop straps around the handlebars and frame to prevent scratches. The bike is held upright in a motorcycle cradle or wheel chock to prevent tipping during transit.
                                 </div>
                             </details>
-                            
                             <!-- FAQ 2 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    Is my vehicle insured during transport?
+                                    Can I ship a motorcycle with personal items in the saddlebags?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Yes, your vehicle is insured during transport. Every carrier in our network is required to carry active cargo insurance to cover any damage that may occur in transit.
+                                    We strongly recommend removing all personal items, loose accessories, and aftermarket parts before shipping. Saddlebags should be empty and unlocked. Carriers are not responsible for items left on or in the motorcycle during transport.
                                 </div>
                             </details>
-
                             <!-- FAQ 3 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    How far out should I schedule my pickup service ?
+                                    Does my motorcycle need to be in running condition to ship?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    For most shipments, we recommend booking at least 1–2 weeks in advance. During peak summer and snowbird seasons, booking 2–4 weeks ahead helps lock in preferred dates.
+                                    No, we can ship non-running motorcycles using a winch system. However, non-running bikes may incur a $75-$150 surcharge. The motorcycle should at least roll freely on its wheels for safe loading.
                                 </div>
                             </details>
-
                             <!-- FAQ 4 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    How do I pay for my auto transport?
+                                    How much does it cost to ship a motorcycle cross-country?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    No payment is due at the time of booking. You provide a payment method to secure a carrier. The balance can be paid in full by card, or you can pay the remaining balance to the driver on delivery day using cash or a certified check.
+                                    Motorcycle shipping costs between $300-$700 for cross-country transport, depending on distance, bike size, and transport type (open or enclosed). Smaller bikes and shorter distances cost less due to lower weight and space requirements.
                                 </div>
                             </details>
-
                             <!-- FAQ 5 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    Can I pack personal items inside my vehicle?
+                                    Should I choose open or enclosed transport for my motorcycle?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Your shipment generally includes up to 100 lbs of personal items stored in the trunk area or secured below the window line. Note that carriers are not responsible for personal items left inside the vehicle.
-                                </div>
-                            </details>
-
-                            <!-- FAQ 6 -->
-                            <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
-                                <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    Do I need to be present at both pickup and delivery?
-                                    <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
-                                </summary>
-                                <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Yes, it is important that you or a trusted adult is present for pickup and delivery to inspect the vehicle and sign the Bill of Lading, which acts as a receipt of the vehicle's condition.
-                                </div>
-                            </details>
-
-                            <!-- FAQ 7 -->
-                            <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
-                                <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    What's the difference between Open vs Enclosed Auto Transport?
-                                    <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
-                                </summary>
-                                <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Open transport is the most affordable and common method, where your car rides on an open-air carrier. Enclosed transport shields your vehicle from weather and road debris in a covered trailer, ideal for luxury or classic cars, but typically costs 30-40% more.
+                                    Open transport works well for standard and cruiser motorcycles. Enclosed transport is recommended for high-value bikes like Harley-Davidsons, Ducatis, or any custom motorcycle where paint and chrome protection is critical.
                                 </div>
                             </details>
                         </div>

@@ -287,6 +287,21 @@ statesData.forEach(state => {
     // 3. Replace Richmond, Norfolk
     content = content.replace(/Richmond, Norfolk/g, state.cities.slice(0, 2).join(', '));
 
+    // 3.1 Fix URL slugs in canonical, OG URL, and breadcrumb schema
+    content = content.replace(/virginia-car-shipping/g, `${slug}-car-shipping`);
+
+    // 3.2 Rebuild meta description with state-specific data
+    const metaDescRegex = /<meta name="description" content="[^"]*">/;
+    content = content.replace(metaDescRegex, `<meta name="description" content="Ship your car to or from ${state.name} with Neon Auto Transport. Fully insured door-to-door vehicle transport serving ${state.cities[0]} and all of ${state.name}. FMCSA approved. Get a free instant quote.">`);
+
+    // 3.3 Rebuild OG description
+    const ogDescRegex = /<meta property="og:description" content="[^"]*">/;
+    content = content.replace(ogDescRegex, `<meta property="og:description" content="Reliable, FMCSA approved car shipping to and from ${state.name}. Serving ${state.cities[0]} and all cities in ${state.name}. Door-to-door auto transport. Call (571) 576-7711.">`);
+
+    // 3.4 Rebuild Twitter description
+    const twitterDescRegex = /<meta name="twitter:description" content="[^"]*">/;
+    content = content.replace(twitterDescRegex, `<meta name="twitter:description" content="Ship your car to or from ${state.name} with Neon Auto Transport. Door-to-door delivery serving ${state.cities[0]}. Instant quote available.">`);
+
     // 3.5 Inject unique state data into Hero paragraph and Multi-Layout Engine
     const sData = stateDataMap[state.name];
     if (sData) {
@@ -374,11 +389,20 @@ statesData.forEach(state => {
         // Deterministic layout selection
         const selectedLayout = layouts[state.name.length % layouts.length];
 
-        const heroRegex = /<section class="bg-\[#0a2540\] text-white pt-24 pb-40 slant-bottom relative">[\s\S]*?<\/section>/;
+        // Replace remaining standalone Richmond references with state hub
+        content = content.replace(/Richmond/g, sData.hub);
+
+        // Replace I-95 references with state highway (safe: I-95 only appears in meta/schema)
+        content = content.replace(/I-95/g, sData.highway);
+
+        // Replace state nickname
+        content = content.replace(/Old Dominion State/g, sData.nickname);
+
+        const heroRegex = /<section class="bg-\[#0a2540\] text-white pt-24 pb-40 slant-bottom relative[^"]*">[\s\S]*?<\/section>/;
         content = content.replace(heroRegex, selectedLayout);
 
         content = content.replace(
-            /For pickups and drop-offs in Virginia, choose a location near major highways\. Spots close to I-95 or I-81 attract more carriers/g,
+            new RegExp(`For pickups and drop-offs in ${state.name}, choose a location near major highways\\. Spots close to [^<]+attract more carriers`, 'g'),
             `For pickups and drop-offs in ${state.name}, choose a location near major highways. Spots close to ${sData.highway} or near ${sData.hub} attract more carriers`
         );
 

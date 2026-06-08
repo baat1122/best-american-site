@@ -38,114 +38,47 @@
     <!-- JSON-LD: Service -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Car Buyer Auto Transport",
-      "description": "Just bought a car online or out of state? Neon Auto Transport delivers your new purchase right to your door. FMCSA approved, fully insured, nationwide delivery.",
-      "serviceType": "Car Buyer Auto Transport",
-      "provider": {
-        "@type": "MovingCompany",
-        "name": "Neon Auto Transport",
-        "telephone": "+15715767711",
-        "url": "https://neonautotransport.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "2709 Neabsco Common Pl suite 101",
-          "addressLocality": "Woodbridge",
-          "addressRegion": "VA",
-          "postalCode": "22191",
-          "addressCountry": "US"
-        }
-      },
-      "areaServed": { "@type": "Country", "name": "United States" },
-      "url": "https://neonautotransport.com/services/car-buyer-auto-transport/",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "Neon Auto Transport" }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "1247",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://neonautotransport.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://neonautotransport.com/services/" },
-        { "@type": "ListItem", "position": 3, "name": "Car Buyer Auto Transport", "item": "https://neonautotransport.com/services/car-buyer-auto-transport/" }
-      ]
-    }
-    </script>
-
-    <!-- JSON-LD: FAQPage -->
-    <script type="application/ld+json">
-{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I prepare my vehicle for transit with this service?",
+      "name": "I just bought a car online — how do I get it shipped to me?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Remove personal belongings and document existing damage with photos. Ensure your gas tank is about a quarter full, disable alarms, and ensure the vehicle is operational unless stated otherwise."
+        "text": "Simply provide us with the pickup address (seller location) and your delivery address. We handle all coordination with the seller for pickup scheduling. You receive tracking updates throughout transit and the driver delivers directly to your door."
       }
     },
     {
       "@type": "Question",
-      "name": "Is my vehicle insured during transport?",
+      "name": "Can you pick up a car from a private seller I found on Craigslist or Facebook?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, your vehicle is insured during transport. Every carrier in our network is required to carry active cargo insurance to cover any damage that may occur in transit."
+        "text": "Yes. We coordinate directly with private sellers for pickup. Provide us the seller address and contact info, and we handle the rest. The seller just needs to be present to hand over the keys and sign the Bill of Lading at pickup."
       }
     },
     {
       "@type": "Question",
-      "name": "How far out should I schedule my pickup service ?",
+      "name": "Should I inspect the car before the carrier picks it up?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most shipments, we recommend booking at least 1–2 weeks in advance. During peak summer and snowbird seasons, booking 2–4 weeks ahead helps lock in preferred dates."
+        "text": "Absolutely. We strongly recommend a pre-purchase inspection before shipping. If you cannot inspect in person, request detailed photos and a video walkaround from the seller. Document any existing damage on the Bill of Lading at pickup."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I pay for my auto transport?",
+      "name": "How do I pay for a car I am having shipped?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No payment is due at the time of booking. You provide a payment method to secure a carrier. The balance can be paid in full by card, or you can pay the remaining balance to the driver on delivery day using cash or a certified check."
+        "text": "Vehicle payment is handled directly between you and the seller — we only handle shipping payment. We recommend using secure payment methods and verifying title transfer before the carrier picks up the vehicle."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I pack personal items inside my vehicle?",
+      "name": "What happens if the car I bought looks different when it arrives?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your shipment generally includes up to 100 lbs of personal items stored in the trunk area or secured below the window line. Note that carriers are not responsible for personal items left inside the vehicle."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to be present at both pickup and delivery?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, it is important that you or a trusted adult is present for pickup and delivery to inspect the vehicle and sign the Bill of Lading, which acts as a receipt of the vehicle's condition."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's the difference between Open vs Enclosed Auto Transport?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open transport is the most affordable and common method, where your car rides on an open-air carrier. Enclosed transport shields your vehicle from weather and road debris in a covered trailer, ideal for luxury or classic cars, but typically costs 30-40% more."
+        "text": "The Bill of Lading signed at pickup documents the vehicle condition with photos. If damage occurs during transit, it is covered by the carrier cargo insurance. If the vehicle was misrepresented by the seller, that is a separate dispute to resolve with them."
       }
     }
   ]
@@ -177,7 +110,7 @@
         
     <section class="bg-[#0a2540] text-white pt-24 pb-40 slant-bottom relative overflow-hidden">
         <div class="absolute inset-0 w-full h-full opacity-10">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=60" class="w-full h-full object-cover" alt="Car Buyer Auto Transport — Neon Auto Transport">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=60" class="w-full h-full object-cover" alt="Car buyer auto transport for shipping vehicles purchased online or from private sellers nationwide">
         </div>
         <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center relative z-10">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[rgba(255,255,255,0.3)] bg-[rgba(255,255,255,0.1)] text-xs font-bold mb-6">
@@ -209,84 +142,57 @@
                             <!-- FAQ 1 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    How do I prepare my vehicle for transit with this service?
+                                    I just bought a car online — how do I get it shipped to me?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Remove personal belongings and document existing damage with photos. Ensure your gas tank is about a quarter full, disable alarms, and ensure the vehicle is operational unless stated otherwise.
+                                    Simply provide us with the pickup address (seller location) and your delivery address. We handle all coordination with the seller for pickup scheduling. You receive tracking updates throughout transit and the driver delivers directly to your door.
                                 </div>
                             </details>
-                            
                             <!-- FAQ 2 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    Is my vehicle insured during transport?
+                                    Can you pick up a car from a private seller I found on Craigslist or Facebook?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Yes, your vehicle is insured during transport. Every carrier in our network is required to carry active cargo insurance to cover any damage that may occur in transit.
+                                    Yes. We coordinate directly with private sellers for pickup. Provide us the seller address and contact info, and we handle the rest. The seller just needs to be present to hand over the keys and sign the Bill of Lading at pickup.
                                 </div>
                             </details>
-
                             <!-- FAQ 3 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    How far out should I schedule my pickup service ?
+                                    Should I inspect the car before the carrier picks it up?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    For most shipments, we recommend booking at least 1–2 weeks in advance. During peak summer and snowbird seasons, booking 2–4 weeks ahead helps lock in preferred dates.
+                                    Absolutely. We strongly recommend a pre-purchase inspection before shipping. If you cannot inspect in person, request detailed photos and a video walkaround from the seller. Document any existing damage on the Bill of Lading at pickup.
                                 </div>
                             </details>
-
                             <!-- FAQ 4 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    How do I pay for my auto transport?
+                                    How do I pay for a car I am having shipped?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    No payment is due at the time of booking. You provide a payment method to secure a carrier. The balance can be paid in full by card, or you can pay the remaining balance to the driver on delivery day using cash or a certified check.
+                                    Vehicle payment is handled directly between you and the seller — we only handle shipping payment. We recommend using secure payment methods and verifying title transfer before the carrier picks up the vehicle.
                                 </div>
                             </details>
-
                             <!-- FAQ 5 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    Can I pack personal items inside my vehicle?
+                                    What happens if the car I bought looks different when it arrives?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Your shipment generally includes up to 100 lbs of personal items stored in the trunk area or secured below the window line. Note that carriers are not responsible for personal items left inside the vehicle.
-                                </div>
-                            </details>
-
-                            <!-- FAQ 6 -->
-                            <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
-                                <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    Do I need to be present at both pickup and delivery?
-                                    <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
-                                </summary>
-                                <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Yes, it is important that you or a trusted adult is present for pickup and delivery to inspect the vehicle and sign the Bill of Lading, which acts as a receipt of the vehicle's condition.
-                                </div>
-                            </details>
-
-                            <!-- FAQ 7 -->
-                            <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
-                                <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    What's the difference between Open vs Enclosed Auto Transport?
-                                    <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
-                                </summary>
-                                <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Open transport is the most affordable and common method, where your car rides on an open-air carrier. Enclosed transport shields your vehicle from weather and road debris in a covered trailer, ideal for luxury or classic cars, but typically costs 30-40% more.
+                                    The Bill of Lading signed at pickup documents the vehicle condition with photos. If damage occurs during transit, it is covered by the carrier cargo insurance. If the vehicle was misrepresented by the seller, that is a separate dispute to resolve with them.
                                 </div>
                             </details>
                         </div>
                     </div>
 
-                
-<!-- TIPS & TRICKS -->
+                    <!-- TIPS & TRICKS -->
                     <div class="stripe-card p-8 lg:p-10 border-l-4 border-l-[#468de6]">
                         <div class="text-[#468de6] font-black uppercase tracking-widest text-sm mb-2">TIPS & TRICKS</div>
                         <h2 class="text-3xl font-bold mb-8 text-[#0a2540] tracking-tight">Tips & Tricks for Saving on Vehicle Shipping</h2>

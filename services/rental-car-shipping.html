@@ -38,114 +38,47 @@
     <!-- JSON-LD: Service -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Rental Car Fleet Shipping",
-      "description": "Neon Auto Transport provides specialized rental car fleet relocation services. Move your rental vehicles between locations quickly and cost-effectively. Get a fleet quote.",
-      "serviceType": "Rental Car Fleet Shipping",
-      "provider": {
-        "@type": "MovingCompany",
-        "name": "Neon Auto Transport",
-        "telephone": "+15715767711",
-        "url": "https://neonautotransport.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "2709 Neabsco Common Pl suite 101",
-          "addressLocality": "Woodbridge",
-          "addressRegion": "VA",
-          "postalCode": "22191",
-          "addressCountry": "US"
-        }
-      },
-      "areaServed": { "@type": "Country", "name": "United States" },
-      "url": "https://neonautotransport.com/services/rental-car-shipping/",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "Neon Auto Transport" }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "1247",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://neonautotransport.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://neonautotransport.com/services/" },
-        { "@type": "ListItem", "position": 3, "name": "Rental Car Fleet Shipping", "item": "https://neonautotransport.com/services/rental-car-shipping/" }
-      ]
-    }
-    </script>
-
-    <!-- JSON-LD: FAQPage -->
-    <script type="application/ld+json">
-{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I prepare my vehicle for transit with this service?",
+      "name": "Can I ship a rental car to another location instead of driving it back?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Remove personal belongings and document existing damage with photos. Ensure your gas tank is about a quarter full, disable alarms, and ensure the vehicle is operational unless stated otherwise."
+        "text": "Yes, but you must get permission from the rental company first. Most major rental companies allow one-way returns or shipping with prior authorization. Check your rental agreement for any restrictions or additional fees."
       }
     },
     {
       "@type": "Question",
-      "name": "Is my vehicle insured during transport?",
+      "name": "Who pays for shipping a rental car — me or the rental company?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, your vehicle is insured during transport. Every carrier in our network is required to carry active cargo insurance to cover any damage that may occur in transit."
+        "text": "The renter is typically responsible for all costs related to returning the vehicle. Shipping a rental car is your expense unless the rental company has agreed to cover transport as part of a special arrangement."
       }
     },
     {
       "@type": "Question",
-      "name": "How far out should I schedule my pickup service ?",
+      "name": "Can Neon ship rental fleet vehicles between branch locations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most shipments, we recommend booking at least 1–2 weeks in advance. During peak summer and snowbird seasons, booking 2–4 weeks ahead helps lock in preferred dates."
+        "text": "Yes, we regularly ship fleet vehicles between rental car branch locations. Multi-vehicle fleet shipments receive volume discounts, and we can coordinate complex multi-location transfers with consolidated billing."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I pay for my auto transport?",
+      "name": "How far in advance should I book rental car shipping?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No payment is due at the time of booking. You provide a payment method to secure a carrier. The balance can be paid in full by card, or you can pay the remaining balance to the driver on delivery day using cash or a certified check."
+        "text": "Standard fleet transfers require 1-2 weeks notice. For large fleet rebalancing (10+ vehicles across multiple locations), book 3-4 weeks ahead to ensure carrier availability and optimal routing for cost efficiency."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I pack personal items inside my vehicle?",
+      "name": "What condition should a rental car be in for shipping?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your shipment generally includes up to 100 lbs of personal items stored in the trunk area or secured below the window line. Note that carriers are not responsible for personal items left inside the vehicle."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to be present at both pickup and delivery?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, it is important that you or a trusted adult is present for pickup and delivery to inspect the vehicle and sign the Bill of Lading, which acts as a receipt of the vehicle's condition."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's the difference between Open vs Enclosed Auto Transport?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open transport is the most affordable and common method, where your car rides on an open-air carrier. Enclosed transport shields your vehicle from weather and road debris in a covered trailer, ideal for luxury or classic cars, but typically costs 30-40% more."
+        "text": "The vehicle should be in drivable condition with a quarter tank of fuel. Remove all personal items and rental company accessories (GPS units, child seats). Document existing damage with photos before the carrier arrives for pickup."
       }
     }
   ]
@@ -177,7 +110,7 @@
         
     <section class="relative pt-32 pb-48 flex items-center justify-center border-b-[8px] border-[#39FF14]">
         <div class="absolute inset-0 w-full h-full">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=60" alt="Rental Car Shipping" class="w-full h-full object-cover">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=60" alt="Rental car shipping service for transporting rental vehicles between locations and fleet depots nationwide" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-[#0a2540]/85"></div>
         </div>
         <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center relative z-10">
@@ -330,77 +263,51 @@
                             <!-- FAQ 1 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    How do I prepare my vehicle for transit with this service?
+                                    Can I ship a rental car to another location instead of driving it back?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Remove personal belongings and document existing damage with photos. Ensure your gas tank is about a quarter full, disable alarms, and ensure the vehicle is operational unless stated otherwise.
+                                    Yes, but you must get permission from the rental company first. Most major rental companies allow one-way returns or shipping with prior authorization. Check your rental agreement for any restrictions or additional fees.
                                 </div>
                             </details>
-                            
                             <!-- FAQ 2 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    Is my vehicle insured during transport?
+                                    Who pays for shipping a rental car — me or the rental company?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Yes, your vehicle is insured during transport. Every carrier in our network is required to carry active cargo insurance to cover any damage that may occur in transit.
+                                    The renter is typically responsible for all costs related to returning the vehicle. Shipping a rental car is your expense unless the rental company has agreed to cover transport as part of a special arrangement.
                                 </div>
                             </details>
-
                             <!-- FAQ 3 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    How far out should I schedule my pickup service ?
+                                    Can Neon ship rental fleet vehicles between branch locations?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    For most shipments, we recommend booking at least 1–2 weeks in advance. During peak summer and snowbird seasons, booking 2–4 weeks ahead helps lock in preferred dates.
+                                    Yes, we regularly ship fleet vehicles between rental car branch locations. Multi-vehicle fleet shipments receive volume discounts, and we can coordinate complex multi-location transfers with consolidated billing.
                                 </div>
                             </details>
-
                             <!-- FAQ 4 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    How do I pay for my auto transport?
+                                    How far in advance should I book rental car shipping?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    No payment is due at the time of booking. You provide a payment method to secure a carrier. The balance can be paid in full by card, or you can pay the remaining balance to the driver on delivery day using cash or a certified check.
+                                    Standard fleet transfers require 1-2 weeks notice. For large fleet rebalancing (10+ vehicles across multiple locations), book 3-4 weeks ahead to ensure carrier availability and optimal routing for cost efficiency.
                                 </div>
                             </details>
-
                             <!-- FAQ 5 -->
                             <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
                                 <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    Can I pack personal items inside my vehicle?
+                                    What condition should a rental car be in for shipping?
                                     <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Your shipment generally includes up to 100 lbs of personal items stored in the trunk area or secured below the window line. Note that carriers are not responsible for personal items left inside the vehicle.
-                                </div>
-                            </details>
-
-                            <!-- FAQ 6 -->
-                            <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
-                                <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    Do I need to be present at both pickup and delivery?
-                                    <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
-                                </summary>
-                                <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Yes, it is important that you or a trusted adult is present for pickup and delivery to inspect the vehicle and sign the Bill of Lading, which acts as a receipt of the vehicle's condition.
-                                </div>
-                            </details>
-
-                            <!-- FAQ 7 -->
-                            <details class="group bg-[#f0f5fa] rounded-xl border border-transparent hover:border-[#468de6] transition cursor-pointer open:bg-white open:shadow-md open:border-[#e6e6e6]">
-                                <summary class="flex items-center justify-between font-bold text-[#0a2540] p-6 marker:content-none list-none text-lg">
-                                    What's the difference between Open vs Enclosed Auto Transport?
-                                    <span class="text-[#468de6] group-open:rotate-45 transition-transform text-3xl leading-none font-normal">+</span>
-                                </summary>
-                                <div class="px-6 pb-6 text-[#425466] text-[15px] leading-relaxed border-t border-[#e6e6e6] pt-4">
-                                    Open transport is the most affordable and common method, where your car rides on an open-air carrier. Enclosed transport shields your vehicle from weather and road debris in a covered trailer, ideal for luxury or classic cars, but typically costs 30-40% more.
+                                    The vehicle should be in drivable condition with a quarter tank of fuel. Remove all personal items and rental company accessories (GPS units, child seats). Document existing damage with photos before the carrier arrives for pickup.
                                 </div>
                             </details>
                         </div>

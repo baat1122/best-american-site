@@ -10,7 +10,6 @@ Disallow: /services/generate-services-v2.js
 Disallow: /seo-inject.js
 Disallow: /optimize.js
 Disallow: /node_modules/
-Disallow: /privacy.html
 
 # Crawl delay
 Crawl-delay: 1
