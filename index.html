@@ -45,7 +45,7 @@
       "name": "Neon Auto Transport",
       "description": "FMCSA and US DOT approved nationwide auto transport company offering door-to-door car shipping across all 50 states.",
       "url": "https://neonautotransport.com",
-      "logo": "https://neonautotransport.com/images/og-cover.jpg",
+      "logo": "https://neonautotransport.com/images/logo.jpg",
       "image": "https://neonautotransport.com/images/og-cover.jpg",
       "telephone": "+15715767711",
       "email": "info@neonautotransport.com",
@@ -177,7 +177,7 @@
     <header class="fixed top-0 w-full z-50 transition-all duration-300" id="global-header">
         <div class="container mx-auto px-4 lg:px-8 py-5 flex justify-between items-center">
             <a href="/" class="text-2xl font-black tracking-tight flex items-center gap-1 text-white" id="logo-text">
-                NEON <span class="text-[#00D4FF]">AUTO TRANSPORT</span>
+                NEON <span style="color: #00D1FF">AUTO TRANSPORT</span>
             </a>
             
             <!-- Desktop Nav -->
@@ -1267,97 +1267,329 @@
             
             <!-- The Nationwide Dispatch Network Canvas (Replaced with lightweight CSS animation for performance) -->
             <div style="width: 100%; height: 400px; position: relative; margin-top: 1.5rem; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                <!-- Glowing Highway -->
-                <div style="position: absolute; bottom: 20%; left: 0; width: 100%; height: 2px; background-color: #635bff; box-shadow: 0 0 15px #635bff;"></div>
-                <div style="position: absolute; bottom: 20%; left: 0; width: 100%; height: 1px; background-color: #00d4ff; box-shadow: 0 0 20px #00d4ff; opacity: 0.8;"></div>
+                <!-- Animated US Map -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; pointer-events: none;">
+                    <svg viewBox="0 0 900 550" style="width: 92%; max-width: 900px; height: auto;" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <!-- Strong glow -->
+                            <filter id="mapGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="6" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                            <!-- City glow -->
+                            <filter id="cityGlow" x="-100%" y="-100%" width="300%" height="300%">
+                                <feGaussianBlur stdDeviation="6" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                            <!-- Route glow -->
+                            <filter id="routeGlow" x="-10%" y="-10%" width="120%" height="120%">
+                                <feGaussianBlur stdDeviation="3" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                            <!-- Soft outer glow for map -->
+                            <filter id="mapOuterGlow" x="-5%" y="-5%" width="110%" height="110%">
+                                <feGaussianBlur stdDeviation="8" result="blur"/>
+                                <feFlood flood-color="#00d4ff" flood-opacity="0.1"/>
+                                <feComposite in2="blur" operator="in"/>
+                                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                            <!-- Moving dot gradient -->
+                            <radialGradient id="dotCyan">
+                                <stop offset="0%" stop-color="#00d4ff"/>
+                                <stop offset="60%" stop-color="#00d4ff" stop-opacity="0.6"/>
+                                <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+                            </radialGradient>
+                            <radialGradient id="dotPurple">
+                                <stop offset="0%" stop-color="#635bff"/>
+                                <stop offset="60%" stop-color="#635bff" stop-opacity="0.6"/>
+                                <stop offset="100%" stop-color="#635bff" stop-opacity="0"/>
+                            </radialGradient>
+                            <!-- Map fill gradient -->
+                            <linearGradient id="mapFill" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="rgba(0,212,255,0.04)"/>
+                                <stop offset="50%" stop-color="rgba(99,91,255,0.03)"/>
+                                <stop offset="100%" stop-color="rgba(0,212,255,0.04)"/>
+                            </linearGradient>
+                        </defs>
 
-                <!-- Animated Truck Wrapper -->
-                <div style="position: absolute; bottom: 20%; left: 0; width: 100%; height: 100%; pointer-events: none;">
-                    <div class="truck-container absolute bottom-0 left-[-300px]" style="position: absolute; bottom: 0; left: -300px;">
-                        <!-- High-Tech Neon Car Carrier SVG -->
-                        <svg width="280" height="140" viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Glow Filters -->
-                            <defs>
-                                <filter id="neonGlowBlue" x="-20%" y="-20%" width="140%" height="140%">
-                                    <feGaussianBlur stdDeviation="4" result="blur" />
-                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                                </filter>
-                                <filter id="neonGlowCyan" x="-20%" y="-20%" width="140%" height="140%">
-                                    <feGaussianBlur stdDeviation="5" result="blur" />
-                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                                </filter>
-                            </defs>
+                        <!-- Subtle grid background -->
+                        <g opacity="0.06">
+                            <line x1="0" y1="100" x2="900" y2="100" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="0" y1="200" x2="900" y2="200" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="0" y1="300" x2="900" y2="300" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="0" y1="400" x2="900" y2="400" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="100" y1="0" x2="100" y2="550" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="200" y1="0" x2="200" y2="550" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="300" y1="0" x2="300" y2="550" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="400" y1="0" x2="400" y2="550" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="500" y1="0" x2="500" y2="550" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="600" y1="0" x2="600" y2="550" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="700" y1="0" x2="700" y2="550" stroke="#fff" stroke-width="0.5"/>
+                            <line x1="800" y1="0" x2="800" y2="550" stroke="#fff" stroke-width="0.5"/>
+                        </g>
 
-                            <!-- Trailer Frame -->
-                            <path d="M 10,120 L 10,50 L 180,50 L 180,120 Z" fill="rgba(99,91,255,0.1)" stroke="#635bff" stroke-width="3" filter="url(#neonGlowBlue)" />
-                            
-                            <!-- Trailer Deck & Pillars -->
-                            <path d="M 10,85 L 180,85 M 65,50 L 65,120 M 125,50 L 125,120" stroke="#00d4ff" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
-                            
-                            <!-- Car 1 (Top Left) -->
-                            <path d="M 15,80 L 15,65 L 30,55 L 55,55 L 60,65 L 60,80 Z" fill="#00d4ff" opacity="0.8" filter="url(#neonGlowCyan)" />
-                            <circle cx="25" cy="80" r="4" fill="#0a2540" stroke="#00d4ff" stroke-width="1.5" />
-                            <circle cx="50" cy="80" r="4" fill="#0a2540" stroke="#00d4ff" stroke-width="1.5" />
+                        <!-- US Map Outline (detailed) -->
+                        <path d="M 130,130 C 135,118 145,108 160,100 C 175,92 192,88 210,87 C 225,87 238,92 248,100 C 255,95 265,90 278,88 C 290,87 305,90 318,96 C 328,100 335,108 340,118 C 350,114 362,110 378,108 C 392,107 408,108 425,112 C 438,115 448,120 458,128 C 468,124 480,118 495,114 C 508,111 522,110 538,112 C 550,114 562,120 572,130 C 580,138 586,148 590,160 C 594,172 596,186 597,200 C 598,215 600,228 605,240 C 612,252 622,262 635,270 C 648,276 660,278 672,275 C 680,272 688,266 694,258 C 700,248 704,238 710,230 C 716,222 722,218 730,218 C 736,220 738,228 736,238 C 732,252 724,266 714,278 C 704,290 692,300 678,308 C 662,316 645,322 626,326 C 608,330 588,332 568,334 C 548,336 528,338 508,342 C 488,346 470,352 455,360 C 440,368 428,378 418,390 C 408,402 400,412 388,420 C 375,428 360,432 345,430 C 330,428 316,422 302,414 C 290,406 278,398 264,394 C 250,390 235,390 220,394 C 205,398 190,404 175,406 C 160,408 146,404 134,396 C 124,388 118,376 114,362 C 110,348 108,332 107,316 C 106,300 105,282 104,264 C 103,246 102,228 103,210 C 104,192 107,174 112,158 C 117,144 123,135 130,130 Z"
+                            fill="url(#mapFill)" stroke="rgba(0,212,255,0.25)" stroke-width="2" filter="url(#mapOuterGlow)"/>
+                        
+                        <!-- Inner state-like lines for detail -->
+                        <g stroke="rgba(255,255,255,0.04)" stroke-width="0.8" fill="none">
+                            <line x1="300" y1="100" x2="300" y2="400"/>
+                            <line x1="450" y1="110" x2="450" y2="420"/>
+                            <line x1="600" y1="130" x2="600" y2="330"/>
+                            <line x1="105" y1="250" x2="730" y2="250"/>
+                            <line x1="110" y1="350" x2="680" y2="350"/>
+                        </g>
 
-                            <!-- Car 2 (Top Right) -->
-                            <path d="M 70,80 L 70,65 L 85,55 L 110,55 L 115,65 L 115,80 Z" fill="#39FF14" opacity="0.8" filter="url(#neonGlowCyan)" />
-                            <circle cx="80" cy="80" r="4" fill="#0a2540" stroke="#39FF14" stroke-width="1.5" />
-                            <circle cx="105" cy="80" r="4" fill="#0a2540" stroke="#39FF14" stroke-width="1.5" />
+                        <!-- Route Lines (glowing base) -->
+                        <g filter="url(#routeGlow)">
+                            <!-- LA to NYC -->
+                            <path d="M 155,295 C 280,240 480,195 720,175" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-opacity="0.25"/>
+                            <!-- LA to Chicago -->
+                            <path d="M 155,295 C 250,250 380,210 530,185" fill="none" stroke="#635bff" stroke-width="2.5" stroke-opacity="0.25"/>
+                            <!-- Miami to NYC -->
+                            <path d="M 645,395 C 665,330 690,260 720,175" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-opacity="0.25"/>
+                            <!-- Miami to Chicago -->
+                            <path d="M 645,395 C 600,320 570,250 530,185" fill="none" stroke="#635bff" stroke-width="2" stroke-opacity="0.2"/>
+                            <!-- Seattle to NYC -->
+                            <path d="M 155,120 C 340,125 530,145 720,175" fill="none" stroke="#00d4ff" stroke-width="2" stroke-opacity="0.2"/>
+                            <!-- Dallas to Chicago -->
+                            <path d="M 440,340 C 470,290 500,240 530,185" fill="none" stroke="#00d4ff" stroke-width="2" stroke-opacity="0.2"/>
+                            <!-- Dallas to LA -->
+                            <path d="M 440,340 C 340,330 240,315 155,295" fill="none" stroke="#635bff" stroke-width="2" stroke-opacity="0.2"/>
+                            <!-- Denver to Chicago -->
+                            <path d="M 340,225 C 400,210 460,195 530,185" fill="none" stroke="#00d4ff" stroke-width="2" stroke-opacity="0.18"/>
+                            <!-- Atlanta to NYC -->
+                            <path d="M 620,310 C 660,270 695,225 720,175" fill="none" stroke="#635bff" stroke-width="2" stroke-opacity="0.2"/>
+                            <!-- SF to Chicago -->
+                            <path d="M 120,230 C 250,215 400,195 530,185" fill="none" stroke="#635bff" stroke-width="2" stroke-opacity="0.18"/>
+                            <!-- Houston to Atlanta -->
+                            <path d="M 460,385 C 520,360 570,340 620,310" fill="none" stroke="#00d4ff" stroke-width="2" stroke-opacity="0.18"/>
+                            <!-- Phoenix to Dallas -->
+                            <path d="M 235,330 C 310,340 380,340 440,340" fill="none" stroke="#635bff" stroke-width="1.8" stroke-opacity="0.15"/>
+                        </g>
 
-                            <!-- Car 3 (Bottom) -->
-                            <path d="M 130,115 L 130,100 L 145,90 L 170,90 L 175,100 L 175,115 Z" fill="#635bff" opacity="0.8" filter="url(#neonGlowBlue)" />
-                            <circle cx="140" cy="115" r="4" fill="#0a2540" stroke="#635bff" stroke-width="1.5" />
-                            <circle cx="165" cy="115" r="4" fill="#0a2540" stroke="#635bff" stroke-width="1.5" />
+                        <!-- Animated traveling dots -->
+                        <!-- Dot 1: LA to NYC -->
+                        <circle r="5" fill="url(#dotCyan)" filter="url(#cityGlow)">
+                            <animateMotion dur="4s" repeatCount="indefinite" path="M 155,295 C 280,240 480,195 720,175"/>
+                        </circle>
+                        <!-- Dot 2: LA to Chicago -->
+                        <circle r="5" fill="url(#dotPurple)" filter="url(#cityGlow)">
+                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="-1s" path="M 155,295 C 250,250 380,210 530,185"/>
+                        </circle>
+                        <!-- Dot 3: Miami to NYC -->
+                        <circle r="5" fill="url(#dotCyan)" filter="url(#cityGlow)">
+                            <animateMotion dur="3s" repeatCount="indefinite" begin="-0.5s" path="M 645,395 C 665,330 690,260 720,175"/>
+                        </circle>
+                        <!-- Dot 4: Miami to Chicago -->
+                        <circle r="4" fill="url(#dotPurple)" filter="url(#cityGlow)">
+                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="-2s" path="M 645,395 C 600,320 570,250 530,185"/>
+                        </circle>
+                        <!-- Dot 5: Seattle to NYC -->
+                        <circle r="4" fill="url(#dotCyan)" filter="url(#cityGlow)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-1.5s" path="M 155,120 C 340,125 530,145 720,175"/>
+                        </circle>
+                        <!-- Dot 6: Dallas to Chicago -->
+                        <circle r="4" fill="url(#dotCyan)" filter="url(#cityGlow)">
+                            <animateMotion dur="2.5s" repeatCount="indefinite" begin="-0.8s" path="M 440,340 C 470,290 500,240 530,185"/>
+                        </circle>
+                        <!-- Dot 7: Dallas to LA -->
+                        <circle r="4" fill="url(#dotPurple)" filter="url(#cityGlow)">
+                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="-1.2s" path="M 440,340 C 340,330 240,315 155,295"/>
+                        </circle>
+                        <!-- Dot 8: Denver to Chicago -->
+                        <circle r="4" fill="url(#dotCyan)" filter="url(#cityGlow)">
+                            <animateMotion dur="2.5s" repeatCount="indefinite" begin="-0.3s" path="M 340,225 C 400,210 460,195 530,185"/>
+                        </circle>
+                        <!-- Dot 9: Atlanta to NYC -->
+                        <circle r="4" fill="url(#dotPurple)" filter="url(#cityGlow)">
+                            <animateMotion dur="3s" repeatCount="indefinite" begin="-2.5s" path="M 620,310 C 660,270 695,225 720,175"/>
+                        </circle>
+                        <!-- Dot 10: SF to Chicago -->
+                        <circle r="4" fill="url(#dotPurple)" filter="url(#cityGlow)">
+                            <animateMotion dur="3.2s" repeatCount="indefinite" begin="-1.8s" path="M 120,230 C 250,215 400,195 530,185"/>
+                        </circle>
+                        <!-- Dot 11: Houston to Atlanta -->
+                        <circle r="3.5" fill="url(#dotCyan)" filter="url(#cityGlow)">
+                            <animateMotion dur="2.8s" repeatCount="indefinite" begin="-0.5s" path="M 460,385 C 520,360 570,340 620,310"/>
+                        </circle>
 
-                            <!-- Truck Cab -->
-                            <path d="M 190,120 L 190,60 L 220,60 L 245,85 L 265,85 L 265,120 Z" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="3" filter="url(#neonGlowCyan)" />
-                            <!-- Window -->
-                            <path d="M 220,60 L 240,85 L 220,85 Z" fill="#635bff" opacity="0.7" />
+                        <!-- ==================== CITIES ==================== -->
+                        <!-- NYC (Major Hub) -->
+                        <g>
+                            <circle cx="720" cy="175" r="18" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3" class="ripple-ring"/>
+                            <circle cx="720" cy="175" r="12" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.5" class="ripple-ring ripple-d1"/>
+                            <circle cx="720" cy="175" r="7" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse"/>
+                            <circle cx="720" cy="175" r="3.5" fill="#fff"/>
+                            <rect x="694" y="152" width="52" height="18" rx="9" fill="rgba(0,212,255,0.15)" stroke="rgba(0,212,255,0.3)" stroke-width="0.5"/>
+                            <text x="720" y="165" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="Arial, sans-serif">New York</text>
+                        </g>
 
-                            <!-- Exhaust Pipe -->
-                            <path d="M 195,60 L 195,35" stroke="#a1b0c0" stroke-width="3" />
-                            <circle cx="195" cy="30" r="2" fill="#fff" class="smoke-puff" opacity="0" />
+                        <!-- LA (Major Hub) -->
+                        <g>
+                            <circle cx="155" cy="295" r="18" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3" class="ripple-ring ripple-d2"/>
+                            <circle cx="155" cy="295" r="12" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.5" class="ripple-ring ripple-d3"/>
+                            <circle cx="155" cy="295" r="7" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d1"/>
+                            <circle cx="155" cy="295" r="3.5" fill="#fff"/>
+                            <rect x="140" y="270" width="30" height="18" rx="9" fill="rgba(0,212,255,0.15)" stroke="rgba(0,212,255,0.3)" stroke-width="0.5"/>
+                            <text x="155" y="283" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="Arial, sans-serif">LA</text>
+                        </g>
 
-                            <!-- Truck Wheels -->
-                            <circle cx="40" cy="120" r="14" fill="#0a2540" stroke="#635bff" stroke-width="3" />
-                            <circle cx="90" cy="120" r="14" fill="#0a2540" stroke="#635bff" stroke-width="3" />
-                            <circle cx="160" cy="120" r="14" fill="#0a2540" stroke="#635bff" stroke-width="3" />
-                            <circle cx="215" cy="120" r="14" fill="#0a2540" stroke="#00d4ff" stroke-width="3" />
-                            <circle cx="245" cy="120" r="14" fill="#0a2540" stroke="#00d4ff" stroke-width="3" />
+                        <!-- Chicago (Major Hub) -->
+                        <g>
+                            <circle cx="530" cy="185" r="16" fill="none" stroke="#635bff" stroke-width="1" opacity="0.3" class="ripple-ring ripple-d1"/>
+                            <circle cx="530" cy="185" r="10" fill="none" stroke="#635bff" stroke-width="1.5" opacity="0.5" class="ripple-ring ripple-d2"/>
+                            <circle cx="530" cy="185" r="6" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d2"/>
+                            <circle cx="530" cy="185" r="3" fill="#fff"/>
+                            <rect x="500" y="162" width="60" height="18" rx="9" fill="rgba(99,91,255,0.15)" stroke="rgba(99,91,255,0.3)" stroke-width="0.5"/>
+                            <text x="530" y="175" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="Arial, sans-serif">Chicago</text>
+                        </g>
 
-                            <!-- Wheel Hubs (Spinning) -->
-                            <circle cx="40" cy="120" r="5" fill="#00d4ff" class="spinning-hub" />
-                            <circle cx="90" cy="120" r="5" fill="#00d4ff" class="spinning-hub" />
-                            <circle cx="160" cy="120" r="5" fill="#00d4ff" class="spinning-hub" />
-                            <circle cx="215" cy="120" r="5" fill="#39FF14" class="spinning-hub" />
-                            <circle cx="245" cy="120" r="5" fill="#39FF14" class="spinning-hub" />
-                        </svg>
-                    </div>
+                        <!-- Miami -->
+                        <g>
+                            <circle cx="645" cy="395" r="14" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3" class="ripple-ring ripple-d3"/>
+                            <circle cx="645" cy="395" r="6" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d3"/>
+                            <circle cx="645" cy="395" r="3" fill="#fff"/>
+                            <rect x="622" y="408" width="46" height="16" rx="8" fill="rgba(0,212,255,0.12)" stroke="rgba(0,212,255,0.25)" stroke-width="0.5"/>
+                            <text x="645" y="420" text-anchor="middle" fill="#fff" font-size="10" font-weight="600" font-family="Arial, sans-serif">Miami</text>
+                        </g>
+
+                        <!-- Seattle -->
+                        <g>
+                            <circle cx="155" cy="120" r="12" fill="none" stroke="#635bff" stroke-width="1" opacity="0.25" class="ripple-ring"/>
+                            <circle cx="155" cy="120" r="5" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d4"/>
+                            <circle cx="155" cy="120" r="2.5" fill="#fff"/>
+                            <rect x="130" y="100" width="50" height="16" rx="8" fill="rgba(99,91,255,0.12)" stroke="rgba(99,91,255,0.25)" stroke-width="0.5"/>
+                            <text x="155" y="112" text-anchor="middle" fill="#fff" font-size="10" font-weight="600" font-family="Arial, sans-serif">Seattle</text>
+                        </g>
+
+                        <!-- Dallas -->
+                        <g>
+                            <circle cx="440" cy="340" r="12" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.25" class="ripple-ring ripple-d2"/>
+                            <circle cx="440" cy="340" r="5" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d1"/>
+                            <circle cx="440" cy="340" r="2.5" fill="#fff"/>
+                            <rect x="418" y="350" width="44" height="16" rx="8" fill="rgba(0,212,255,0.12)" stroke="rgba(0,212,255,0.25)" stroke-width="0.5"/>
+                            <text x="440" y="362" text-anchor="middle" fill="#fff" font-size="10" font-weight="600" font-family="Arial, sans-serif">Dallas</text>
+                        </g>
+
+                        <!-- Denver -->
+                        <g>
+                            <circle cx="340" cy="225" r="10" fill="none" stroke="#635bff" stroke-width="1" opacity="0.2" class="ripple-ring ripple-d1"/>
+                            <circle cx="340" cy="225" r="4.5" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d2"/>
+                            <circle cx="340" cy="225" r="2.5" fill="#fff"/>
+                            <rect x="316" y="205" width="48" height="16" rx="8" fill="rgba(99,91,255,0.1)" stroke="rgba(99,91,255,0.2)" stroke-width="0.5"/>
+                            <text x="340" y="217" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" font-family="Arial, sans-serif">Denver</text>
+                        </g>
+
+                        <!-- Atlanta -->
+                        <g>
+                            <circle cx="620" cy="310" r="10" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.2" class="ripple-ring ripple-d3"/>
+                            <circle cx="620" cy="310" r="4.5" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d3"/>
+                            <circle cx="620" cy="310" r="2.5" fill="#fff"/>
+                            <rect x="596" y="318" width="48" height="16" rx="8" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.2)" stroke-width="0.5"/>
+                            <text x="620" y="330" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" font-family="Arial, sans-serif">Atlanta</text>
+                        </g>
+
+                        <!-- Phoenix -->
+                        <g>
+                            <circle cx="235" cy="330" r="9" fill="none" stroke="#635bff" stroke-width="0.8" opacity="0.2" class="ripple-ring ripple-d4"/>
+                            <circle cx="235" cy="330" r="4" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d4"/>
+                            <circle cx="235" cy="330" r="2" fill="#fff"/>
+                            <text x="235" y="348" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" opacity="0.6" font-family="Arial, sans-serif">Phoenix</text>
+                        </g>
+
+                        <!-- Boston -->
+                        <g>
+                            <circle cx="745" cy="155" r="9" fill="none" stroke="#635bff" stroke-width="0.8" opacity="0.2" class="ripple-ring"/>
+                            <circle cx="745" cy="155" r="4" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d1"/>
+                            <circle cx="745" cy="155" r="2" fill="#fff"/>
+                            <text x="760" y="147" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" opacity="0.6" font-family="Arial, sans-serif">Boston</text>
+                        </g>
+
+                        <!-- Houston -->
+                        <g>
+                            <circle cx="460" cy="385" r="9" fill="none" stroke="#00d4ff" stroke-width="0.8" opacity="0.2" class="ripple-ring ripple-d2"/>
+                            <circle cx="460" cy="385" r="4" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d2"/>
+                            <circle cx="460" cy="385" r="2" fill="#fff"/>
+                            <text x="460" y="403" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" opacity="0.6" font-family="Arial, sans-serif">Houston</text>
+                        </g>
+
+                        <!-- San Francisco -->
+                        <g>
+                            <circle cx="120" cy="230" r="9" fill="none" stroke="#00d4ff" stroke-width="0.8" opacity="0.2" class="ripple-ring ripple-d3"/>
+                            <circle cx="120" cy="230" r="4" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d3"/>
+                            <circle cx="120" cy="230" r="2" fill="#fff"/>
+                            <rect x="88" y="237" width="24" height="14" rx="7" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.2)" stroke-width="0.5"/>
+                            <text x="100" y="248" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" font-family="Arial, sans-serif">SF</text>
+                        </g>
+
+                        <!-- Portland -->
+                        <g>
+                            <circle cx="138" cy="155" r="3.5" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d4"/>
+                            <circle cx="138" cy="155" r="1.8" fill="#fff"/>
+                            <text x="120" y="168" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" opacity="0.5" font-family="Arial, sans-serif">PDX</text>
+                        </g>
+
+                        <!-- Vegas -->
+                        <g>
+                            <circle cx="195" cy="280" r="3.5" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d1"/>
+                            <circle cx="195" cy="280" r="1.8" fill="#fff"/>
+                            <text x="195" y="272" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" opacity="0.5" font-family="Arial, sans-serif">Vegas</text>
+                        </g>
+
+                        <!-- Detroit -->
+                        <g>
+                            <circle cx="580" cy="168" r="3.5" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d2"/>
+                            <circle cx="580" cy="168" r="1.8" fill="#fff"/>
+                            <text x="580" y="158" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" opacity="0.5" font-family="Arial, sans-serif">Detroit</text>
+                        </g>
+
+                        <!-- DC -->
+                        <g>
+                            <circle cx="700" cy="215" r="3.5" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d3"/>
+                            <circle cx="700" cy="215" r="1.8" fill="#fff"/>
+                            <text x="718" y="212" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" opacity="0.5" font-family="Arial, sans-serif">DC</text>
+                        </g>
+
+                        <!-- Orlando -->
+                        <g>
+                            <circle cx="630" cy="370" r="3.5" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d4"/>
+                            <circle cx="630" cy="370" r="1.8" fill="#fff"/>
+                            <text x="648" y="370" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" opacity="0.5" font-family="Arial, sans-serif">Orlando</text>
+                        </g>
+                    </svg>
                 </div>
 
                 <style>
-                    .truck-container {
-                        animation: driveAcross 18s linear infinite;
+                    /* Traveling dot animations via SMIL - handled in SVG */
+                    
+                    /* City pulse animation */
+                    .city-pulse {
+                        animation: pulse 2.5s ease-in-out infinite;
                     }
-                    .spinning-hub {
-                        transform-origin: center;
-                        transform-box: fill-box;
-                        animation: spinWheel 1s linear infinite;
+                    .city-pulse-d1 { animation-delay: -0.4s; }
+                    .city-pulse-d2 { animation-delay: -0.9s; }
+                    .city-pulse-d3 { animation-delay: -1.4s; }
+                    .city-pulse-d4 { animation-delay: -1.9s; }
+
+                    @keyframes pulse {
+                        0%, 100% { opacity: 1; }
+                        50% { opacity: 0.5; }
                     }
-                    .smoke-puff {
-                        animation: smokeRise 2s ease-out infinite;
+
+                    /* Ripple rings expanding outward */
+                    .ripple-ring {
+                        animation: ripple 3s ease-out infinite;
                     }
-                    @keyframes driveAcross {
-                        0% { transform: translateX(-300px); }
-                        100% { transform: translateX(calc(100vw + 300px)); }
-                    }
-                    @keyframes spinWheel {
-                        from { transform: rotate(0deg); }
-                        to { transform: rotate(360deg); }
-                    }
-                    @keyframes smokeRise {
-                        0% { transform: translateY(0) scale(1); opacity: 0.8; }
-                        100% { transform: translateY(-30px) scale(3); opacity: 0; }
+                    .ripple-d1 { animation-delay: -0.5s; }
+                    .ripple-d2 { animation-delay: -1s; }
+                    .ripple-d3 { animation-delay: -1.5s; }
+                    .ripple-d4 { animation-delay: -2s; }
+
+                    @keyframes ripple {
+                        0% { r: 6; opacity: 0.6; }
+                        100% { r: 22; opacity: 0; }
                     }
                 </style>
             </div>
@@ -1459,43 +1691,43 @@
             <h2 class="text-3xl md:text-4xl font-black text-[#0a2540] tracking-tight">Expert Auto Transport Guides</h2>
             <p class="text-[#425466] mt-4 max-w-2xl mx-auto leading-relaxed">Tips, cost breakdowns, and insider knowledge from our logistics team to help you ship with confidence.</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8 reveal" style="transition-delay: 150ms;">
+        <div class="grid md:grid-cols-3 gap-8 reveal items-stretch" style="transition-delay: 150ms;">
 
             <!-- Article 1 -->
-            <a href="/blog/open-vs-enclosed-auto-transport/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#635bff] bg-white rounded-xl">
-                <div class="h-48 bg-gradient-to-br from-[#635bff] to-[#0a2540] flex items-center justify-center">
-                    <svg class="w-16 h-16 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <a href="/blog/open-vs-enclosed-auto-transport/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#635bff] bg-white rounded-xl flex flex-col">
+                <div class="h-48 shrink-0 overflow-hidden">
+                    <img src="/images/open-vs-enclosed-transport.jpg" alt="Luxury sports car being loaded onto an open car carrier truck for transport" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" width="600" height="315" loading="eager">
                 </div>
-                <div class="p-6">
+                <div class="p-6 flex flex-col flex-grow">
                     <div class="text-xs text-[#635bff] font-bold uppercase tracking-wider mb-2">Guide</div>
                     <h3 class="font-bold text-[#0a2540] text-lg mb-2 group-hover:text-[#635bff] transition">Open vs. Enclosed Auto Transport: Which Is Right for You?</h3>
-                    <p class="text-[#425466] text-sm leading-relaxed mb-4">Compare costs, protection levels, and use cases for open and enclosed car carriers to find the best fit for your vehicle.</p>
+                    <p class="text-[#425466] text-sm leading-relaxed mb-4 flex-grow">Compare costs, protection levels, and use cases for open and enclosed car carriers to find the best fit for your vehicle.</p>
                     <span class="text-[#635bff] font-bold text-sm uppercase tracking-wider flex items-center gap-1">Read More <svg aria-hidden="true" class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
                 </div>
             </a>
 
             <!-- Article 2 -->
-            <a href="/blog/how-to-prepare-car-for-shipping/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#39FF14] bg-white rounded-xl">
-                <div class="h-48 bg-gradient-to-br from-[#39FF14] to-[#0a2540] flex items-center justify-center">
-                    <svg class="w-16 h-16 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+            <a href="/blog/how-to-prepare-car-for-shipping/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#39FF14] bg-white rounded-xl flex flex-col">
+                <div class="h-48 shrink-0 overflow-hidden">
+                    <img src="/images/prepare-car-for-shipping.jpg" alt="White Volvo car carrier truck transporting luxury SUVs and sedans on scenic coastal highway - cross-country auto transport service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" width="600" height="315" loading="lazy">
                 </div>
-                <div class="p-6">
+                <div class="p-6 flex flex-col flex-grow">
                     <div class="text-xs text-[#635bff] font-bold uppercase tracking-wider mb-2">Checklist</div>
                     <h3 class="font-bold text-[#0a2540] text-lg mb-2 group-hover:text-[#635bff] transition">How to Prepare Your Vehicle for Cross-Country Shipping</h3>
-                    <p class="text-[#425466] text-sm leading-relaxed mb-4">A step-by-step checklist to get your car ready for transport — from cleaning to documentation to insurance.</p>
+                    <p class="text-[#425466] text-sm leading-relaxed mb-4 flex-grow">A step-by-step checklist to get your car ready for transport — from cleaning to documentation to insurance.</p>
                     <span class="text-[#635bff] font-bold text-sm uppercase tracking-wider flex items-center gap-1">Read More <svg aria-hidden="true" class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
                 </div>
             </a>
 
             <!-- Article 3 -->
-            <a href="/blog/true-cost-of-car-shipping-2026/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#00D4FF] bg-white rounded-xl">
-                <div class="h-48 bg-gradient-to-br from-[#00D4FF] to-[#0a2540] flex items-center justify-center">
-                    <svg class="w-16 h-16 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <a href="/blog/true-cost-of-car-shipping-2026/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#00D4FF] bg-white rounded-xl flex flex-col">
+                <div class="h-48 shrink-0 overflow-hidden">
+                    <img src="/images/true-cost-car-shipping-2026.jpg" alt="Professional car transport team loading a classic red Jaguar onto an enclosed auto transport trailer - premium vehicle shipping service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" width="600" height="315" loading="lazy">
                 </div>
-                <div class="p-6">
+                <div class="p-6 flex flex-col flex-grow">
                     <div class="text-xs text-[#635bff] font-bold uppercase tracking-wider mb-2">Cost Guide</div>
                     <h3 class="font-bold text-[#0a2540] text-lg mb-2 group-hover:text-[#635bff] transition">The True Cost of Car Shipping in 2026</h3>
-                    <p class="text-[#425466] text-sm leading-relaxed mb-4">Real pricing data, hidden fee breakdowns, and a broker comparison to help you avoid overpaying for auto transport.</p>
+                    <p class="text-[#425466] text-sm leading-relaxed mb-4 flex-grow">Real pricing data, hidden fee breakdowns, and a broker comparison to help you avoid overpaying for auto transport.</p>
                     <span class="text-[#635bff] font-bold text-sm uppercase tracking-wider flex items-center gap-1">Read More <svg aria-hidden="true" class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
                 </div>
             </a>
