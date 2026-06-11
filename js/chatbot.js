@@ -29,7 +29,10 @@
 
   // ---- Initialize ----
   function init() {
-    return; // Chatbot disabled — do not render widget
+    if (document.getElementById('neon-chat-bubble')) return;
+    createBubble();
+    createChatWindow();
+    bindEvents();
   }
 
   // ---- Create Floating Bubble ----
