@@ -29,12 +29,7 @@
 
   // ---- Initialize ----
   function init() {
-    if (document.getElementById('neon-chat-bubble')) return; // Already initialized
-    createBubble();
-    createChatWindow();
-    bindEvents();
-    
-    // Chat bubble is available — user must click to open (no auto-popup)
+    return; // Chatbot disabled — do not render widget
   }
 
   // ---- Create Floating Bubble ----
@@ -50,7 +45,7 @@
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
-      <span class="chat-badge" id="neon-chat-badge">1</span>
+      <span class="chat-badge" id="neon-chat-badge" style="display:none">1</span>
     `;
     document.body.appendChild(chatBubble);
   }
