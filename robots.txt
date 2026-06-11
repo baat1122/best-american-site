@@ -11,8 +11,5 @@ Disallow: /seo-inject.js
 Disallow: /optimize.js
 Disallow: /node_modules/
 
-# Crawl delay
-Crawl-delay: 1
-
 # Sitemap
 Sitemap: https://neonautotransport.com/sitemap.xml

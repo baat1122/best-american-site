@@ -34,12 +34,7 @@
     createChatWindow();
     bindEvents();
     
-    // Auto-open chat assistant after 2 seconds on page load
-    setTimeout(() => {
-      if (!isOpen) {
-        toggleChat();
-      }
-    }, 2000);
+    // Chat bubble is available — user must click to open (no auto-popup)
   }
 
   // ---- Create Floating Bubble ----

@@ -1,5 +1,49 @@
 {
   "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/favicon.ico",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/favicon-(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/apple-touch-icon.png",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*).html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ],
   "functions": {
     "api/chat.js": {
       "maxDuration": 30
@@ -248,18 +292,6 @@
       "destination": "/services/corporate-relocation/"
     },
     {
-      "source": "/door-to-door-car-shipping/",
-      "destination": "/services/door-to-door-car-shipping/"
-    },
-    {
-      "source": "/enclosed-auto-transport/",
-      "destination": "/services/enclosed-auto-transport/"
-    },
-    {
-      "source": "/expedited-auto-transport/",
-      "destination": "/services/expedited-auto-transport/"
-    },
-    {
       "source": "/fleet-management-transportation-services/",
       "destination": "/services/fleet-management-transportation-services/"
     },
@@ -272,43 +304,24 @@
       "destination": "/services/international-overseas-car-shipping-services/"
     },
     {
-      "source": "/luxury-car-shipping/",
-      "destination": "/services/luxury-car-shipping/"
-    },
-    {
-      "source": "/military-car-shipping/",
-      "destination": "/services/military-car-shipping/"
-    },
-    {
-      "source": "/motorcycle-shipping/",
-      "destination": "/services/motorcycle-shipping/"
-    },
-    {
-      "source": "/open-auto-transport/",
-      "destination": "/services/open-auto-transport/"
-    },
-    {
       "source": "/rental-car-shipping/",
       "destination": "/services/rental-car-shipping/"
-    },
-    {
-      "source": "/snow-bird-car-shipping/",
-      "destination": "/services/snow-bird-car-shipping/"
-    },
-    {
-      "source": "/truck-shipping-services/",
-      "destination": "/services/truck-shipping-services/"
     }
   ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex"
-        }
-      ]
-    }
+  "redirects": [
+    { "source": "/expedited-auto-transport/", "destination": "/services/expedited-auto-transport/", "permanent": true },
+    { "source": "/services/door-to-door/", "destination": "/services/door-to-door-car-shipping/", "permanent": true },
+    { "source": "/how-it-works/", "destination": "/#how-it-works", "permanent": true },
+    { "source": "/state/:state/", "destination": "/locations.html", "permanent": true },
+    { "source": "/state/:state", "destination": "/locations.html", "permanent": true },
+    { "source": "/door-to-door-car-shipping/", "destination": "/services/door-to-door-car-shipping/", "permanent": true },
+    { "source": "/enclosed-auto-transport/", "destination": "/services/enclosed-auto-transport/", "permanent": true },
+    { "source": "/open-auto-transport/", "destination": "/services/open-auto-transport/", "permanent": true },
+    { "source": "/military-car-shipping/", "destination": "/services/military-car-shipping/", "permanent": true },
+    { "source": "/luxury-car-shipping/", "destination": "/services/luxury-car-shipping/", "permanent": true },
+    { "source": "/college-car-shipping/", "destination": "/services/college-car-shipping/", "permanent": true },
+    { "source": "/motorcycle-shipping/", "destination": "/services/motorcycle-shipping/", "permanent": true },
+    { "source": "/snow-bird-car-shipping/", "destination": "/services/snow-bird-car-shipping/", "permanent": true },
+    { "source": "/truck-shipping-services/", "destination": "/services/truck-shipping-services/", "permanent": true }
   ]
 }

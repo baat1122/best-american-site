@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 fill: #00d4ff; 
                 stroke-width: 2.5; 
             }
-            #us-map-container .separator1 { fill: none !important; stroke: #e6e6e6 !important; stroke-width: 2 !important; cursor: default; }
+            #us-map-container .separator1 { fill: none !important; stroke: #e6e6e6 !important; stroke-width: 2 !important; cursor: default; pointer-events: none; }
+            #us-map-container .borders, #us-map-container .borders path { fill: none !important; pointer-events: none !important; cursor: default !important; }
             .state-label {
                 fill: #ffffff;
                 font-size: 13px;
