@@ -128,7 +128,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="block text-[11px] font-bold text-[#425466] mb-1">Estimated Pickup Date</label>
+                            <label class="block text-[11px] font-bold text-[#425466] mb-1" for="pickupDate">Estimated Pickup Date</label>
                             <input type="date" id="pickupDate" name="Pickup Date" required onclick="this.showPicker()" class="w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md focus:ring-2 focus:ring-[#635bff] focus:outline-none">
                         </div>
 
@@ -136,17 +136,17 @@
                             <div class="vehicle-group border border-[#e6e6e6] rounded-lg p-3 mb-2">
                                 <span id="vehicle1Label" class="block text-[11px] font-bold text-[#635bff] uppercase tracking-wide mb-2">Vehicle 1</span>
                                 <div class="grid grid-cols-3 gap-2 mb-2">
-                                    <input type="text" class="vehicleYear w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Year e.g. 2023" required>
-                                    <input type="text" class="vehicleMake w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Make e.g. Honda" required>
-                                    <input type="text" class="vehicleModel w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Model e.g. Civic" required>
+                                    <input type="text" class="vehicleYear w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Year e.g. 2023" required aria-label="Vehicle Year">
+                                    <input type="text" class="vehicleMake w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Make e.g. Honda" required aria-label="Vehicle Make">
+                                    <input type="text" class="vehicleModel w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Model e.g. Civic" required aria-label="Vehicle Model">
                                 </div>
                                 <div class="grid grid-cols-2 gap-2">
-                                    <select class="vehicleType w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md bg-white">
+                                    <select class="vehicleType w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md bg-white" aria-label="Vehicle Type">
                                         <option value="sedan">Sedan</option>
                                         <option value="suv">SUV</option>
                                         <option value="truck">Truck</option>
                                     </select>
-                                    <select class="vehicleCondition w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md bg-white">
+                                    <select class="vehicleCondition w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md bg-white" aria-label="Vehicle Condition">
                                         <option value="run">Runs & Drives</option>
                                         <option value="inop">Inoperable</option>
                                     </select>
@@ -160,7 +160,7 @@
                         </button>
 
                         <div class="mb-3">
-                            <label class="block text-[11px] font-bold text-[#425466] mb-1">Transport</label>
+                            <label class="block text-[11px] font-bold text-[#425466] mb-1" for="transportType">Transport</label>
                             <select id="transportType" name="Transport Type" class="w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md bg-white">
                                 <option value="open">Open Carrier</option>
                                 <option value="enclosed">Enclosed</option>
