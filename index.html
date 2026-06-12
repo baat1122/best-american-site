@@ -356,7 +356,7 @@
                 <div class="block lg:col-span-6 xl:col-span-5 reveal relative pointer-events-auto mt-8 lg:mt-0" style="transition-delay: 200ms;">
                     <div class="stripe-card p-6 lg:p-8 w-full shadow-2xl relative z-20 bg-white rounded-2xl">
                         <div class="mb-4">
-                            <h3 class="text-xl font-bold mb-1 text-[#0a2540]">Get a Free Quote</h3>
+                            <h2 class="text-xl font-bold mb-1 text-[#0a2540]">Get a Free Quote</h2>
                             <p class="text-[#425466] text-xs leading-relaxed">Enter your shipment details to request a custom route quote.</p>
                         </div>
 
@@ -385,7 +385,7 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="block text-[11px] font-bold text-[#425466] mb-1">Estimated Pickup Date</label>
+                                    <label class="block text-[11px] font-bold text-[#425466] mb-1" for="pickupDate">Estimated Pickup Date</label>
                                     <input type="date" id="pickupDate" name="Pickup Date" required onclick="this.showPicker()" class="w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md focus:ring-2 focus:ring-[#635bff] focus:outline-none">
                                 </div>
 
@@ -393,18 +393,18 @@
                                     <div class="vehicle-group border border-[#e6e6e6] rounded-lg p-3 mb-2">
                                         <span id="vehicle1Label" class="block text-[11px] font-bold text-[#635bff] uppercase tracking-wide mb-2">Vehicle 1</span>
                                         <div class="grid grid-cols-3 gap-2 mb-2">
-                                            <input type="text" class="vehicleYear w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Year e.g. 2023" required>
-                                            <input type="text" class="vehicleMake w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Make e.g. Honda" required>
-                                            <input type="text" class="vehicleModel w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Model e.g. Civic" required>
+                                            <input type="text" class="vehicleYear w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Year e.g. 2023" aria-label="Vehicle Year" required>
+                                            <input type="text" class="vehicleMake w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Make e.g. Honda" aria-label="Vehicle Make" required>
+                                            <input type="text" class="vehicleModel w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md" placeholder="Model e.g. Civic" aria-label="Vehicle Model" required>
                                         </div>
                                         <div class="grid grid-cols-2 gap-2">
-                                            <select class="vehicleType w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md bg-white">
+                                            <select class="vehicleType w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md bg-white" aria-label="Vehicle Type">
                                                 <option value="sedan">Sedan</option>
                                                 <option value="suv">SUV</option>
                                                 <option value="truck">Truck</option>
                                             </select>
-                                            <select class="vehicleCondition w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md bg-white">
-                                                <option value="run">Runs & Drives</option>
+                                            <select class="vehicleCondition w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md bg-white" aria-label="Vehicle Condition">
+                                                <option value="run">Runs &amp; Drives</option>
                                                 <option value="inop">Inoperable</option>
                                             </select>
                                         </div>
@@ -417,7 +417,7 @@
                                 </button>
 
                                 <div class="mb-3">
-                                    <label class="block text-[11px] font-bold text-[#425466] mb-1">Transport</label>
+                                    <label class="block text-[11px] font-bold text-[#425466] mb-1" for="transportType">Transport</label>
                                     <select id="transportType" name="Transport Type" class="w-full px-3 py-2 text-sm border border-[#e6e6e6] rounded-md bg-white">
                                         <option value="open">Open Carrier</option>
                                         <option value="enclosed">Enclosed</option>
@@ -936,7 +936,7 @@
                         </div>
 
                         <div class="stripe-card p-6 flex items-start gap-5 hover:border-[#39FF14] border border-transparent transition duration-300">
-                            <div class="w-12 h-12 rounded-xl bg-[#dcfce7] text-[#16a34a] flex items-center justify-center shrink-0 text-xl font-bold">⏱️</div>
+                            <div class="w-12 h-12 rounded-xl bg-[#dcfce7] text-[#15803d] flex items-center justify-center shrink-0 text-xl font-bold">⏱️</div>
                             <div>
                                 <h4 class="font-bold text-lg text-[#0a2540] mb-2">Standard Service Timeline</h4>
                                 <p class="text-sm text-[#425466] leading-relaxed">Standard service uses solo drivers. To estimate your standard delivery time, <strong>divide your total route mileage by 500 miles per day</strong>.</p>
@@ -1457,21 +1457,21 @@
                         <tbody class="text-sm bg-white">
                             <tr class="border-b border-[#e6e6e6] hover:bg-slate-50 transition">
                                 <td class="p-6 font-bold text-[#0a2540]">Direct Driver Contact</td>
-                                <td class="p-6 text-[#16a34a] font-black text-lg">✅ Yes</td>
+                                <td class="p-6 text-[#15803d] font-black text-lg">✅ Yes</td>
                                 <td class="p-6 text-[#425466]">No (Dispatch Only)</td>
                                 <td class="p-6 text-[#425466]">No</td>
                                 <td class="p-6 text-[#425466]">No</td>
                             </tr>
                             <tr class="border-b border-[#e6e6e6] hover:bg-slate-50 transition">
                                 <td class="p-6 font-bold text-[#0a2540]">Price Lock Guarantee</td>
-                                <td class="p-6 text-[#16a34a] font-black text-lg">✅ Yes</td>
+                                <td class="p-6 text-[#15803d] font-black text-lg">✅ Yes</td>
                                 <td class="p-6 text-[#425466]">Variable</td>
-                                <td class="p-6 text-[#16a34a]">Yes</td>
+                                <td class="p-6 text-[#15803d]">Yes</td>
                                 <td class="p-6 text-[#425466]">Variable</td>
                             </tr>
                             <tr class="border-b border-[#e6e6e6] hover:bg-slate-50 transition">
                                 <td class="p-6 font-bold text-[#0a2540]">No Upfront Deposit</td>
-                                <td class="p-6 text-[#16a34a] font-black text-lg">✅ Yes</td>
+                                <td class="p-6 text-[#15803d] font-black text-lg">✅ Yes</td>
                                 <td class="p-6 text-[#e31837]">Deposit Required</td>
                                 <td class="p-6 text-[#e31837]">Deposit Required</td>
                                 <td class="p-6 text-[#e31837]">Deposit Required</td>
