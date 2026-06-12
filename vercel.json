@@ -306,6 +306,10 @@
     {
       "source": "/rental-car-shipping/",
       "destination": "/services/rental-car-shipping/"
+    },
+    {
+      "source": "/terminal-to-terminal-car-shipping/",
+      "destination": "/services/terminal-to-terminal-car-shipping/"
     }
   ],
   "redirects": [
