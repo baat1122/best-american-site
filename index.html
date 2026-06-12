@@ -7,9 +7,17 @@
     <!-- Primary SEO -->
     <title>Neon Auto Transport | #1 Nationwide Car Shipping Company | FMCSA Approved</title>
     <meta name="description" content="Neon Auto Transport is a top-rated, FMCSA &amp; US DOT approved car shipping company. Get an instant quote for door-to-door auto transport across all 50 states. 9+ years, 150K+ vehicles shipped safely.">
-        <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Neon Auto Transport">
+    <meta name="publisher" content="Neon Auto Transport LLC">
+    <meta name="application-name" content="Neon Auto Transport">
     <link rel="canonical" href="https://neonautotransport.com/" />
+
+    <!-- Entity Disambiguation for AI -->
+    <meta name="entity-type" content="Organization">
+    <meta name="entity-name" content="Neon Auto Transport LLC">
+    <meta name="entity-location" content="Woodbridge, Virginia, United States">
+    <meta name="entity-category" content="Auto Transport, Car Shipping, Vehicle Logistics">
 
     <!-- Geo Tags -->
     <meta name="geo.position" content="38.6582;-77.2497">
@@ -161,6 +169,40 @@
     }
   ]
 }
+    </script>
+
+    <!-- JSON-LD: WebSite (for AI Search/Sitelinks) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Neon Auto Transport",
+      "alternateName": ["Neon Auto Transport LLC", "Neon Auto", "neonautotransport"],
+      "url": "https://neonautotransport.com",
+      "description": "Neon Auto Transport LLC is a fully licensed auto transport broker based in Woodbridge, Virginia. FMCSA approved, USDOT 4355879, MC 1703787. We offer door-to-door car shipping across all 50 U.S. states with 9+ years of experience and 150,000+ vehicles shipped.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://neonautotransport.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Neon Auto Transport",
+        "legalName": "Neon Auto Transport LLC",
+        "url": "https://neonautotransport.com",
+        "logo": "https://neonautotransport.com/images/logo.jpg",
+        "telephone": "+15715767711",
+        "email": "info@neonautotransport.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2709 Neabsco Common Pl Suite 101",
+          "addressLocality": "Woodbridge",
+          "addressRegion": "VA",
+          "postalCode": "22191",
+          "addressCountry": "US"
+        }
+      }
+    }
     </script>
 
     <!-- JSON-LD: WebPage with SpeakableSpecification -->
@@ -1218,331 +1260,128 @@
                 </div>
             </div>
             
-            <!-- The Nationwide Dispatch Network Canvas (Replaced with lightweight CSS animation for performance) -->
-            <div style="width: 100%; height: 400px; position: relative; margin-top: 1.5rem; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                <!-- Animated US Map -->
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; pointer-events: none;">
-                    <svg viewBox="0 0 900 550" style="width: 92%; max-width: 900px; height: auto;" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <!-- Strong glow -->
-                            <filter id="mapGlow" x="-20%" y="-20%" width="140%" height="140%">
-                                <feGaussianBlur stdDeviation="6" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                            <!-- City glow -->
-                            <filter id="cityGlow" x="-100%" y="-100%" width="300%" height="300%">
-                                <feGaussianBlur stdDeviation="6" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                            <!-- Route glow -->
-                            <filter id="routeGlow" x="-10%" y="-10%" width="120%" height="120%">
-                                <feGaussianBlur stdDeviation="3" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                            <!-- Soft outer glow for map -->
-                            <filter id="mapOuterGlow" x="-5%" y="-5%" width="110%" height="110%">
-                                <feGaussianBlur stdDeviation="8" result="blur"/>
-                                <feFlood flood-color="#00d4ff" flood-opacity="0.1"/>
-                                <feComposite in2="blur" operator="in"/>
-                                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                            <!-- Moving dot gradient -->
-                            <radialGradient id="dotCyan">
-                                <stop offset="0%" stop-color="#00d4ff"/>
-                                <stop offset="60%" stop-color="#00d4ff" stop-opacity="0.6"/>
-                                <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
-                            </radialGradient>
-                            <radialGradient id="dotPurple">
-                                <stop offset="0%" stop-color="#635bff"/>
-                                <stop offset="60%" stop-color="#635bff" stop-opacity="0.6"/>
-                                <stop offset="100%" stop-color="#635bff" stop-opacity="0"/>
-                            </radialGradient>
-                            <!-- Map fill gradient -->
-                            <linearGradient id="mapFill" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="rgba(0,212,255,0.04)"/>
-                                <stop offset="50%" stop-color="rgba(99,91,255,0.03)"/>
-                                <stop offset="100%" stop-color="rgba(0,212,255,0.04)"/>
-                            </linearGradient>
-                        </defs>
+            <!-- How It Works - Shipping Process Timeline -->
+            <div style="width: 100%; position: relative; margin-top: 1.5rem; padding: 3rem 1.5rem; background: linear-gradient(180deg, rgba(10,37,64,0.95) 0%, rgba(15,30,55,1) 100%); border-radius: 12px; overflow: hidden;">
+                <!-- Subtle grid background -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.04; background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none;"></div>
 
-                        <!-- Subtle grid background -->
-                        <g opacity="0.06">
-                            <line x1="0" y1="100" x2="900" y2="100" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="0" y1="200" x2="900" y2="200" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="0" y1="300" x2="900" y2="300" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="0" y1="400" x2="900" y2="400" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="100" y1="0" x2="100" y2="550" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="200" y1="0" x2="200" y2="550" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="300" y1="0" x2="300" y2="550" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="400" y1="0" x2="400" y2="550" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="500" y1="0" x2="500" y2="550" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="600" y1="0" x2="600" y2="550" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="700" y1="0" x2="700" y2="550" stroke="#fff" stroke-width="0.5"/>
-                            <line x1="800" y1="0" x2="800" y2="550" stroke="#fff" stroke-width="0.5"/>
-                        </g>
+                <!-- Section heading -->
+                <div style="text-align: center; margin-bottom: 2.5rem; position: relative; z-index: 1;">
+                    <p style="color: #00d4ff; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 0.5rem 0;">Simple 4-Step Process</p>
+                    <h2 style="color: #fff; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin: 0; text-shadow: 0 0 25px rgba(0,212,255,0.3);">How Neon Auto Transport Works</h2>
+                </div>
 
-                        <!-- US Map Outline (detailed) -->
-                        <path d="M 130,130 C 135,118 145,108 160,100 C 175,92 192,88 210,87 C 225,87 238,92 248,100 C 255,95 265,90 278,88 C 290,87 305,90 318,96 C 328,100 335,108 340,118 C 350,114 362,110 378,108 C 392,107 408,108 425,112 C 438,115 448,120 458,128 C 468,124 480,118 495,114 C 508,111 522,110 538,112 C 550,114 562,120 572,130 C 580,138 586,148 590,160 C 594,172 596,186 597,200 C 598,215 600,228 605,240 C 612,252 622,262 635,270 C 648,276 660,278 672,275 C 680,272 688,266 694,258 C 700,248 704,238 710,230 C 716,222 722,218 730,218 C 736,220 738,228 736,238 C 732,252 724,266 714,278 C 704,290 692,300 678,308 C 662,316 645,322 626,326 C 608,330 588,332 568,334 C 548,336 528,338 508,342 C 488,346 470,352 455,360 C 440,368 428,378 418,390 C 408,402 400,412 388,420 C 375,428 360,432 345,430 C 330,428 316,422 302,414 C 290,406 278,398 264,394 C 250,390 235,390 220,394 C 205,398 190,404 175,406 C 160,408 146,404 134,396 C 124,388 118,376 114,362 C 110,348 108,332 107,316 C 106,300 105,282 104,264 C 103,246 102,228 103,210 C 104,192 107,174 112,158 C 117,144 123,135 130,130 Z"
-                            fill="url(#mapFill)" stroke="rgba(0,212,255,0.25)" stroke-width="2" filter="url(#mapOuterGlow)"/>
-                        
-                        <!-- Inner state-like lines for detail -->
-                        <g stroke="rgba(255,255,255,0.04)" stroke-width="0.8" fill="none">
-                            <line x1="300" y1="100" x2="300" y2="400"/>
-                            <line x1="450" y1="110" x2="450" y2="420"/>
-                            <line x1="600" y1="130" x2="600" y2="330"/>
-                            <line x1="105" y1="250" x2="730" y2="250"/>
-                            <line x1="110" y1="350" x2="680" y2="350"/>
-                        </g>
+                <!-- Timeline container -->
+                <div class="timeline-wrap" style="display: flex; align-items: flex-start; justify-content: center; gap: 0; max-width: 960px; margin: 0 auto; position: relative; z-index: 1;">
 
-                        <!-- Route Lines (glowing base) -->
-                        <g filter="url(#routeGlow)">
-                            <!-- LA to NYC -->
-                            <path d="M 155,295 C 280,240 480,195 720,175" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-opacity="0.25"/>
-                            <!-- LA to Chicago -->
-                            <path d="M 155,295 C 250,250 380,210 530,185" fill="none" stroke="#635bff" stroke-width="2.5" stroke-opacity="0.25"/>
-                            <!-- Miami to NYC -->
-                            <path d="M 645,395 C 665,330 690,260 720,175" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-opacity="0.25"/>
-                            <!-- Miami to Chicago -->
-                            <path d="M 645,395 C 600,320 570,250 530,185" fill="none" stroke="#635bff" stroke-width="2" stroke-opacity="0.2"/>
-                            <!-- Seattle to NYC -->
-                            <path d="M 155,120 C 340,125 530,145 720,175" fill="none" stroke="#00d4ff" stroke-width="2" stroke-opacity="0.2"/>
-                            <!-- Dallas to Chicago -->
-                            <path d="M 440,340 C 470,290 500,240 530,185" fill="none" stroke="#00d4ff" stroke-width="2" stroke-opacity="0.2"/>
-                            <!-- Dallas to LA -->
-                            <path d="M 440,340 C 340,330 240,315 155,295" fill="none" stroke="#635bff" stroke-width="2" stroke-opacity="0.2"/>
-                            <!-- Denver to Chicago -->
-                            <path d="M 340,225 C 400,210 460,195 530,185" fill="none" stroke="#00d4ff" stroke-width="2" stroke-opacity="0.18"/>
-                            <!-- Atlanta to NYC -->
-                            <path d="M 620,310 C 660,270 695,225 720,175" fill="none" stroke="#635bff" stroke-width="2" stroke-opacity="0.2"/>
-                            <!-- SF to Chicago -->
-                            <path d="M 120,230 C 250,215 400,195 530,185" fill="none" stroke="#635bff" stroke-width="2" stroke-opacity="0.18"/>
-                            <!-- Houston to Atlanta -->
-                            <path d="M 460,385 C 520,360 570,340 620,310" fill="none" stroke="#00d4ff" stroke-width="2" stroke-opacity="0.18"/>
-                            <!-- Phoenix to Dallas -->
-                            <path d="M 235,330 C 310,340 380,340 440,340" fill="none" stroke="#635bff" stroke-width="1.8" stroke-opacity="0.15"/>
-                        </g>
+                    <!-- Step 1: Book -->
+                    <div class="timeline-step" style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; padding: 0 0.5rem;">
+                        <!-- Icon circle -->
+                        <div class="step-icon" style="width: 80px; height: 80px; border-radius: 50%; background: rgba(0,212,255,0.08); border: 2px solid rgba(0,212,255,0.35); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; position: relative; box-shadow: 0 0 25px rgba(0,212,255,0.15);">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                            <!-- Step number badge -->
+                            <div style="position: absolute; top: -6px; right: -6px; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #00d4ff, #635bff); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; color: #fff; box-shadow: 0 2px 8px rgba(0,212,255,0.4);">1</div>
+                            <!-- Pulse ring -->
+                            <div class="icon-ring" style="position: absolute; top: -4px; left: -4px; right: -4px; bottom: -4px; border-radius: 50%; border: 1.5px solid rgba(0,212,255,0.3);"></div>
+                        </div>
+                        <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem 0;">Book Online</h3>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.5; margin: 0; max-width: 180px;">Get an instant quote and book your shipment in minutes</p>
+                        <!-- Connector line to next step -->
+                        <div class="connector" style="position: absolute; top: 40px; left: calc(50% + 48px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, rgba(0,212,255,0.5), rgba(99,91,255,0.5)); overflow: hidden;">
+                            <div class="connector-glow" style="position: absolute; top: 0; left: -40px; width: 40px; height: 100%; background: linear-gradient(90deg, transparent, #00d4ff, transparent);"></div>
+                        </div>
+                    </div>
 
-                        <!-- Animated traveling dots -->
-                        <!-- Dot 1: LA to NYC -->
-                        <circle r="5" fill="url(#dotCyan)" filter="url(#cityGlow)">
-                            <animateMotion dur="4s" repeatCount="indefinite" path="M 155,295 C 280,240 480,195 720,175"/>
-                        </circle>
-                        <!-- Dot 2: LA to Chicago -->
-                        <circle r="5" fill="url(#dotPurple)" filter="url(#cityGlow)">
-                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="-1s" path="M 155,295 C 250,250 380,210 530,185"/>
-                        </circle>
-                        <!-- Dot 3: Miami to NYC -->
-                        <circle r="5" fill="url(#dotCyan)" filter="url(#cityGlow)">
-                            <animateMotion dur="3s" repeatCount="indefinite" begin="-0.5s" path="M 645,395 C 665,330 690,260 720,175"/>
-                        </circle>
-                        <!-- Dot 4: Miami to Chicago -->
-                        <circle r="4" fill="url(#dotPurple)" filter="url(#cityGlow)">
-                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="-2s" path="M 645,395 C 600,320 570,250 530,185"/>
-                        </circle>
-                        <!-- Dot 5: Seattle to NYC -->
-                        <circle r="4" fill="url(#dotCyan)" filter="url(#cityGlow)">
-                            <animateMotion dur="5s" repeatCount="indefinite" begin="-1.5s" path="M 155,120 C 340,125 530,145 720,175"/>
-                        </circle>
-                        <!-- Dot 6: Dallas to Chicago -->
-                        <circle r="4" fill="url(#dotCyan)" filter="url(#cityGlow)">
-                            <animateMotion dur="2.5s" repeatCount="indefinite" begin="-0.8s" path="M 440,340 C 470,290 500,240 530,185"/>
-                        </circle>
-                        <!-- Dot 7: Dallas to LA -->
-                        <circle r="4" fill="url(#dotPurple)" filter="url(#cityGlow)">
-                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="-1.2s" path="M 440,340 C 340,330 240,315 155,295"/>
-                        </circle>
-                        <!-- Dot 8: Denver to Chicago -->
-                        <circle r="4" fill="url(#dotCyan)" filter="url(#cityGlow)">
-                            <animateMotion dur="2.5s" repeatCount="indefinite" begin="-0.3s" path="M 340,225 C 400,210 460,195 530,185"/>
-                        </circle>
-                        <!-- Dot 9: Atlanta to NYC -->
-                        <circle r="4" fill="url(#dotPurple)" filter="url(#cityGlow)">
-                            <animateMotion dur="3s" repeatCount="indefinite" begin="-2.5s" path="M 620,310 C 660,270 695,225 720,175"/>
-                        </circle>
-                        <!-- Dot 10: SF to Chicago -->
-                        <circle r="4" fill="url(#dotPurple)" filter="url(#cityGlow)">
-                            <animateMotion dur="3.2s" repeatCount="indefinite" begin="-1.8s" path="M 120,230 C 250,215 400,195 530,185"/>
-                        </circle>
-                        <!-- Dot 11: Houston to Atlanta -->
-                        <circle r="3.5" fill="url(#dotCyan)" filter="url(#cityGlow)">
-                            <animateMotion dur="2.8s" repeatCount="indefinite" begin="-0.5s" path="M 460,385 C 520,360 570,340 620,310"/>
-                        </circle>
+                    <!-- Step 2: Pick Up -->
+                    <div class="timeline-step" style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; padding: 0 0.5rem;">
+                        <div class="step-icon" style="width: 80px; height: 80px; border-radius: 50%; background: rgba(99,91,255,0.08); border: 2px solid rgba(99,91,255,0.35); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; position: relative; box-shadow: 0 0 25px rgba(99,91,255,0.15);">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#635bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><line x1="8" y1="16" x2="8" y2="8"/><line x1="12" y1="16" x2="12" y2="11"/>
+                            </svg>
+                            <div style="position: absolute; top: -6px; right: -6px; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #635bff, #00d4ff); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; color: #fff; box-shadow: 0 2px 8px rgba(99,91,255,0.4);">2</div>
+                            <div class="icon-ring" style="position: absolute; top: -4px; left: -4px; right: -4px; bottom: -4px; border-radius: 50%; border: 1.5px solid rgba(99,91,255,0.3);"></div>
+                        </div>
+                        <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem 0;">Pick Up</h3>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.5; margin: 0; max-width: 180px;">Our vetted carrier picks up your vehicle door-to-door</p>
+                        <div class="connector" style="position: absolute; top: 40px; left: calc(50% + 48px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, rgba(99,91,255,0.5), rgba(0,212,255,0.5)); overflow: hidden;">
+                            <div class="connector-glow" style="position: absolute; top: 0; left: -40px; width: 40px; height: 100%; background: linear-gradient(90deg, transparent, #635bff, transparent);"></div>
+                        </div>
+                    </div>
 
-                        <!-- ==================== CITIES ==================== -->
-                        <!-- NYC (Major Hub) -->
-                        <g>
-                            <circle cx="720" cy="175" r="18" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3" class="ripple-ring"/>
-                            <circle cx="720" cy="175" r="12" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.5" class="ripple-ring ripple-d1"/>
-                            <circle cx="720" cy="175" r="7" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse"/>
-                            <circle cx="720" cy="175" r="3.5" fill="#fff"/>
-                            <rect x="694" y="152" width="52" height="18" rx="9" fill="rgba(0,212,255,0.15)" stroke="rgba(0,212,255,0.3)" stroke-width="0.5"/>
-                            <text x="720" y="165" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="Arial, sans-serif">New York</text>
-                        </g>
+                    <!-- Step 3: In Transit -->
+                    <div class="timeline-step" style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; padding: 0 0.5rem;">
+                        <div class="step-icon" style="width: 80px; height: 80px; border-radius: 50%; background: rgba(0,212,255,0.08); border: 2px solid rgba(0,212,255,0.35); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; position: relative; box-shadow: 0 0 25px rgba(0,212,255,0.15);">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <div style="position: absolute; top: -6px; right: -6px; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #00d4ff, #635bff); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; color: #fff; box-shadow: 0 2px 8px rgba(0,212,255,0.4);">3</div>
+                            <div class="icon-ring" style="position: absolute; top: -4px; left: -4px; right: -4px; bottom: -4px; border-radius: 50%; border: 1.5px solid rgba(0,212,255,0.3);"></div>
+                        </div>
+                        <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem 0;">In Transit</h3>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.5; margin: 0; max-width: 180px;">Track your vehicle in real-time with live GPS updates</p>
+                        <div class="connector" style="position: absolute; top: 40px; left: calc(50% + 48px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, rgba(0,212,255,0.5), rgba(99,91,255,0.5)); overflow: hidden;">
+                            <div class="connector-glow" style="position: absolute; top: 0; left: -40px; width: 40px; height: 100%; background: linear-gradient(90deg, transparent, #00d4ff, transparent);"></div>
+                        </div>
+                    </div>
 
-                        <!-- LA (Major Hub) -->
-                        <g>
-                            <circle cx="155" cy="295" r="18" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3" class="ripple-ring ripple-d2"/>
-                            <circle cx="155" cy="295" r="12" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.5" class="ripple-ring ripple-d3"/>
-                            <circle cx="155" cy="295" r="7" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d1"/>
-                            <circle cx="155" cy="295" r="3.5" fill="#fff"/>
-                            <rect x="140" y="270" width="30" height="18" rx="9" fill="rgba(0,212,255,0.15)" stroke="rgba(0,212,255,0.3)" stroke-width="0.5"/>
-                            <text x="155" y="283" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="Arial, sans-serif">LA</text>
-                        </g>
+                    <!-- Step 4: Delivered -->
+                    <div class="timeline-step" style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; padding: 0 0.5rem;">
+                        <div class="step-icon" style="width: 80px; height: 80px; border-radius: 50%; background: rgba(99,91,255,0.08); border: 2px solid rgba(99,91,255,0.35); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; position: relative; box-shadow: 0 0 25px rgba(99,91,255,0.15);">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#635bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <div style="position: absolute; top: -6px; right: -6px; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #635bff, #00d4ff); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; color: #fff; box-shadow: 0 2px 8px rgba(99,91,255,0.4);">4</div>
+                            <div class="icon-ring" style="position: absolute; top: -4px; left: -4px; right: -4px; bottom: -4px; border-radius: 50%; border: 1.5px solid rgba(99,91,255,0.3);"></div>
+                        </div>
+                        <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem 0;">Delivered</h3>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.5; margin: 0; max-width: 180px;">Your vehicle arrives safely at your destination on time</p>
+                    </div>
+                </div>
 
-                        <!-- Chicago (Major Hub) -->
-                        <g>
-                            <circle cx="530" cy="185" r="16" fill="none" stroke="#635bff" stroke-width="1" opacity="0.3" class="ripple-ring ripple-d1"/>
-                            <circle cx="530" cy="185" r="10" fill="none" stroke="#635bff" stroke-width="1.5" opacity="0.5" class="ripple-ring ripple-d2"/>
-                            <circle cx="530" cy="185" r="6" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d2"/>
-                            <circle cx="530" cy="185" r="3" fill="#fff"/>
-                            <rect x="500" y="162" width="60" height="18" rx="9" fill="rgba(99,91,255,0.15)" stroke="rgba(99,91,255,0.3)" stroke-width="0.5"/>
-                            <text x="530" y="175" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="Arial, sans-serif">Chicago</text>
-                        </g>
-
-                        <!-- Miami -->
-                        <g>
-                            <circle cx="645" cy="395" r="14" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3" class="ripple-ring ripple-d3"/>
-                            <circle cx="645" cy="395" r="6" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d3"/>
-                            <circle cx="645" cy="395" r="3" fill="#fff"/>
-                            <rect x="622" y="408" width="46" height="16" rx="8" fill="rgba(0,212,255,0.12)" stroke="rgba(0,212,255,0.25)" stroke-width="0.5"/>
-                            <text x="645" y="420" text-anchor="middle" fill="#fff" font-size="10" font-weight="600" font-family="Arial, sans-serif">Miami</text>
-                        </g>
-
-                        <!-- Seattle -->
-                        <g>
-                            <circle cx="155" cy="120" r="12" fill="none" stroke="#635bff" stroke-width="1" opacity="0.25" class="ripple-ring"/>
-                            <circle cx="155" cy="120" r="5" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d4"/>
-                            <circle cx="155" cy="120" r="2.5" fill="#fff"/>
-                            <rect x="130" y="100" width="50" height="16" rx="8" fill="rgba(99,91,255,0.12)" stroke="rgba(99,91,255,0.25)" stroke-width="0.5"/>
-                            <text x="155" y="112" text-anchor="middle" fill="#fff" font-size="10" font-weight="600" font-family="Arial, sans-serif">Seattle</text>
-                        </g>
-
-                        <!-- Dallas -->
-                        <g>
-                            <circle cx="440" cy="340" r="12" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.25" class="ripple-ring ripple-d2"/>
-                            <circle cx="440" cy="340" r="5" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d1"/>
-                            <circle cx="440" cy="340" r="2.5" fill="#fff"/>
-                            <rect x="418" y="350" width="44" height="16" rx="8" fill="rgba(0,212,255,0.12)" stroke="rgba(0,212,255,0.25)" stroke-width="0.5"/>
-                            <text x="440" y="362" text-anchor="middle" fill="#fff" font-size="10" font-weight="600" font-family="Arial, sans-serif">Dallas</text>
-                        </g>
-
-                        <!-- Denver -->
-                        <g>
-                            <circle cx="340" cy="225" r="10" fill="none" stroke="#635bff" stroke-width="1" opacity="0.2" class="ripple-ring ripple-d1"/>
-                            <circle cx="340" cy="225" r="4.5" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d2"/>
-                            <circle cx="340" cy="225" r="2.5" fill="#fff"/>
-                            <rect x="316" y="205" width="48" height="16" rx="8" fill="rgba(99,91,255,0.1)" stroke="rgba(99,91,255,0.2)" stroke-width="0.5"/>
-                            <text x="340" y="217" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" font-family="Arial, sans-serif">Denver</text>
-                        </g>
-
-                        <!-- Atlanta -->
-                        <g>
-                            <circle cx="620" cy="310" r="10" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.2" class="ripple-ring ripple-d3"/>
-                            <circle cx="620" cy="310" r="4.5" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d3"/>
-                            <circle cx="620" cy="310" r="2.5" fill="#fff"/>
-                            <rect x="596" y="318" width="48" height="16" rx="8" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.2)" stroke-width="0.5"/>
-                            <text x="620" y="330" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" font-family="Arial, sans-serif">Atlanta</text>
-                        </g>
-
-                        <!-- Phoenix -->
-                        <g>
-                            <circle cx="235" cy="330" r="9" fill="none" stroke="#635bff" stroke-width="0.8" opacity="0.2" class="ripple-ring ripple-d4"/>
-                            <circle cx="235" cy="330" r="4" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d4"/>
-                            <circle cx="235" cy="330" r="2" fill="#fff"/>
-                            <text x="235" y="348" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" opacity="0.6" font-family="Arial, sans-serif">Phoenix</text>
-                        </g>
-
-                        <!-- Boston -->
-                        <g>
-                            <circle cx="745" cy="155" r="9" fill="none" stroke="#635bff" stroke-width="0.8" opacity="0.2" class="ripple-ring"/>
-                            <circle cx="745" cy="155" r="4" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d1"/>
-                            <circle cx="745" cy="155" r="2" fill="#fff"/>
-                            <text x="760" y="147" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" opacity="0.6" font-family="Arial, sans-serif">Boston</text>
-                        </g>
-
-                        <!-- Houston -->
-                        <g>
-                            <circle cx="460" cy="385" r="9" fill="none" stroke="#00d4ff" stroke-width="0.8" opacity="0.2" class="ripple-ring ripple-d2"/>
-                            <circle cx="460" cy="385" r="4" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d2"/>
-                            <circle cx="460" cy="385" r="2" fill="#fff"/>
-                            <text x="460" y="403" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" opacity="0.6" font-family="Arial, sans-serif">Houston</text>
-                        </g>
-
-                        <!-- San Francisco -->
-                        <g>
-                            <circle cx="120" cy="230" r="9" fill="none" stroke="#00d4ff" stroke-width="0.8" opacity="0.2" class="ripple-ring ripple-d3"/>
-                            <circle cx="120" cy="230" r="4" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d3"/>
-                            <circle cx="120" cy="230" r="2" fill="#fff"/>
-                            <rect x="88" y="237" width="24" height="14" rx="7" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.2)" stroke-width="0.5"/>
-                            <text x="100" y="248" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" font-family="Arial, sans-serif">SF</text>
-                        </g>
-
-                        <!-- Portland -->
-                        <g>
-                            <circle cx="138" cy="155" r="3.5" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d4"/>
-                            <circle cx="138" cy="155" r="1.8" fill="#fff"/>
-                            <text x="120" y="168" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" opacity="0.5" font-family="Arial, sans-serif">PDX</text>
-                        </g>
-
-                        <!-- Vegas -->
-                        <g>
-                            <circle cx="195" cy="280" r="3.5" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d1"/>
-                            <circle cx="195" cy="280" r="1.8" fill="#fff"/>
-                            <text x="195" y="272" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" opacity="0.5" font-family="Arial, sans-serif">Vegas</text>
-                        </g>
-
-                        <!-- Detroit -->
-                        <g>
-                            <circle cx="580" cy="168" r="3.5" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d2"/>
-                            <circle cx="580" cy="168" r="1.8" fill="#fff"/>
-                            <text x="580" y="158" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" opacity="0.5" font-family="Arial, sans-serif">Detroit</text>
-                        </g>
-
-                        <!-- DC -->
-                        <g>
-                            <circle cx="700" cy="215" r="3.5" fill="#00d4ff" filter="url(#cityGlow)" class="city-pulse city-pulse-d3"/>
-                            <circle cx="700" cy="215" r="1.8" fill="#fff"/>
-                            <text x="718" y="212" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" opacity="0.5" font-family="Arial, sans-serif">DC</text>
-                        </g>
-
-                        <!-- Orlando -->
-                        <g>
-                            <circle cx="630" cy="370" r="3.5" fill="#635bff" filter="url(#cityGlow)" class="city-pulse city-pulse-d4"/>
-                            <circle cx="630" cy="370" r="1.8" fill="#fff"/>
-                            <text x="648" y="370" text-anchor="middle" fill="#fff" font-size="8" font-weight="600" opacity="0.5" font-family="Arial, sans-serif">Orlando</text>
-                        </g>
-                    </svg>
+                <!-- CTA below timeline -->
+                <div style="text-align: center; margin-top: 2.5rem; position: relative; z-index: 1;">
+                    <a href="/quote/" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #00d4ff, #635bff); color: #fff; font-size: 1rem; font-weight: 700; padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 20px rgba(0,212,255,0.35); transition: transform 0.2s, box-shadow 0.2s;">
+                        Start Your Shipment
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
                 </div>
 
                 <style>
-                    /* Traveling dot animations via SMIL - handled in SVG */
-                    
-                    /* City pulse animation */
-                    .city-pulse {
-                        animation: pulse 2.5s ease-in-out infinite;
-                    }
-                    .city-pulse-d1 { animation-delay: -0.4s; }
-                    .city-pulse-d2 { animation-delay: -0.9s; }
-                    .city-pulse-d3 { animation-delay: -1.4s; }
-                    .city-pulse-d4 { animation-delay: -1.9s; }
+                    /* Timeline animations */
+                    .timeline-step .step-icon { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+                    .timeline-step:hover .step-icon { transform: translateY(-6px) scale(1.05); }
 
-                    @keyframes pulse {
-                        0%, 100% { opacity: 1; }
-                        50% { opacity: 0.5; }
+                    /* Pulsing icon rings */
+                    .icon-ring { animation: ringPulse 2.5s ease-out infinite; }
+                    @keyframes ringPulse {
+                        0% { transform: scale(1); opacity: 0.6; }
+                        100% { transform: scale(1.4); opacity: 0; }
                     }
 
-                    /* Ripple rings expanding outward */
-                    .ripple-ring {
-                        animation: ripple 3s ease-out infinite;
+                    /* Glowing connector animation */
+                    .connector-glow { animation: connectorSlide 2.5s linear infinite; }
+                    @keyframes connectorSlide {
+                        0% { left: -40px; }
+                        100% { left: calc(100% + 40px); }
                     }
-                    .ripple-d1 { animation-delay: -0.5s; }
-                    .ripple-d2 { animation-delay: -1s; }
-                    .ripple-d3 { animation-delay: -1.5s; }
-                    .ripple-d4 { animation-delay: -2s; }
 
-                    @keyframes ripple {
-                        0% { r: 6; opacity: 0.6; }
-                        100% { r: 22; opacity: 0; }
+                    /* Staggered step entrance */
+                    .timeline-step { opacity: 0; transform: translateY(20px); animation: stepFadeIn 0.6s ease forwards; }
+                    .timeline-step:nth-child(1) { animation-delay: 0.1s; }
+                    .timeline-step:nth-child(2) { animation-delay: 0.3s; }
+                    .timeline-step:nth-child(3) { animation-delay: 0.5s; }
+                    .timeline-step:nth-child(4) { animation-delay: 0.7s; }
+                    @keyframes stepFadeIn {
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+
+                    /* Responsive: stack vertically on mobile */
+                    @media (max-width: 700px) {
+                        .timeline-wrap { flex-direction: column !important; align-items: center !important; gap: 2rem !important; }
+                        .connector { display: none !important; }
+                        .timeline-step { max-width: 280px; }
                     }
                 </style>
             </div>

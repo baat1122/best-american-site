@@ -314,6 +314,7 @@
     { "source": "/how-it-works/", "destination": "/#how-it-works", "permanent": true },
     { "source": "/state/:state/", "destination": "/locations.html", "permanent": true },
     { "source": "/state/:state", "destination": "/locations.html", "permanent": true },
+    { "source": "/about/", "destination": "/about.html", "permanent": false },
     { "source": "/door-to-door-car-shipping/", "destination": "/services/door-to-door-car-shipping/", "permanent": true },
     { "source": "/enclosed-auto-transport/", "destination": "/services/enclosed-auto-transport/", "permanent": true },
     { "source": "/open-auto-transport/", "destination": "/services/open-auto-transport/", "permanent": true },
