@@ -47,6 +47,10 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
+# Block old malware site URL patterns (these pages no longer exist)
+Disallow: /products/
+Disallow: /detail/
+
 # Block utility/generator scripts from crawlers
 Disallow: /routes/generate-routes.js
 Disallow: /routes/generate-routes-v2.js
