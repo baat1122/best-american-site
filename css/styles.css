@@ -37,18 +37,34 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
 }
 
-/* The Animated Stripe Gradient Mesh */
+/* The Animated Stripe Gradient Mesh (GPU-composited) */
 .stripe-gradient-bg {
   position: relative;
-  background: linear-gradient(-45deg, #635bff, #7c3aed, #4f46e5, #3b82f6);
+  overflow: hidden;
+}
+.stripe-gradient-bg::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(-45deg, #635bff, #7c3aed, #4f46e5, #3b82f6, #635bff);
   background-size: 400% 400%;
   animation: gradientMesh 15s ease infinite;
+  z-index: 0;
+}
+.stripe-gradient-bg > *:not(canvas) {
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes gradientMesh {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-25%, -25%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (max-width: 768px) {
+  .stripe-gradient-bg::before { animation: none !important; }
+  #particleCanvas { display: none !important; }
 }
 
 @keyframes fadeIn {

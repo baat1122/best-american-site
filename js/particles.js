@@ -1,18 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
+(function(){
+function initParticles() {
+    // Skip on mobile — canvas animation is decorative and expensive
+    if (window.innerWidth < 768) return;
     const canvas = document.getElementById("particleCanvas");
     if (!canvas) return;
     
     const ctx = canvas.getContext("2d");
     
     // Set canvas to full window size
-    let width, height;
+    let width = 0, height = 0;
+    let needsResize = true;
     function resizeCanvas() {
         const hero = document.getElementById("hero-section");
-        width = canvas.width = hero.offsetWidth;
-        height = canvas.height = hero.offsetHeight;
+        if (!hero) return;
+        const rect = hero.getBoundingClientRect();
+        width = canvas.width = rect.width;
+        height = canvas.height = rect.height;
+        needsResize = false;
     }
     
-    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("resize", () => { needsResize = true; });
+    
+    // Size canvas immediately so particles spawn at valid positions
     resizeCanvas();
     
     // Particles configuration
@@ -68,6 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     function animate() {
+        if (needsResize) resizeCanvas();
+        if (width === 0 || height === 0) {
+            if (isVisible) requestAnimationFrame(animate);
+            return;
+        }
         ctx.clearRect(0, 0, width, height);
         
         for (let i = 0; i < particles.length; i++) {
@@ -144,4 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     observer.observe(canvas);
         
-});
+}
+if(document.readyState !== 'loading') initParticles();
+else document.addEventListener("DOMContentLoaded", initParticles);
+})();

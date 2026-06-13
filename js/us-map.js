@@ -1,8 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+(function(){
+function initUsMap() {
     const container = document.getElementById("us-map-container");
     const tooltip = document.getElementById("map-tooltip");
     
     if (!container || !tooltip) return;
+
+    const isMobile = window.innerWidth < 768;
 
     const stateNames = {
         "al": "Alabama", "ak": "Alaska", "az": "Arizona", "ar": "Arkansas", "ca": "California",
@@ -30,10 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
         style.innerHTML = `
             #us-map-container svg { width: 100%; height: auto; max-height: 500px; overflow: visible; font-family: 'Inter', sans-serif; }
             #us-map-container path, #us-map-container circle { 
-                fill: #0284c7; /* Clean, bright blue like reference */
+                fill: #0284c7;
                 stroke: #ffffff; 
                 stroke-width: 1.5; 
-                transition: fill 0.3s ease, stroke-width 0.3s ease; 
                 cursor: pointer;
             }
             #us-map-container path:hover, #us-map-container circle:hover { 
@@ -46,10 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 fill: #ffffff;
                 font-size: 13px;
                 font-weight: 600;
-                pointer-events: none; /* Let clicks pass through to the path */
+                pointer-events: none;
                 text-anchor: middle;
                 dominant-baseline: central;
-                text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
             }
         `;
         document.head.appendChild(style);
@@ -88,8 +89,47 @@ document.addEventListener("DOMContentLoaded", () => {
             "dc": { hide: true }
         };
 
-        const mapWrapper = document.getElementById("nationwide-coverage");
-        
+        // Skip label generation on mobile — too small to read, expensive getBBox calls
+        if (!isMobile) {
+            const mapWrapper = document.getElementById("nationwide-coverage");
+            
+            // Batch reads: collect all bbox data first to avoid forced reflows
+            const stateData = [];
+            paths.forEach(path => {
+                if (path.classList.contains("separator1")) return;
+                
+                const classList = Array.from(path.classList);
+                const stateCode = classList.find(c => stateNames[c]);
+                
+                if (stateCode && stateAbbreviations[stateCode]) {
+                    const offset = labelOffsets[stateCode] || { x: 0, y: 0 };
+                    if (!offset.hide) {
+                        try {
+                            const bbox = path.getBBox();
+                            stateData.push({
+                                path,
+                                stateCode,
+                                stateName: stateNames[stateCode],
+                                centerX: bbox.x + bbox.width / 2 + offset.x,
+                                centerY: bbox.y + bbox.height / 2 + offset.y
+                            });
+                        } catch (e) {}
+                    }
+                }
+            });
+
+            // Batch writes: create and append all text labels after all reads
+            stateData.forEach(({ path, stateCode, stateName, centerX, centerY }) => {
+                const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                text.setAttribute("x", centerX);
+                text.setAttribute("y", centerY);
+                text.setAttribute("class", "state-label");
+                text.textContent = stateAbbreviations[stateCode];
+                svg.appendChild(text);
+            });
+        }
+
+        // Use offsetX/offsetY instead of getBoundingClientRect to avoid forced reflow
         paths.forEach(path => {
             if (path.classList.contains("separator1")) return;
             
@@ -99,48 +139,20 @@ document.addEventListener("DOMContentLoaded", () => {
             if (stateCode) {
                 const stateName = stateNames[stateCode];
 
-                // Append the abbreviation text to the SVG
-                if (stateAbbreviations[stateCode]) {
-                    const offset = labelOffsets[stateCode] || { x: 0, y: 0 };
-                    
-                    if (!offset.hide) {
-                        try {
-                            const bbox = path.getBBox();
-                            const centerX = bbox.x + bbox.width / 2 + offset.x;
-                            const centerY = bbox.y + bbox.height / 2 + offset.y;
-
-                            const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                            text.setAttribute("x", centerX);
-                            text.setAttribute("y", centerY);
-                            text.setAttribute("class", "state-label");
-                            text.textContent = stateAbbreviations[stateCode];
-                            svg.appendChild(text);
-                        } catch (e) {
-                            // getBBox might fail if the SVG is not fully rendered/visible in some edge cases
-                        }
-                    }
-                }
-
-                // Hover events
                 path.addEventListener("mouseenter", (e) => {
                     tooltip.textContent = stateName;
                     tooltip.classList.remove("hidden");
                 });
 
                 path.addEventListener("mousemove", (e) => {
-                    const rect = container.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    tooltip.style.left = `${x}px`;
-                    tooltip.style.top = `${y - 15}px`;
+                    tooltip.style.left = `${e.offsetX}px`;
+                    tooltip.style.top = `${e.offsetY - 15}px`;
                 });
 
                 path.addEventListener("mouseleave", () => {
                     tooltip.classList.add("hidden");
                 });
 
-                // Click event to route
                 path.addEventListener("click", () => {
                     const slug = stateName.toLowerCase().replace(/\s+/g, '-');
                     window.location.href = `/${slug}-car-shipping/`;
@@ -148,4 +160,31 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-});
+}
+// Defer map initialization until user scrolls near it
+if(document.readyState !== 'loading') {
+    const mapEl = document.getElementById("us-map-container");
+    if (mapEl) {
+        const mapObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                mapObserver.disconnect();
+                initUsMap();
+            }
+        }, { rootMargin: '200px' });
+        mapObserver.observe(mapEl);
+    }
+} else {
+    document.addEventListener("DOMContentLoaded", function(){
+        const mapEl = document.getElementById("us-map-container");
+        if (mapEl) {
+            const mapObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    mapObserver.disconnect();
+                    initUsMap();
+                }
+            }, { rootMargin: '200px' });
+            mapObserver.observe(mapEl);
+        }
+    });
+}
+})();
