@@ -473,8 +473,8 @@ footer .pt-8.border-t {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 </head>
 <body class="antialiased bg-[#f6f9fc]">
-                        <!-- Global Header -->
-    <header class="fixed top-0 w-full z-50 transition-all duration-300" id="global-header">
+                            <!-- Global Header -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300" id="global-header" style="background-color:#0a2540">
         <div class="container mx-auto px-4 lg:px-8 py-4 flex justify-between items-center" style="gap:24px">
             <!-- Left: Logo + Desktop Nav -->
             <div class="flex items-center" style="gap:24px">
@@ -1139,7 +1139,13 @@ footer .pt-8.border-t {
 <!-- Neon AI Chat Widget -->
     <link rel="stylesheet" href="/css/chatbot.css?v=2" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/css/chatbot.css?v=2"></noscript>
     <script src="/js/chatbot.js?v=4" defer></script>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if (btn && menu) btn.addEventListener('click', function() { menu.classList.toggle('hidden'); });
+        });
+    </script>
     <script>
         window.addEventListener('scroll', () => {
             const header = document.getElementById('global-header');
@@ -1147,16 +1153,9 @@ footer .pt-8.border-t {
                 header.style.backgroundColor = '#0a2540';
                 header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
             } else {
-                header.style.backgroundColor = 'transparent';
+                header.style.backgroundColor = '';
                 header.style.boxShadow = 'none';
             }
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var btn = document.getElementById('mobile-menu-btn');
-            var menu = document.getElementById('mobile-menu');
-            if (btn && menu) btn.addEventListener('click', function() { menu.classList.toggle('hidden'); });
         });
     </script>
 </body>

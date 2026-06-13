@@ -6,8 +6,12 @@ const SKIP = ['node_modules', '.git', '.vercel', '.vercel-tmp', 'og-images'];
 
 // The canonical global header HTML (extracted from index.html with fixes applied)
 // We use /#how-it-works instead of #how-it-works so it works on sub-pages
+// SUBPAGE_HEADER has an initial dark background so the header is visible immediately
 const GLOBAL_HEADER = `    <!-- Global Header -->
-    <header class="fixed top-0 w-full z-50 transition-all duration-300" id="global-header">
+    <header class="fixed top-0 w-full z-50 transition-all duration-300" id="global-header">`;
+const SUBPAGE_HEADER = `    <!-- Global Header -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300" id="global-header" style="background-color:#0a2540">`;
+const HEADER_BODY = `
         <div class="container mx-auto px-4 lg:px-8 py-4 flex justify-between items-center" style="gap:24px">
             <!-- Left: Logo + Desktop Nav -->
             <div class="flex items-center" style="gap:24px">
@@ -105,8 +109,7 @@ const GLOBAL_HEADER = `    <!-- Global Header -->
             <a href="/quote/" class="btn-primary inline-block mx-auto mt-4">Cost Calculator</a>
         </div>
     </header>`;
-
-// Scroll-to-dark JS snippet
+// Scroll-to-dark JS snippet (sub-pages start dark, so reset properly on scroll up)
 const SCROLL_JS = `    <script>
         window.addEventListener('scroll', () => {
             const header = document.getElementById('global-header');
@@ -114,7 +117,7 @@ const SCROLL_JS = `    <script>
                 header.style.backgroundColor = '#0a2540';
                 header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
             } else {
-                header.style.backgroundColor = 'transparent';
+                header.style.backgroundColor = '';
                 header.style.boxShadow = 'none';
             }
         });
@@ -148,13 +151,12 @@ function processFile(filePath) {
     const original = html;
     
     // --- PATTERN 1: Simple dark header (routes, services, blog) ---
-    // <header class="bg-[#0a2540] py-5 relative z-50">...</header>
     const simpleHeaderRegex = /<header class="bg-\[#0a2540\] py-5 relative z-50">[\s\S]*?<\/header>/;
     
     // --- PATTERN 2: Services index white header ---
     const servicesHeaderRegex = /<header class="w-full bg-white border-b border-\[#e6e6e6\][\s\S]*?<\/header>/;
     
-    // --- PATTERN 3: Existing global header (about, contact, faq, etc.) ---
+    // --- PATTERN 3: Existing global header (with or without style attribute) ---
     const globalHeaderRegex = /<!-- Global Header -->\s*<header class="fixed top-0 w-full z-50[\s\S]*?<\/header>/;
     
     // --- PATTERN 4: Old-style simple dark header without relative z-50 ---
@@ -164,51 +166,54 @@ function processFile(filePath) {
     
     if (globalHeaderRegex.test(html)) {
         headerType = 'global';
-        html = html.replace(globalHeaderRegex, GLOBAL_HEADER);
+        html = html.replace(globalHeaderRegex, SUBPAGE_HEADER + HEADER_BODY);
     } else if (simpleHeaderRegex.test(html)) {
         headerType = 'simple-dark';
-        html = html.replace(simpleHeaderRegex, GLOBAL_HEADER);
+        html = html.replace(simpleHeaderRegex, SUBPAGE_HEADER + HEADER_BODY);
     } else if (servicesHeaderRegex.test(html)) {
         headerType = 'services-white';
-        html = html.replace(servicesHeaderRegex, GLOBAL_HEADER);
+        html = html.replace(servicesHeaderRegex, SUBPAGE_HEADER + HEADER_BODY);
     } else if (oldSimpleHeaderRegex.test(html)) {
         headerType = 'old-simple';
-        html = html.replace(oldSimpleHeaderRegex, GLOBAL_HEADER);
+        html = html.replace(oldSimpleHeaderRegex, SUBPAGE_HEADER + HEADER_BODY);
+    } else if (html.includes('id="global-header"')) {
+        // Header exists but without the comment - try to add style to the header tag
+        headerType = 'global-no-comment';
+        // Ensure the header tag has the dark background style
+        html = html.replace(
+            /(<header[^>]*id="global-header")([^>]*)(?<!style="background-color:#0a2540")>/,
+            (match, before, rest) => {
+                if (before.includes('style="background-color:#0a2540"')) return match;
+                return `${before} style="background-color:#0a2540"${rest}>`;
+            }
+        );
     } else {
-        // Check if file already has the global header without the comment
-        if (html.includes('id="global-header"')) {
-            // Already has global header but maybe without comment - skip
-            skippedCount++;
-            return;
-        }
         console.log(`  SKIP (no header pattern found): ${rel}`);
         skippedCount++;
         return;
     }
     
     // For sub-pages that previously had static headers, add top padding to <main> or first section
-    // so content isn't hidden behind the fixed header
     if (headerType === 'simple-dark' || headerType === 'services-white' || headerType === 'old-simple') {
-        // Add pt-28 (7rem) to <main> if it doesn't already have padding-top
         if (html.includes('<main>') && !html.includes('<main class="pt-')) {
             html = html.replace('<main>', '<main class="pt-28">');
         } else if (html.includes('<main class="') && !html.includes('pt-')) {
             html = html.replace('<main class="', '<main class="pt-28 ');
         }
-        
-        // For route/service pages with hero sections that have bg-[#f6f9fc], add top padding
-        // to ensure the hero isn't hidden behind the fixed header
-        // These pages have: <section class="bg-[#f6f9fc] border-b border-[#e6e6e6]">
-        // We add pt-28 to make room for the fixed header
         html = html.replace(
             /(<main[^>]*>)\s*\n\s*(<!-- Hero Section -->)/,
             '$1\n        $2'
         );
     }
     
-    // Add scroll-to-dark JS if not already present
-    if (!html.includes("header.style.backgroundColor = '#0a2540'")) {
-        // Insert before </body>
+    // Ensure the sub-page scroll JS is present (with '' reset instead of 'transparent')
+    if (!html.includes("header.style.backgroundColor = ''")) {
+        // Remove old scroll JS if present
+        const oldScrollRegex = /\s*<script>\s*window\.addEventListener\('scroll'[\s\S]*?header\.style\.backgroundColor = 'transparent'[\s\S]*?<\/script>/;
+        if (oldScrollRegex.test(html)) {
+            html = html.replace(oldScrollRegex, '');
+        }
+        // Insert new scroll JS before </body>
         html = html.replace('</body>', SCROLL_JS + '\n</body>');
     }
     
