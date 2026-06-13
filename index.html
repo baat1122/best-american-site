@@ -1073,23 +1073,6 @@ footer .pt-8.border-t {
                         servicesSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
                     });
                 }
-
-                // Blog slider logic
-                const blogSlider = document.getElementById('blogSlider');
-                const btnPrevBlog = document.getElementById('prevBlog');
-                const btnNextBlog = document.getElementById('nextBlog');
-
-                if(blogSlider && btnPrevBlog && btnNextBlog) {
-                    const scrollAmount = 404; // Card width + gap (380px + 24px)
-
-                    btnNextBlog.addEventListener('click', () => {
-                        blogSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                    });
-
-                    btnPrevBlog.addEventListener('click', () => {
-                        blogSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                    });
-                }
             });
         </script>
 
@@ -1814,27 +1797,17 @@ footer .pt-8.border-t {
 
 <!-- Blog Section -->
 <section id="blog" class="py-24 bg-[#f6f9fc]">
-    <div class="container mx-auto px-4 lg:px-8 max-w-6xl reveal">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-            <div class="max-w-2xl">
-                <span class="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#635bff] bg-[#e0e7ff] px-4 py-1.5 rounded-full mb-4">From Our Blog</span>
-                <h2 class="text-3xl md:text-4xl font-black text-[#0a2540] tracking-tight">Expert Auto Transport Guides</h2>
-                <p class="text-[#425466] mt-4 leading-relaxed">Tips, cost breakdowns, and insider knowledge from our logistics team to help you ship with confidence.</p>
-            </div>
-            <div class="hidden md:flex gap-3 pb-2">
-                <button id="prevBlog" class="w-12 h-12 rounded-full border-2 border-[#e6e6e6] bg-white flex items-center justify-center hover:border-[#635bff] hover:text-[#635bff] text-[#0a2540] transition shadow-sm">
-                    <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                </button>
-                <button id="nextBlog" class="w-12 h-12 rounded-full border-2 border-[#e6e6e6] bg-white flex items-center justify-center hover:border-[#635bff] hover:text-[#635bff] text-[#0a2540] transition shadow-sm">
-                    <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                </button>
-            </div>
+    <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
+        <div class="text-center mb-14 reveal">
+            <span class="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#635bff] bg-[#e0e7ff] px-4 py-1.5 rounded-full mb-4">From Our Blog</span>
+            <h2 class="text-3xl md:text-4xl font-black text-[#0a2540] tracking-tight">Expert Auto Transport Guides</h2>
+            <p class="text-[#425466] mt-4 max-w-2xl mx-auto leading-relaxed">Tips, cost breakdowns, and insider knowledge from our logistics team to help you ship with confidence.</p>
         </div>
 
-        <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 -mx-4 px-4 lg:-mx-8 lg:px-8 custom-scrollbar" id="blogSlider">
+        <div class="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none gap-6 md:gap-8 pb-12 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 custom-scrollbar reveal" style="transition-delay: 150ms;">
 
             <!-- Article 1: Best Auto Transport Company -->
-            <a href="/blog/what-is-the-best-auto-transport-company-to-use/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#635bff] bg-white rounded-xl flex flex-col flex-none w-[85vw] md:w-[380px] snap-start">
+            <a href="/blog/what-is-the-best-auto-transport-company-to-use/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#635bff] bg-white rounded-xl flex flex-col flex-none w-[85vw] md:w-auto snap-start">
                 <div class="h-48 shrink-0 overflow-hidden">
                     <img src="/images/best-auto-transport-company.jpg" alt="Fleet of professional enclosed car carriers and open transport trucks delivering vehicles safely" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" width="600" height="315" loading="lazy" decoding="async">
                 </div>
@@ -1847,7 +1820,7 @@ footer .pt-8.border-t {
             </a>
 
             <!-- Article 2: Open vs Enclosed -->
-            <a href="/blog/open-vs-enclosed-auto-transport/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#635bff] bg-white rounded-xl flex flex-col flex-none w-[85vw] md:w-[380px] snap-start">
+            <a href="/blog/open-vs-enclosed-auto-transport/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#635bff] bg-white rounded-xl flex flex-col flex-none w-[85vw] md:w-auto snap-start">
                 <div class="h-48 shrink-0 overflow-hidden">
                     <img src="/images/open-vs-enclosed-transport-card.webp" alt="Luxury sports car being loaded onto an open car carrier truck for transport" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" width="600" height="315" loading="eager" decoding="async">
                 </div>
@@ -1860,7 +1833,7 @@ footer .pt-8.border-t {
             </a>
 
             <!-- Article 3: True Cost -->
-            <a href="/blog/true-cost-of-car-shipping-2026/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#00D4FF] bg-white rounded-xl flex flex-col flex-none w-[85vw] md:w-[380px] snap-start">
+            <a href="/blog/true-cost-of-car-shipping-2026/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#00D4FF] bg-white rounded-xl flex flex-col flex-none w-[85vw] md:w-auto snap-start">
                 <div class="h-48 shrink-0 overflow-hidden">
                     <img src="/images/true-cost-car-shipping-2026-card.webp" alt="Professional car transport team loading a classic red Jaguar onto an enclosed auto transport trailer - premium vehicle shipping service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" width="600" height="315" loading="lazy" decoding="async">
                 </div>
@@ -1873,7 +1846,7 @@ footer .pt-8.border-t {
             </a>
 
             <!-- Article 4: Preparation Checklist -->
-            <a href="/blog/how-to-prepare-car-for-shipping/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#39FF14] bg-white rounded-xl flex flex-col flex-none w-[85vw] md:w-[380px] snap-start">
+            <a href="/blog/how-to-prepare-car-for-shipping/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#39FF14] bg-white rounded-xl flex flex-col flex-none w-[85vw] md:w-auto snap-start">
                 <div class="h-48 shrink-0 overflow-hidden">
                     <img src="/images/prepare-car-for-shipping-card.webp" alt="White Volvo car carrier truck transporting luxury SUVs and sedans on scenic coastal highway - cross-country auto transport service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" width="600" height="315" loading="lazy" decoding="async">
                 </div>
@@ -1886,7 +1859,7 @@ footer .pt-8.border-t {
             </a>
 
             <!-- Article 5: Cross Country Cost -->
-            <a href="/blog/how-much-does-it-cost-to-ship-a-car-across-the-country/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#635bff] bg-white rounded-xl flex flex-col flex-none w-[85vw] md:w-[380px] snap-start">
+            <a href="/blog/how-much-does-it-cost-to-ship-a-car-across-the-country/" class="stripe-card overflow-hidden group hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#635bff] bg-white rounded-xl flex flex-col flex-none w-[85vw] md:w-auto snap-start">
                 <div class="h-48 shrink-0 overflow-hidden">
                     <img src="/images/enclosed-car-carrier-coastal-highway-card.webp" alt="Enclosed car carrier truck transporting vehicles on scenic coastal highway" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" width="600" height="315" loading="lazy" decoding="async">
                 </div>
