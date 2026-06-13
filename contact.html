@@ -485,24 +485,33 @@ footer .pt-8.border-t {
 
     <main>
         <!-- Slanted Hero Header -->
-        <section class="relative pt-20 stripe-gradient-bg slant-bottom overflow-hidden" style="padding-bottom:60px">
+        <section class="relative stripe-gradient-bg overflow-hidden" style="padding-top:140px;padding-bottom:120px;clip-path:polygon(0 0,100% 0,100% 88%,0 100%)">
             <canvas id="particleCanvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none" style="position:absolute;top:0;left:0;width:100%;height:100%"></canvas>
             <div class="container mx-auto px-4 lg:px-8 z-10 relative text-center text-white max-w-4xl">
                 <span class="px-4 py-1.5 rounded-full bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.3)] text-white text-xs font-bold uppercase tracking-wider mb-6 inline-block">
-                    Get In Touch
+                    We're Here to Help
                 </span>
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-none mb-6 tracking-tighter">
-                    Contact Us
+                    Get In <span style="color: #00D1FF">Touch</span>
                 </h1>
-                <p class="text-lg md:text-xl text-[rgba(255,255,255,0.9)] max-w-2xl mx-auto leading-relaxed">
-                    Have questions about your vehicle transport? Get in touch with our auto shipping specialists directly or submit an online request.
+                <p class="text-lg md:text-xl text-[rgba(255,255,255,0.9)] max-w-2xl mx-auto leading-relaxed mb-8">
+                    Have questions about your vehicle transport? Our auto shipping specialists are available 7 days a week — call, email, or submit a request.
                 </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="tel:5715767711" class="bg-[#39FF14] text-[#0a2540] px-8 py-3.5 rounded-full font-black text-lg hover:bg-[#32e011] transition shadow-[0_0_20px_rgba(57,255,20,0.4)]">
+                        Call (571) 576-7711
+                    </a>
+                    <a href="#contact-form" class="px-8 py-3.5 rounded-full font-black text-lg border-2 border-white text-white hover:bg-white hover:text-[#0a2540] transition">
+                        Send a Message
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- Main Content -->
-        <section class="py-24 bg-white relative z-10 -mt-16 overlap-up container mx-auto px-4 lg:px-8 max-w-6xl">
-            <div class="grid lg:grid-cols-12 gap-12 items-start">
+        <section class="py-20 bg-white relative z-10" style="margin-top:-60px">
+            <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
+                <div class="grid lg:grid-cols-12 gap-12 items-start">
                 
                 <!-- Left: Contact Details Cards -->
                 <div class="lg:col-span-5 space-y-6">
@@ -586,6 +595,7 @@ footer .pt-8.border-t {
                         </button>
                     </form>
                 </div>
+            </div>
             </div>
         </section>
     </main>
