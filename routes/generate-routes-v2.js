@@ -310,61 +310,61 @@ statesData.forEach(state => {
     if (sData) {
         const heroDesc = `Planning to ship a car to or from ${state.name}? Whether you're relocating to ${sData.nickname} or sending a vehicle across the country, navigating ${sData.highway} and dealing with ${sData.climate} can be challenging. Neon Auto Transport ensures a stress-free experience tailored for ${sData.terrain}, with upfront pricing and a highly vetted carrier network ready to handle ${sData.challenge}.`;
         
-        const stateImages = {
-            "Alabama": "photo-1593113598332-cd288d649433",
-            "Alaska": "photo-1531324437-009d7906d2b8",
-            "Arizona": "photo-1474015081324-898997eccd8e",
-            "Arkansas": "photo-1475924156734-496f6cac6ec1",
-            "California": "photo-1502082553048-f009c37129b9",
-            "Colorado": "photo-1464822759023-fed622ff2c3b",
-            "Connecticut": "photo-1509062522246-3755977927d7",
-            "Delaware": "photo-1505245208761-ba872912fac0",
-            "Florida": "photo-1507525428034-b723cf961d3e",
-            "Georgia": "photo-1513836279014-a89f7a76ae86",
-            "Hawaii": "photo-1506744038136-46273834b3fb",
-            "Idaho": "photo-1510784722466-f2aa9c52dde6",
-            "Illinois": "photo-1486915309851-b0cc1f8a0084",
-            "Indiana": "photo-1447752875215-b2761acb3c5d",
-            "Iowa": "photo-1470240731273-7821a6eeb6bd",
-            "Kansas": "photo-1500530855697-b586d89ba3ee",
-            "Kentucky": "photo-1518495973542-4542c06a5843",
-            "Louisiana": "photo-1472214222541-d510753a8707",
-            "Maine": "photo-1501854140801-50d01698950b",
-            "Maryland": "photo-1470770841072-f978cf4d019e",
-            "Massachusetts": "photo-1465146344425-f00d5f5c8f07",
-            "Michigan": "photo-1433832597046-4f10e10ac764",
-            "Minnesota": "photo-1461896836934-ffe607ba8211",
-            "Mississippi": "photo-1528164344705-47542687000d",
-            "Missouri": "photo-1488521787991-ed7bbaae773c",
-            "Montana": "photo-1426604966848-d7adac402bff",
-            "Nebraska": "photo-1501785888041-af3ef285b470",
-            "Nevada": "photo-1434064511983-18c6dae20ed5",
-            "New Hampshire": "photo-1533105079780-92b9be482077",
-            "New Jersey": "photo-1482862549707-f63cb32c5fd9",
-            "New Mexico": "photo-1490604001847-b712b0c2f957",
-            "New York": "photo-1513407030348-c983a97b98d8",
-            "North Carolina": "photo-1478147427282-58a87a120781",
-            "North Dakota": "photo-1508873696983-2df519f0397e",
-            "Ohio": "photo-1534447677768-be436bb09401",
-            "Oklahoma": "photo-1516690561799-46d8f74f90f6",
-            "Oregon": "photo-1506260408121-e353d10b87c7",
-            "Pennsylvania": "photo-1439853949127-fa647821eba0",
-            "Rhode Island": "photo-1520250497591-112f2f40a3f4",
-            "South Carolina": "photo-1493976040374-85c8e12f0c0e",
-            "South Dakota": "photo-1469571486040-4b9b17502f25",
-            "Tennessee": "photo-1483728642387-6c3bdd6c93e5",
-            "Texas": "photo-1504893524553-ac55fce69fbf",
-            "Utah": "photo-1487014679447-9f8336841d58",
-            "Vermont": "photo-1470071459604-3b5ec3a7fe05",
-            "Virginia": "photo-1542362567-b07e54358753",
-            "Washington": "photo-1502877338535-34cb0bf4ead3",
-            "Washington DC": "photo-1502877338535-34cb0bf4ead3",
-            "West Virginia": "photo-1469854523086-cc02fe5d8800",
-            "Wisconsin": "photo-1494783367193-149034c05e8f",
-            "Wyoming": "photo-1449844908441-8829872d2607"
+                const stateImages = {
+  "Alabama": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Alabama.svg/1280px-Flag_of_Alabama.svg.png",
+  "Alaska": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Alaska.svg/1280px-Flag_of_Alaska.svg.png",
+  "Arizona": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arizona.svg/1280px-Flag_of_Arizona.svg.png",
+  "Arkansas": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arkansas.svg/1280px-Flag_of_Arkansas.svg.png",
+  "California": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/1280px-Flag_of_California.svg.png",
+  "Colorado": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Flag_of_Colorado.svg/1280px-Flag_of_Colorado.svg.png",
+  "Connecticut": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Flag_of_Connecticut.svg/1280px-Flag_of_Connecticut.svg.png",
+  "Delaware": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Flag_of_Delaware.svg/1280px-Flag_of_Delaware.svg.png",
+  "Florida": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Florida.svg/1280px-Flag_of_Florida.svg.png",
+  "Georgia": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_the_State_of_Georgia.svg/1280px-Flag_of_the_State_of_Georgia.svg.png",
+  "Hawaii": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Flag_of_Hawaii.svg/1280px-Flag_of_Hawaii.svg.png",
+  "Idaho": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_Idaho.svg/1280px-Flag_of_Idaho.svg.png",
+  "Illinois": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Illinois.svg/1280px-Flag_of_Illinois.svg.png",
+  "Indiana": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Flag_of_Indiana.svg/1280px-Flag_of_Indiana.svg.png",
+  "Iowa": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_Iowa.svg/1280px-Flag_of_Iowa.svg.png",
+  "Kansas": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Flag_of_Kansas.svg/1280px-Flag_of_Kansas.svg.png",
+  "Kentucky": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Flag_of_Kentucky.svg/1280px-Flag_of_Kentucky.svg.png",
+  "Louisiana": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Flag_of_Louisiana.svg/1280px-Flag_of_Louisiana.svg.png",
+  "Maine": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Flag_of_Maine.svg/1280px-Flag_of_Maine.svg.png",
+  "Maryland": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Flag_of_Maryland.svg/1280px-Flag_of_Maryland.svg.png",
+  "Massachusetts": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Massachusetts.svg/1280px-Flag_of_Massachusetts.svg.png",
+  "Michigan": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Flag_of_Michigan.svg/1280px-Flag_of_Michigan.svg.png",
+  "Minnesota": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Minnesota.svg/1280px-Flag_of_Minnesota.svg.png",
+  "Mississippi": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_Mississippi.svg/1280px-Flag_of_Mississippi.svg.png",
+  "Missouri": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Flag_of_Missouri.svg/1280px-Flag_of_Missouri.svg.png",
+  "Montana": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_Montana.svg/1280px-Flag_of_Montana.svg.png",
+  "Nebraska": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Flag_of_Nebraska.svg/1280px-Flag_of_Nebraska.svg.png",
+  "Nevada": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Flag_of_Nevada.svg/1280px-Flag_of_Nevada.svg.png",
+  "New Hampshire": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Flag_of_New_Hampshire.svg/1280px-Flag_of_New_Hampshire.svg.png",
+  "New Jersey": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_New_Jersey.svg/1280px-Flag_of_New_Jersey.svg.png",
+  "New Mexico": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_New_Mexico.svg/1280px-Flag_of_New_Mexico.svg.png",
+  "New York": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_New_York.svg/1280px-Flag_of_New_York.svg.png",
+  "North Carolina": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Flag_of_North_Carolina.svg/1280px-Flag_of_North_Carolina.svg.png",
+  "North Dakota": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Flag_of_North_Dakota.svg/1280px-Flag_of_North_Dakota.svg.png",
+  "Ohio": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Ohio.svg/1280px-Flag_of_Ohio.svg.png",
+  "Oklahoma": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Flag_of_Oklahoma.svg/1280px-Flag_of_Oklahoma.svg.png",
+  "Oregon": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Oregon.svg/1280px-Flag_of_Oregon.svg.png",
+  "Pennsylvania": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Pennsylvania.svg/1280px-Flag_of_Pennsylvania.svg.png",
+  "Rhode Island": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Rhode_Island.svg/1280px-Flag_of_Rhode_Island.svg.png",
+  "South Carolina": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_South_Carolina.svg/1280px-Flag_of_South_Carolina.svg.png",
+  "South Dakota": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_South_Dakota.svg/1280px-Flag_of_South_Dakota.svg.png",
+  "Tennessee": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Tennessee.svg/1280px-Flag_of_Tennessee.svg.png",
+  "Texas": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Texas.svg/1280px-Flag_of_Texas.svg.png",
+  "Utah": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Utah.svg/1280px-Flag_of_Utah.svg.png",
+  "Vermont": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Vermont.svg/1280px-Flag_of_Vermont.svg.png",
+  "Virginia": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Flag_of_Virginia.svg/1280px-Flag_of_Virginia.svg.png",
+  "Washington": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Flag_of_Washington.svg/1280px-Flag_of_Washington.svg.png",
+  "Washington D.C.": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Washington%2C_D.C.svg/1280px-Flag_of_Washington%2C_D.C.svg.png",
+  "West Virginia": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flag_of_West_Virginia.svg/1280px-Flag_of_West_Virginia.svg.png",
+  "Wisconsin": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flag_of_Wisconsin.svg/1280px-Flag_of_Wisconsin.svg.png",
+  "Wyoming": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Wyoming.svg/1280px-Flag_of_Wyoming.svg.png",
         };
-        const photoId = stateImages[state.name] || "photo-1469854523086-cc02fe5d8800";
-        const imgUrl = `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=1200&q=60`;
+
+        const imgUrl = stateImages[state.name] || "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=60";
         
         // Layouts
         const layoutA = `
@@ -434,9 +434,7 @@ statesData.forEach(state => {
             </div>
         </section>`;
 
-        const layouts = [layoutA, layoutB, layoutC];
-        // Deterministic layout selection
-        const selectedLayout = layouts[state.name.length % layouts.length];
+        const selectedLayout = layoutC;
 
         // Replace remaining standalone Richmond references with state hub
         content = content.replace(/Richmond/g, sData.hub);
