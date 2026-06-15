@@ -310,15 +310,61 @@ statesData.forEach(state => {
     if (sData) {
         const heroDesc = `Planning to ship a car to or from ${state.name}? Whether you're relocating to ${sData.nickname} or sending a vehicle across the country, navigating ${sData.highway} and dealing with ${sData.climate} can be challenging. Neon Auto Transport ensures a stress-free experience tailored for ${sData.terrain}, with upfront pricing and a highly vetted carrier network ready to handle ${sData.challenge}.`;
         
-        const images = [
-            "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=60",
-            "https://images.unsplash.com/photo-1494783367193-149034c05e8f?auto=format&fit=crop&w=1200&q=60",
-            "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=60",
-            "https://images.unsplash.com/photo-1502877338535-34cb0bf4ead3?auto=format&fit=crop&w=1200&q=60",
-            "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=60"
-        ];
-        // Deterministic image selection based on state name length
-        const imgUrl = images[state.name.length % images.length];
+        const stateImages = {
+            "Alabama": "photo-1593113598332-cd288d649433",
+            "Alaska": "photo-1531324437-009d7906d2b8",
+            "Arizona": "photo-1474015081324-898997eccd8e",
+            "Arkansas": "photo-1475924156734-496f6cac6ec1",
+            "California": "photo-1502082553048-f009c37129b9",
+            "Colorado": "photo-1464822759023-fed622ff2c3b",
+            "Connecticut": "photo-1509062522246-3755977927d7",
+            "Delaware": "photo-1505245208761-ba872912fac0",
+            "Florida": "photo-1507525428034-b723cf961d3e",
+            "Georgia": "photo-1513836279014-a89f7a76ae86",
+            "Hawaii": "photo-1506744038136-46273834b3fb",
+            "Idaho": "photo-1510784722466-f2aa9c52dde6",
+            "Illinois": "photo-1486915309851-b0cc1f8a0084",
+            "Indiana": "photo-1447752875215-b2761acb3c5d",
+            "Iowa": "photo-1470240731273-7821a6eeb6bd",
+            "Kansas": "photo-1500530855697-b586d89ba3ee",
+            "Kentucky": "photo-1518495973542-4542c06a5843",
+            "Louisiana": "photo-1472214222541-d510753a8707",
+            "Maine": "photo-1501854140801-50d01698950b",
+            "Maryland": "photo-1470770841072-f978cf4d019e",
+            "Massachusetts": "photo-1465146344425-f00d5f5c8f07",
+            "Michigan": "photo-1433832597046-4f10e10ac764",
+            "Minnesota": "photo-1461896836934-ffe607ba8211",
+            "Mississippi": "photo-1528164344705-47542687000d",
+            "Missouri": "photo-1488521787991-ed7bbaae773c",
+            "Montana": "photo-1426604966848-d7adac402bff",
+            "Nebraska": "photo-1501785888041-af3ef285b470",
+            "Nevada": "photo-1434064511983-18c6dae20ed5",
+            "New Hampshire": "photo-1533105079780-92b9be482077",
+            "New Jersey": "photo-1482862549707-f63cb32c5fd9",
+            "New Mexico": "photo-1490604001847-b712b0c2f957",
+            "New York": "photo-1513407030348-c983a97b98d8",
+            "North Carolina": "photo-1478147427282-58a87a120781",
+            "North Dakota": "photo-1508873696983-2df519f0397e",
+            "Ohio": "photo-1534447677768-be436bb09401",
+            "Oklahoma": "photo-1516690561799-46d8f74f90f6",
+            "Oregon": "photo-1506260408121-e353d10b87c7",
+            "Pennsylvania": "photo-1439853949127-fa647821eba0",
+            "Rhode Island": "photo-1520250497591-112f2f40a3f4",
+            "South Carolina": "photo-1493976040374-85c8e12f0c0e",
+            "South Dakota": "photo-1469571486040-4b9b17502f25",
+            "Tennessee": "photo-1483728642387-6c3bdd6c93e5",
+            "Texas": "photo-1504893524553-ac55fce69fbf",
+            "Utah": "photo-1487014679447-9f8336841d58",
+            "Vermont": "photo-1470071459604-3b5ec3a7fe05",
+            "Virginia": "photo-1542362567-b07e54358753",
+            "Washington": "photo-1502877338535-34cb0bf4ead3",
+            "Washington DC": "photo-1502877338535-34cb0bf4ead3",
+            "West Virginia": "photo-1469854523086-cc02fe5d8800",
+            "Wisconsin": "photo-1494783367193-149034c05e8f",
+            "Wyoming": "photo-1449844908441-8829872d2607"
+        };
+        const photoId = stateImages[state.name] || "photo-1469854523086-cc02fe5d8800";
+        const imgUrl = `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=1200&q=60`;
         
         // Layouts
         const layoutA = `
