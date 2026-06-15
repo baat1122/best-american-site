@@ -447,8 +447,8 @@ statesData.forEach(state => {
         // Replace state nickname
         content = content.replace(/Old Dominion State/g, sData.nickname);
 
-        const heroRegex = /<section class="bg-\[#0a2540\] text-white pt-24 pb-40 slant-bottom relative[^"]*">[\s\S]*?<\/section>/;
-        content = content.replace(heroRegex, selectedLayout);
+        const heroRegex = /<!-- Hero Section -->\s*<section[\s\S]*?<\/section>/;
+        content = content.replace(heroRegex, `<!-- Hero Section -->\n        ` + selectedLayout);
 
         content = content.replace(
             new RegExp(`For pickups and drop-offs in ${state.name}, choose a location near major highways\\. Spots close to [^<]+attract more carriers`, 'g'),
