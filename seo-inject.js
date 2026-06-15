@@ -190,7 +190,7 @@ function buildStateHead(state, data, slug) {
   const { nickname, highway, hub, climate, terrain, challenge } = data;
   const title = `${state} Car Shipping | Auto Transport to & from ${state} | Neon Auto Transport`;
   const desc = `Ship your car to or from ${state}, ${nickname}. Neon Auto Transport provides fully insured door-to-door vehicle transport along ${highway} serving ${hub} and all of ${state}. FMCSA approved. Get a free instant quote.`;
-  const url = `${BASE_URL}/routes/${slug}`;
+  const url = `${BASE_URL}/${slug}`;
   const keywords = `${state} car shipping, ${state} auto transport, ship car to ${state}, vehicle transport ${state}, car shipping from ${state}, ${hub} auto transport`;
 
   return `<!DOCTYPE html>
