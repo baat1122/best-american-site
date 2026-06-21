@@ -10,6 +10,7 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/why-best-american", "destination": "/why-best-american.html" },
-    { "source": "/blog/:slug", "destination": "/blog/:slug.html" }
+    { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
+    { "source": "/:state-car-shipping", "destination": "/routes/:state-car-shipping/index.html" }
   ]
 }
