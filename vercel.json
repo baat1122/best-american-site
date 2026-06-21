@@ -1,6 +1,17 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/faq", "destination": "/faq.html" },
+    { "source": "/reviews", "destination": "/reviews.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/locations", "destination": "/locations.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/why-best-american", "destination": "/why-best-american.html" },
+    { "source": "/blog/:slug", "destination": "/blog/:slug.html" }
+  ],
   "installCommand": "echo 'skipping install'",
   "buildCommand": "echo 'skipping build'"
 }
