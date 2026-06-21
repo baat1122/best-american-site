@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -528,9 +528,9 @@
         }
     </style>
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
 </head>
 <body>
 
@@ -554,8 +554,8 @@
                 <h1>BEST AMERICAN <span>DISPATCH</span></h1>
             </div>
             <div class="dash-header-right">
-                <button class="dash-btn" onclick="refreshLeads()">↻ Refresh</button>
-                <button class="dash-btn" onclick="exportCSV()">↓ Export CSV</button>
+                <button class="dash-btn" onclick="refreshLeads()">? Refresh</button>
+                <button class="dash-btn" onclick="exportCSV()">? Export CSV</button>
                 <button class="dash-btn danger" onclick="logout()">Logout</button>
             </div>
         </div>
@@ -626,7 +626,7 @@
     </div>
 
     <script>
-        // Simple password — for demo/internal use only. Production should use proper auth.
+        // Simple password � for demo/internal use only. Production should use proper auth.
         const DASHBOARD_PASSWORD = 'neon2026';
 
         let allLeads = [];
@@ -700,7 +700,7 @@
             var filtered = filter === 'all' ? allLeads : allLeads.filter(function(l) { return l.status === filter; });
 
             if (filtered.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="9"><div class="empty-state"><div class="icon">📭</div><h3>No leads yet</h3><p>Leads captured by the AI chat widget will appear here automatically.</p></div></td></tr>';
+                tbody.innerHTML = '<tr><td colspan="9"><div class="empty-state"><div class="icon">??</div><h3>No leads yet</h3><p>Leads captured by the AI chat widget will appear here automatically.</p></div></td></tr>';
                 return;
             }
 
@@ -709,7 +709,7 @@
                 var f = lead.fields || {};
                 var name = ((f.firstName || '') + ' ' + (f.lastName || '')).trim() || 'Unknown';
                 var phone = f.phone || '-';
-                var route = 'Zip: ' + (f.pickupZip || '?') + ' → Zip: ' + (f.deliveryZip || '?');
+                var route = 'Zip: ' + (f.pickupZip || '?') + ' ? Zip: ' + (f.deliveryZip || '?');
                 var vehicle = ((f.vehicleYear || '') + ' ' + (f.vehicleMake || '') + ' ' + (f.vehicleModel || '')).trim() || '-';
                 var transport = f.transportType || '-';
                 var date = lead.createdAt ? new Date(lead.createdAt).toLocaleDateString() : '-';
@@ -824,9 +824,9 @@
                 '<button class="modal-save-btn" onclick="saveLead(\'' + lead.id + '\')">Save Changes</button>';
 
             if (lead.syncedWithCRM) {
-                document.getElementById('modal-body').innerHTML += '<div class="modal-synced-badge">✓ Synced with Best American CRM</div>';
+                document.getElementById('modal-body').innerHTML += '<div class="modal-synced-badge">? Synced with Best American CRM</div>';
             } else {
-                document.getElementById('modal-body').innerHTML += '<button class="modal-crm-btn" id="modal-crm-btn" onclick="sendToCRM(\'' + lead.id + '\')">📤 Send to Best American CRM</button>';
+                document.getElementById('modal-body').innerHTML += '<button class="modal-crm-btn" id="modal-crm-btn" onclick="sendToCRM(\'' + lead.id + '\')">?? Send to Best American CRM</button>';
             }
 
             document.getElementById('modal-overlay').classList.add('active');
@@ -885,7 +885,7 @@
                     alert('Error saving to CRM: ' + (data.message || 'Unknown error'));
                     if (btn) {
                         btn.disabled = false;
-                        btn.textContent = '📤 Send to Best American CRM';
+                        btn.textContent = '?? Send to Best American CRM';
                     }
                 }
             })
@@ -893,7 +893,7 @@
                 alert('Connection failure to CRM API: ' + err.message);
                 if (btn) {
                     btn.disabled = false;
-                    btn.textContent = '📤 Send to Best American CRM';
+                    btn.textContent = '?? Send to Best American CRM';
                 }
             });
         }
