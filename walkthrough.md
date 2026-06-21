@@ -115,7 +115,7 @@ All 50 states + Washington DC route pages were regenerated with Best American br
   - Updated the access key hidden inputs in the Homepage mini-quote form ([index.html](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/index.html)), the dedicated calculator page ([quote/index.html](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/quote/index.html)), and the contact page form ([contact.html](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/contact.html)).
   - Synced the chatbot lead submission key in [js/chatbot.js](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/js/chatbot.js) to use the new API key as well, ensuring AI-generated leads are also correctly routed to Gmail.
 - **Gemini API Integration for Chatbot**:
-  - Configured the sales chatbot backend handler ([api/chat.js](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/api/chat.js)) to authenticate and request chat generation directly using the new Gemini API Key (`AQ.Ab8RN6J2lyEfxnWXHY2R8tisdYKAWZFnsi94QXrJuAtL_ZOfXw`).
+  - Configured the sales chatbot backend handler ([api/chat.js](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/api/chat.js)) to authenticate and request chat generation directly using the new Gemini API Key (`YOUR_GEMINI_API_KEY`).
   - Added the credentials to the local configuration [`.env`](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/.env) file to enable full chat functionality on local developer servers.
 - **Favicon Asset Replacement**:
   - Resized the client's official high-resolution PNG logo to generate 16x16, 32x32, 48x48, and 180x180 sizes.

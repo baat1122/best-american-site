@@ -48,7 +48,7 @@ Open your terminal (PowerShell, Command Prompt, or VS Code Terminal) in the proj
    * Leave the **Root Directory** as `./`.
 5. Expand the **Environment Variables** section and add the following:
    * **Name**: `GEMINI_API_KEY`
-   * **Value**: `AQ.Ab8RN6J2lyEfxnWXHY2R8tisdYKAWZFnsi94QXrJuAtL_ZOfXw`
+   * **Value**: `YOUR_GEMINI_API_KEY`
 6. Click the **Deploy** button.
 
 Once Vercel finishes the deployment, you will receive a production URL (e.g. `https://best-american-site.vercel.app`) where your website, cost calculator, forms, and conversational AI chatbot will all be fully functional and connected!

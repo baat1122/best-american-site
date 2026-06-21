@@ -8,7 +8,7 @@
   const CONFIG = {
     apiEndpoint: '/api/chat',
     web3formsKey: '39370f4e-9eb6-47ed-99a2-31569ae34b2a',
-    geminiApiKey: 'AQ.Ab8RN6J2lyEfxnWXHY2R8tisdYKAWZFnsi94QXrJuAtL_ZOfXw',
+    geminiApiKey: '',
     phone: '(302) 355-5544',
     phoneRaw: '3023555544',
     maxMessages: 60,
