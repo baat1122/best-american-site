@@ -146,3 +146,10 @@ All 50 states + Washington DC route pages were regenerated with Best American br
   - Resized floating bubble launcher to `56x56px` with a snug `16px` margin on mobile screens.
   - Configured the chat window when opened to adapt to a clean, native full-screen view (`100%` width/height, `0` border radius) on screens under 640px.
   - Scaled up the close button to `40x40px` and adjusted margins to ensure tap compatibility.
+
+---
+
+## Clean URL Routing & Chatbot Injection (June 21) ✅
+- **Explicit Vercel Rewrite Rules**: Configured `vercel.json` with explicit rewrite rules for extensionless clean URLs (`/about`, `/faq`, `/reviews`, `/contact`, `/locations`, `/privacy`, `/terms`, `/why-best-american`, and `/blog/:slug`) routing to their corresponding flat `.html` files. Combined with `"trailingSlash": false`, this automatically and gracefully handles redirecting `/blog/slug/` -> `/blog/slug` -> `/blog/slug.html` without breaking layouts or displaying 404s.
+- **Chatbot Injection**: Scanned and injected the Best American AI Chatbot CSS/JS code blocks before `</body>` in the remaining 9 pages that were missing them (`about.html`, `faq.html`, `reviews.html`, `blog/index.html`, and 5 blog subpages) as well as the generator template `routes/route-template.html` to ensure full coverage.
+- **Committed & Pushed**: staged, committed, and pushed these updates to the remote GitHub repository (`baat1122/best-american-site`) on the `main` branch.
