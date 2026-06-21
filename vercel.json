@@ -1,0 +1,5 @@
+{
+  "cleanUrls": true,
+  "installCommand": "echo 'skipping install'",
+  "buildCommand": "echo 'skipping build'"
+}
