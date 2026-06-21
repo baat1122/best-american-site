@@ -1,4 +1,4 @@
-﻿/* css/styles.css */
+/* css/styles.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -257,9 +257,9 @@ input:focus, select:focus {
   }
 
   /* Reduce hero section vertical padding to improve mobile scroll */
-  .min-h-screen .py-32 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  #hero-section {
+    padding-top: 6rem !important;
+    padding-bottom: 8rem !important;
   }
 
   /* Service carousel cards: reduce horizontal padding */
@@ -297,6 +297,39 @@ input:focus, select:focus {
 }
 
 /* Chat bubble clearance — all screen sizes */
+/* Chat bubble clearance — all screen sizes */
 footer .pt-8.border-t {
   padding-right: 80px;
 }
+
+/* Global mobile responsiveness safety guards */
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Logo scaling to prevent wrapping or horizontal overflow on small displays */
+@media (max-width: 480px) {
+  #logo-text {
+    font-size: 1.15rem !important;
+  }
+}
+@media (max-width: 360px) {
+  #logo-text {
+    font-size: 1.0rem !important;
+  }
+}
+
+/* Prevent iOS browser auto-zooming on selecting form fields */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Limit mobile header menu height and add vertical scrolling for short screens */
+#mobile-menu {
+  max-height: calc(100vh - 80px) !important;
+  overflow-y: auto !important;
+}
+
