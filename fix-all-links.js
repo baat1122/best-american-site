@@ -25,13 +25,13 @@ for (const filePath of allHtml) {
   // Fix any remaining href="#" for Terms & Conditions
   const termsRegex = /<a href="#"[^>]*>Terms\s*&\s*Conditions<\/a>/g;
   if (termsRegex.test(content)) {
-    content = content.replace(termsRegex, '<a href="/terms/" class="hover:text-[#635bff] transition">Terms & Conditions</a>');
+    content = content.replace(termsRegex, '<a href="/terms/" class="hover:text-[#800020] transition">Terms & Conditions</a>');
     changed = true;
   }
   // Also fix Privacy Policy links that point to #
   const privacyRegex = /<a href="#"[^>]*>Privacy Policy<\/a>/g;
   if (privacyRegex.test(content)) {
-    content = content.replace(privacyRegex, '<a href="/privacy/" class="hover:text-[#635bff] transition">Privacy Policy</a>');
+    content = content.replace(privacyRegex, '<a href="/privacy/" class="hover:text-[#800020] transition">Privacy Policy</a>');
     changed = true;
   }
   if (changed) {

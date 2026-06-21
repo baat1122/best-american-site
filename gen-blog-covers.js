@@ -1,4 +1,4 @@
-const sharp = require('sharp');
+﻿const sharp = require('sharp');
 
 async function generateCovers() {
     console.log('Starting cover generation...');
@@ -13,8 +13,8 @@ async function generateCovers() {
                 <stop offset="100%" style="stop-color:#1a3a5c"/>
             </linearGradient>
             <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#39FF14"/>
-                <stop offset="100%" style="stop-color:#00d4ff"/>
+                <stop offset="0%" style="stop-color:#D4AF37"/>
+                <stop offset="100%" style="stop-color:#D4AF37"/>
             </linearGradient>
         </defs>
         <rect width="1200" height="630" fill="url(#bg1)"/>
@@ -42,19 +42,19 @@ async function generateCovers() {
         
         <!-- Checklist icon -->
         <g transform="translate(80, 120)">
-            <rect x="0" y="0" width="80" height="100" rx="8" fill="none" stroke="#39FF14" stroke-width="3" opacity="0.8"/>
+            <rect x="0" y="0" width="80" height="100" rx="8" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.8"/>
             <line x1="15" y1="25" x2="65" y2="25" stroke="#fff" stroke-width="2" opacity="0.5"/>
             <line x1="15" y1="45" x2="65" y2="45" stroke="#fff" stroke-width="2" opacity="0.5"/>
             <line x1="15" y1="65" x2="50" y2="65" stroke="#fff" stroke-width="2" opacity="0.5"/>
-            <circle cx="75" cy="25" r="8" fill="#39FF14" opacity="0.8"/>
+            <circle cx="75" cy="25" r="8" fill="#D4AF37" opacity="0.8"/>
             <path d="M71,25 L74,28 L79,22" fill="none" stroke="#0a2540" stroke-width="2"/>
-            <circle cx="75" cy="45" r="8" fill="#39FF14" opacity="0.8"/>
+            <circle cx="75" cy="45" r="8" fill="#D4AF37" opacity="0.8"/>
             <path d="M71,45 L74,48 L79,42" fill="none" stroke="#0a2540" stroke-width="2"/>
         </g>
         
         <!-- Badge -->
-        <rect x="80" y="260" width="120" height="32" rx="16" fill="rgba(57,255,20,0.15)" stroke="#39FF14" stroke-width="1"/>
-        <text x="140" y="281" text-anchor="middle" fill="#39FF14" font-family="Arial, sans-serif" font-size="14" font-weight="bold">CHECKLIST</text>
+        <rect x="80" y="260" width="120" height="32" rx="16" fill="rgba(57,255,20,0.15)" stroke="#D4AF37" stroke-width="1"/>
+        <text x="140" y="281" text-anchor="middle" fill="#D4AF37" font-family="Arial, sans-serif" font-size="14" font-weight="bold">CHECKLIST</text>
         
         <!-- Title -->
         <text x="80" y="340" fill="#ffffff" font-family="Arial, sans-serif" font-size="42" font-weight="900">How to Prepare Your</text>
@@ -67,7 +67,7 @@ async function generateCovers() {
         <rect x="0" y="580" width="1200" height="4" fill="url(#accent1)"/>
         
         <!-- Logo text -->
-        <text x="80" y="540" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="800" opacity="0.6">NEON AUTO TRANSPORT</text>
+        <text x="80" y="540" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="800" opacity="0.6">BEST AMERICAN AUTO TRANSPORT INC</text>
     </svg>`;
 
     // Cover 2: Cost Guide
@@ -80,12 +80,12 @@ async function generateCovers() {
                 <stop offset="100%" style="stop-color:#122840"/>
             </linearGradient>
             <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#00d4ff"/>
-                <stop offset="100%" style="stop-color:#635bff"/>
+                <stop offset="0%" style="stop-color:#D4AF37"/>
+                <stop offset="100%" style="stop-color:#800020"/>
             </linearGradient>
             <linearGradient id="chartGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                <stop offset="0%" style="stop-color:#00d4ff" stop-opacity="0.8"/>
-                <stop offset="100%" style="stop-color:#635bff" stop-opacity="0.3"/>
+                <stop offset="0%" style="stop-color:#D4AF37" stop-opacity="0.8"/>
+                <stop offset="100%" style="stop-color:#800020" stop-opacity="0.3"/>
             </linearGradient>
         </defs>
         <rect width="1200" height="630" fill="url(#bg2)"/>
@@ -107,14 +107,14 @@ async function generateCovers() {
         
         <!-- Price tag icon -->
         <g transform="translate(80, 120)">
-            <path d="M0,40 L40,0 L80,0 L80,40 L40,80 L0,40 Z" fill="none" stroke="#00d4ff" stroke-width="3" opacity="0.8"/>
-            <circle cx="60" cy="20" r="8" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.8"/>
-            <text x="30" y="48" text-anchor="middle" fill="#00d4ff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">$</text>
+            <path d="M0,40 L40,0 L80,0 L80,40 L40,80 L0,40 Z" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.8"/>
+            <circle cx="60" cy="20" r="8" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.8"/>
+            <text x="30" y="48" text-anchor="middle" fill="#D4AF37" font-family="Arial, sans-serif" font-size="24" font-weight="bold">$</text>
         </g>
         
         <!-- Badge -->
-        <rect x="80" y="260" width="140" height="32" rx="16" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="1"/>
-        <text x="150" y="281" text-anchor="middle" fill="#00d4ff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">COST GUIDE</text>
+        <rect x="80" y="260" width="140" height="32" rx="16" fill="rgba(0,212,255,0.15)" stroke="#D4AF37" stroke-width="1"/>
+        <text x="150" y="281" text-anchor="middle" fill="#D4AF37" font-family="Arial, sans-serif" font-size="14" font-weight="bold">COST GUIDE</text>
         
         <!-- Title -->
         <text x="80" y="340" fill="#ffffff" font-family="Arial, sans-serif" font-size="42" font-weight="900">The True Cost of</text>
@@ -127,7 +127,7 @@ async function generateCovers() {
         <rect x="0" y="580" width="1200" height="4" fill="url(#accent2)"/>
         
         <!-- Logo text -->
-        <text x="80" y="540" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="800" opacity="0.6">NEON AUTO TRANSPORT</text>
+        <text x="80" y="540" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="800" opacity="0.6">BEST AMERICAN AUTO TRANSPORT INC</text>
     </svg>`;
 
     // Generate Checklist cover

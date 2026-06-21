@@ -27,10 +27,10 @@ for (const file of htmlFiles) {
   content = content.replace(/<meta property="og:url" content="([^"]+)\.html">/g, '<meta property="og:url" content="$1/">');
 
   // 2. Service schema url remove .html
-  content = content.replace(/"url":\s*"https:\/\/neonautotransport\.com\/([^"]+)\.html"/g, '"url": "https://neonautotransport.com/$1/"');
+  content = content.replace(/"url":\s*"https:\/\/bestamericanautotransport\.com\/([^"]+)\.html"/g, '"url": "https://bestamericanautotransport.com/$1/"');
 
   // 3. BreadcrumbList item 3 remove .html
-  content = content.replace(/"item":\s*"https:\/\/neonautotransport\.com\/([^"]+)\.html"/g, '"item": "https://neonautotransport.com/$1/"');
+  content = content.replace(/"item":\s*"https:\/\/bestamericanautotransport\.com\/([^"]+)\.html"/g, '"item": "https://bestamericanautotransport.com/$1/"');
 
   // 4. Header Locations Link
   content = content.replace(/href="\.\.\/locations\.html"/g, 'href="/locations/"');
@@ -38,7 +38,7 @@ for (const file of htmlFiles) {
   // 5. Hero Image Alt Text
   content = content.replace(/<img\s+src="https:\/\/trucknroll\.com[^"]+"/g, match => {
     if (!match.includes('alt=')) {
-      return match + ' alt="Neon Auto Transport Carrier"';
+      return match + ' alt="Best American Auto Transport Inc Carrier"';
     }
     return match;
   });
@@ -76,33 +76,32 @@ console.log(`Phase 4 bugs fixed in ${updatedFiles} files.`);
 
 // 9. Vercel.json X-Robots-Tag
 const vercelPath = path.join(rootDir, 'vercel.json');
-let vercelConfig = {};
 if (fs.existsSync(vercelPath)) {
-  vercelConfig = JSON.parse(fs.readFileSync(vercelPath, 'utf8'));
-}
-if (!vercelConfig.headers) {
-  vercelConfig.headers = [];
-}
-// Check if header already exists
-const hasRobotsHeader = vercelConfig.headers.some(h => h.source === '/(.*)' && h.has && h.has.some(c => c.value === '.*vercel\\.app$'));
-if (!hasRobotsHeader) {
-  vercelConfig.headers.push({
-    "source": "/(.*)",
-    "has": [
-      {
-        "type": "host",
-        "value": ".*vercel\\.app$"
-      }
-    ],
-    "headers": [
-      {
-        "key": "X-Robots-Tag",
-        "value": "noindex, nofollow"
-      }
-    ]
-  });
-  fs.writeFileSync(vercelPath, JSON.stringify(vercelConfig, null, 2), 'utf8');
-  console.log('vercel.json updated with X-Robots-Tag for staging.');
+  let vercelConfig = JSON.parse(fs.readFileSync(vercelPath, 'utf8'));
+  if (!vercelConfig.headers) {
+    vercelConfig.headers = [];
+  }
+  // Check if header already exists
+  const hasRobotsHeader = vercelConfig.headers.some(h => h.source === '/(.*)' && h.has && h.has.some(c => c.value === '.*vercel\\.app$'));
+  if (!hasRobotsHeader) {
+    vercelConfig.headers.push({
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": ".*vercel\\.app$"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    });
+    fs.writeFileSync(vercelPath, JSON.stringify(vercelConfig, null, 2), 'utf8');
+    console.log('vercel.json updated with X-Robots-Tag for staging.');
+  }
 }
 
 // 10. Update Sitemap lastmod to today

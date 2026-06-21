@@ -1,14 +1,14 @@
-/* ============================================
-   Neon Auto Transport — AI Chat Widget Styles
+﻿/* ============================================
+   Best American Auto Transport Inc — AI Chat Widget Styles
    Matches existing Stripe-inspired design system
    ============================================ */
 
 /* ---- CSS Variables (inherit from site) ---- */
 :root {
-  --chat-primary: #635bff;
+  --chat-primary: #800020;
   --chat-primary-dark: #534be8;
-  --chat-accent-cyan: #00d4ff;
-  --chat-accent-green: #39FF14;
+  --chat-accent-cyan: #D4AF37;
+  --chat-accent-green: #D4AF37;
   --chat-dark: #0a2540;
   --chat-dark-mid: #1a385a;
   --chat-slate: #425466;
@@ -79,7 +79,7 @@
   font-size: 9px;
   font-weight: 800;
   color: var(--chat-dark);
-  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
   animation: badgePop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -137,7 +137,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(99, 91, 255, 0.15), rgba(0, 212, 255, 0.1));
+  background: linear-gradient(135deg, rgba(128, 0, 32, 0.15), rgba(0, 212, 255, 0.1));
   pointer-events: none;
 }
 
@@ -361,7 +361,7 @@
 
 .neon-chat-input:focus {
   border-color: var(--chat-primary) !important;
-  box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.15) !important;
+  box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.15) !important;
   background: var(--chat-white) !important;
 }
 
@@ -541,7 +541,7 @@
 
 .neon-chat-call-cta a:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(57, 255, 20, 0.5);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
 }
 
 .neon-chat-call-cta a svg {

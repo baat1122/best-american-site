@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 function processDir(dir) {
@@ -32,8 +32,8 @@ function processDir(dir) {
                 const beforeFooter = content.substring(0, footerStart);
                 let footerSection = content.substring(footerStart);
                 
-                if (footerSection.includes('<span class="text-[#00d4ff]">AUTO TRANSPORT</span>')) {
-                    footerSection = footerSection.replace(/<span class="text-\[#00d4ff\]">AUTO TRANSPORT<\/span>/g, '<span class="text-[#0066cc]">AUTO TRANSPORT</span>');
+                if (footerSection.includes('<span class="text-[#D4AF37]">AUTO TRANSPORT</span>')) {
+                    footerSection = footerSection.replace(/<span class="text-\[#D4AF37\]">AUTO TRANSPORT<\/span>/g, '<span class="text-[#0066cc]">AUTO TRANSPORT</span>');
                     modified = true;
                 }
                 

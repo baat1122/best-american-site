@@ -1,4 +1,4 @@
-﻿const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
 
 function walkDir(dir) {
@@ -22,10 +22,10 @@ const allHtml = walkDir(__dirname);
 let canonCount = 0;
 for (const filePath of allHtml) {
   let content = fs.readFileSync(filePath, 'utf8');
-  if (content.includes('href="https://neonautotransport.com/')) {
+  if (content.includes('href="https://bestamericanautotransport.com/')) {
     content = content.replace(
-      /href="https:\/\/neonautotransport\.com\//g,
-      'href="https://www.neonautotransport.com/'
+      /href="https:\/\/bestamericanautotransport\.com\//g,
+      'href="https://www.bestamericanautotransport.com/'
     );
     fs.writeFileSync(filePath, content, 'utf8');
     canonCount++;
@@ -37,10 +37,10 @@ console.log('Updated canonicals in ' + canonCount + ' files');
 let ogCount = 0;
 for (const filePath of allHtml) {
   let content = fs.readFileSync(filePath, 'utf8');
-  if (content.includes('content="https://neonautotransport.com/')) {
+  if (content.includes('content="https://bestamericanautotransport.com/')) {
     content = content.replace(
-      /content="https:\/\/neonautotransport\.com\//g,
-      'content="https://www.neonautotransport.com/'
+      /content="https:\/\/bestamericanautotransport\.com\//g,
+      'content="https://www.bestamericanautotransport.com/'
     );
     fs.writeFileSync(filePath, content, 'utf8');
     ogCount++;

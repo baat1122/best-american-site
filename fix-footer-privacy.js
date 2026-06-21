@@ -1,11 +1,11 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const root = 'c:\\Users\\DYNABOOK\\.gemini\\antigravity\\scratch\\neon-site';
 const linksBlock = `
                 <div class="mt-4 flex items-center justify-center gap-4 text-xs text-[#425466]">
-                    <a href="/privacy/" class="hover:text-[#635bff] transition">Privacy Policy</a>
-                    <a href="/terms/" class="hover:text-[#635bff] transition">Terms of Service</a>
+                    <a href="/privacy/" class="hover:text-[#800020] transition">Privacy Policy</a>
+                    <a href="/terms/" class="hover:text-[#800020] transition">Terms of Service</a>
                 </div>`;
 
 function walk(dir) {
@@ -41,7 +41,7 @@ for (const file of files) {
     }
 
     // Pattern: simple footer copyright line followed by closing divs
-    const simplePattern = /(<p class="text-\[#425466\] text-sm font-medium">&copy; 2026 Neon Auto Transport\. All rights reserved\.<\/p>)\s*(<\/div>\s*<\/footer>)/;
+    const simplePattern = /(<p class="text-\[#425466\] text-sm font-medium">&copy; 2026 Best American Auto Transport Inc\. All rights reserved\.<\/p>)\s*(<\/div>\s*<\/footer>)/;
     
     if (simplePattern.test(html)) {
         html = html.replace(simplePattern, `$1${linksBlock}\n        $2`);
@@ -52,13 +52,13 @@ for (const file of files) {
     }
 
     // Also try: copyright without classes (some pages may have simpler markup)
-    const plainPattern = /(<p>&copy; 2026 Neon Auto Transport\. All rights reserved\.<\/p>)\s*(<\/div>\s*<\/footer>|<div class="space-x-6)/;
+    const plainPattern = /(<p>&copy; 2026 Best American Auto Transport Inc\. All rights reserved\.<\/p>)\s*(<\/div>\s*<\/footer>|<div class="space-x-6)/;
     
     // For pages that already have the privacy/terms structure but use "Terms & Conditions"
     // Update to "Terms of Service" for consistency
     if (html.includes('Terms & Conditions</a>')) {
         html = html.replace(
-            /(<a href="\/terms\/" class="hover:text-\[#635bff\] transition">)Terms & Conditions(<\/a>)/g,
+            /(<a href="\/terms\/" class="hover:text-\[#800020\] transition">)Terms & Conditions(<\/a>)/g,
             '$1Terms of Service$2'
         );
         fs.writeFileSync(file, html, 'utf8');

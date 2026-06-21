@@ -1,4 +1,4 @@
-// js/chatbot.js — Neon Auto Transport AI Sales Agent Widget
+// js/chatbot.js — Best American Auto Transport Inc AI Sales Agent Widget
 // Conversational AI chatbot for lead qualification and quote generation
 
 (function () {
@@ -7,11 +7,12 @@
   // ---- Configuration ----
   const CONFIG = {
     apiEndpoint: '/api/chat',
-    web3formsKey: 'a479d604-6159-4cdd-8eeb-394772c41436',
-    phone: '(571) 576-7711',
-    phoneRaw: '5715767711',
+    web3formsKey: '39370f4e-9eb6-47ed-99a2-31569ae34b2a',
+    geminiApiKey: 'AQ.Ab8RN6J2lyEfxnWXHY2R8tisdYKAWZFnsi94QXrJuAtL_ZOfXw',
+    phone: '(302) 355-5544',
+    phoneRaw: '3023555544',
     maxMessages: 60,
-    greeting: "Welcome to Neon Auto Transport! 👋 How can I help you today? I can help you get a quick shipping quote, answer questions about our services, or connect you with our team.",
+    greeting: "Welcome to Best American Auto Transport Inc! 👋 How can I help you today? I can help you get a quick shipping quote, answer questions about our services, or connect you with our team.",
     followUp: "To get started, could you tell me the **Year, Make, and Model** of the vehicle you need shipped?",
     placeholderText: 'Type your message...',
   };
@@ -65,7 +66,7 @@
           </svg>
         </div>
         <div class="neon-chat-header-info">
-          <h4>Neon AI Specialist</h4>
+          <h4>Best American AI Specialist</h4>
           <p><span class="status-dot"></span>Online — Responds instantly</p>
         </div>
         <button class="neon-chat-header-close" id="neon-chat-close" aria-label="Close chat">
@@ -88,7 +89,7 @@
         </button>
       </div>
       <div class="neon-chat-powered">
-        Powered by <strong>Neon Auto AI</strong>
+        Powered by <strong>Best American Auto AI</strong>
       </div>
     `;
     document.body.appendChild(chatWindow);
@@ -177,6 +178,162 @@
     scrollToBottom();
   }
 
+  const SYSTEM_PROMPT = `You are the AI Sales Assistant for Best American Auto Transport Inc — a top-rated, FMCSA & US DOT approved nationwide car shipping company with offices in Malvern, PA and Houston, TX. You are a friendly, professional, and knowledgeable auto transport specialist.
+
+YOUR GOAL:
+Naturally guide customers through a conversational quote request. Collect all required information through friendly dialogue — do NOT present a form. Ask one or two questions at a time to keep it natural.
+
+REQUIRED INFORMATION TO COLLECT:
+1. Vehicle Info: Year, Make, Model (Ask for all three together in a single question)
+2. Vehicle Type: Sedan, SUV, Truck, Van, Motorcycle, or Exotic
+3. Vehicle Condition: Running or Non-Running (Ask explicitly if it is running or not running)
+4. Pickup Zip Code (Ask explicitly for the pickup zipcode)
+5. Delivery Zip Code (Ask explicitly for the drop off zipcode)
+6. Desired Pickup Date
+7. Transport Type: Open or Enclosed (Ask explicitly if they want open or enclosed transport)
+8. Customer Name: First and Last
+9. Email Address
+10. Phone Number
+
+ADDITIONAL QUALIFYING QUESTIONS (ask when relevant):
+- Is the vehicle modified or lifted?
+- Is the vehicle inoperable (can it roll/brake/steer)?
+- Are there personal items inside the vehicle?
+- Are you shipping multiple vehicles?
+
+CONVERSATION STRATEGY:
+- STEP 1: First message — Ask for the Year, Make, and Model of the vehicle (all at once in one question).
+- STEP 2: Next — You MUST explicitly ask the user for TWO things in the same message: their Pick-up Zip Code AND their Delivery Zip Code.
+- STEP 3: Next — Ask BOTH: Is the vehicle running or not running? AND Do they want Open or Enclosed transport? (ask both in the same message)
+- STEP 4: Next — Ask for the desired pickup date.
+- STEP 5: Finally — Collect contact info: name, email, and phone number.
+- Keep responses concise (2-3 sentences max).
+- Use a warm, professional tone.
+- Use emojis sparingly (one per message max).
+- NEVER re-ask for information already provided.
+- NEVER ask for city/state — ONLY ask for zipcodes.
+
+ROUTE INTELLIGENCE:
+When asked about transit times, provide general estimates:
+- Under 500 miles: 1-2 days
+- 500-1000 miles: 2-3 days
+- 1000-1500 miles: 3-5 days
+- 1500-2500 miles: 5-7 days
+- 2500+ miles: 7-10 days
+Always note these are estimates that depend on carrier availability and exact locations.
+
+PRICING RULES:
+- NEVER give specific dollar amounts or fake prices
+- Explain that pricing depends on: vehicle type, route distance, transport type (open vs enclosed), vehicle condition, time of year, and current carrier availability
+- Guide the customer toward completing the quote so a specialist can provide an accurate quote
+
+HIGH-INTENT SIGNALS:
+If the customer mentions urgency, a deadline, asks about expedited service, or seems ready to book:
+- Suggest they call directly for fastest service: (302) 355-5544
+- Mark intent as high in your extraction
+
+COMPANY FACTS:
+- Phone: (302) 355-5544
+- Email: info@bestamericanautotransport.com
+- Address: 2709 Neabsco Common Pl Suite 101, Malvern, PA & Houston, TX 22191
+- Hours: Mon-Fri 8AM-8PM, Sat-Sun 9AM-5PM
+- Service: Door-to-door auto transport across all 50 states
+- Insurance: All carriers carry active cargo insurance
+- Experience: 9+ years, 150K+ vehicles shipped
+
+RESPONSE FORMAT:
+You must ALWAYS respond with valid JSON in this exact format:
+{
+  "reply": "Your natural language response to the customer",
+  "extractedData": {
+    "firstName": null,
+    "lastName": null,
+    "email": null,
+    "phone": null,
+    "vehicleYear": null,
+    "vehicleMake": null,
+    "vehicleModel": null,
+    "vehicleType": null,
+    "vehicleCondition": null,
+    "pickupZip": null,
+    "deliveryZip": null,
+    "desiredPickupDate": null,
+    "transportType": null,
+    "isModified": null,
+    "isLifted": null,
+    "isInoperable": null,
+    "hasPersonalItems": null,
+    "multipleVehicles": null
+  },
+  "leadComplete": false,
+  "highIntent": false
+}
+
+RULES FOR extractedData:
+- Only include fields that the customer has EXPLICITLY stated in this message or previous messages
+- Use null for any field not yet provided
+- Set leadComplete to true ONLY when you have: firstName, lastName, email, phone, vehicle (year+make+model), pickupZip, deliveryZip, vehicleCondition, and transportType
+- Set highIntent to true if the customer shows urgency or asks about expedited service
+- For vehicleType, map the vehicle to: Sedan, SUV, Truck, Van, Motorcycle, or Exotic
+- For vehicleCondition, use: Running or Non-Running
+- For transportType, use: Open or Enclosed`;
+
+  async function callGeminiDirectly(messages, extractedFields) {
+    if (!CONFIG.geminiApiKey) {
+      throw new Error('Gemini API key is not configured');
+    }
+
+    const modelName = 'gemini-2.5-flash';
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${CONFIG.geminiApiKey}`;
+
+    const geminiContents = messages.map(msg => ({
+      role: msg.role === 'user' ? 'user' : 'model',
+      parts: [{ text: msg.content }]
+    }));
+
+    let contextNote = '';
+    if (extractedFields && Object.keys(extractedFields).length > 0) {
+      const collected = Object.entries(extractedFields)
+        .filter(([, v]) => v !== null && v !== undefined)
+        .map(([k, v]) => `${k}: ${v}`)
+        .join(', ');
+      if (collected) {
+        contextNote = `\n\n[SYSTEM NOTE: Fields already collected from this customer: ${collected}. Do not re-ask for these. Focus on collecting remaining required fields.]`;
+      }
+    }
+
+    const payload = {
+      contents: geminiContents,
+      systemInstruction: {
+        parts: [{ text: SYSTEM_PROMPT + contextNote }]
+      },
+      generationConfig: {
+        responseMimeType: 'application/json',
+        temperature: 0.7,
+        maxOutputTokens: 600
+      }
+    };
+
+    const response = await fetch(geminiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      throw new Error(`Gemini direct call failed: ${response.status} - ${errText}`);
+    }
+
+    const data = await response.json();
+    const content = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!content) {
+      throw new Error('Empty response from Gemini API');
+    }
+
+    return JSON.parse(content);
+  }
+
   // ---- Handle User Message Sending ----
   async function handleSendMessage() {
     const text = inputField.value.trim();
@@ -193,23 +350,32 @@
     showTypingIndicator();
 
     try {
-      const response = await fetch(CONFIG.apiEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: conversationHistory,
-          extractedFields: extractedFields
-        })
-      });
+      let data;
+      let usingFallback = false;
+
+      try {
+        const response = await fetch(CONFIG.apiEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            messages: conversationHistory,
+            extractedFields: extractedFields
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('API server returned status ' + response.status);
+        }
+
+        data = await response.json();
+      } catch (backendErr) {
+        console.warn('Backend API failed, falling back to direct Gemini API:', backendErr);
+        usingFallback = true;
+        data = await callGeminiDirectly(conversationHistory, extractedFields);
+      }
 
       const indicator = document.getElementById('neon-typing-indicator');
       if (indicator) indicator.remove();
-
-      if (!response.ok) {
-        throw new Error('API server returned an error');
-      }
-
-      const data = await response.json();
 
       // Merge new extracted data
       if (data.extractedData) {
@@ -252,8 +418,8 @@
     try {
       const formData = new FormData();
       formData.append('access_key', CONFIG.web3formsKey);
-      formData.append('subject', `New Lead from Neon Auto AI: ${extractedFields.firstName || ''} ${extractedFields.lastName || ''}`);
-      formData.append('from_name', 'Neon Auto AI Assistant');
+      formData.append('subject', `New Lead from Best American Auto AI: ${extractedFields.firstName || ''} ${extractedFields.lastName || ''}`);
+      formData.append('from_name', 'Best American Auto AI Assistant');
       
       // Append all lead details
       Object.entries(extractedFields).forEach(([key, val]) => {
@@ -277,9 +443,9 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fields: fieldsToSend })
       });
-      console.log('Lead successfully submitted to Neon CRM Database');
+      console.log('Lead successfully submitted to Best American CRM Database');
     } catch (e) {
-      console.error('Failed to submit to Neon CRM Database:', e);
+      console.error('Failed to submit to Best American CRM Database:', e);
     }
   }
 

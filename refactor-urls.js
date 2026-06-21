@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const siteDir = __dirname;
@@ -48,7 +48,7 @@ for (const file of htmlFiles) {
     // B. Fix HTML internal links
     // Root pages
     content = content.replace(/href="(?:\.\.\/)*index\.html(#.*?)?"/g, 'href="/$1"');
-    content = content.replace(/href="(?:\.\.\/)*why-neon\.html(#.*?)?"/g, 'href="/why-neon/$1"');
+    content = content.replace(/href="(?:\.\.\/)*why-best-american\.html(#.*?)?"/g, 'href="/why-best-american/$1"');
     content = content.replace(/href="(?:\.\.\/)*contact\.html(#.*?)?"/g, 'href="/contact/$1"');
     content = content.replace(/href="(?:\.\.\/)*privacy\.html(#.*?)?"/g, 'href="/privacy/$1"');
     content = content.replace(/href="(?:\.\.\/)*quote\/index\.html(#.*?)?"/g, 'href="/quote/$1"');
@@ -68,7 +68,7 @@ for (const file of htmlFiles) {
     // Fix empty hrefs from the regex matches ending with '#'
     content = content.replace(/href="\/#"/g, 'href="/"');
     
-    // Some hrefs ended up as `href="/why-neon/"` if no hash
+    // Some hrefs ended up as `href="/why-best-american/"` if no hash
     content = content.replace(/\/"/g, '/"');
 
     // Special fix: index.html linking to itself as '' or 'index.html'
@@ -95,15 +95,15 @@ if (!fs.existsSync(blogDir)) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Auto Transport Blog | Neon Auto Transport</title>
+    <title>Auto Transport Blog | Best American Auto Transport Inc</title>
     <meta name="description" content="Read the latest news, tips, and guides on car shipping and auto transport.">
     <link rel="stylesheet" href="/css/tailwind.css">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body class="bg-[#f6f9fc]">
     <header class="bg-[#0a2540] py-6 text-center text-white">
-        <h1 class="text-3xl font-black">Neon Auto Transport Blog</h1>
-        <a href="/" class="text-[#00d4ff] mt-2 inline-block">&larr; Back to Home</a>
+        <h1 class="text-3xl font-black">Best American Auto Transport Inc Blog</h1>
+        <a href="/" class="text-[#D4AF37] mt-2 inline-block">&larr; Back to Home</a>
     </header>
     <main class="container mx-auto p-8 max-w-4xl text-center mt-12">
         <h2 class="text-2xl font-bold mb-4">Coming Soon</h2>

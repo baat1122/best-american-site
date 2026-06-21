@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const rootDir = 'c:/Users/DYNABOOK/.gemini/antigravity/scratch/neon-site';
@@ -53,7 +53,7 @@ if (fs.existsSync(indexPath)) {
     const howToSchema = {
       "@context": "https://schema.org",
       "@type": "HowTo",
-      "name": "How to Ship a Car with Neon Auto Transport",
+      "name": "How to Ship a Car with Best American Auto Transport Inc",
       "description": "The complete 3-step process to transport your vehicle safely across the country.",
       "step": [
         {

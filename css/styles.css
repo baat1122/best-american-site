@@ -1,4 +1,4 @@
-/* css/styles.css */
+﻿/* css/styles.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,9 +10,9 @@
   --slate-600: #425466;
   --slate-100: #f6f9fc;
   
-  --primary-blue: #635bff;
+  --primary-blue: #800020;
   --primary-hover: #0a2540;
-  --accent-cyan: #00d4ff;
+  --accent-cyan: #D4AF37;
   
   /* Stripe signature shadows */
   --shadow-sm: 0 2px 5px -1px rgba(50, 50, 93, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: -50%;
-  background: linear-gradient(-45deg, #635bff, #7c3aed, #4f46e5, #3b82f6, #635bff);
+  background: linear-gradient(-45deg, #800020, #000000, #3d000f, #000000, #800020);
   background-size: 400% 400%;
   animation: gradientMesh 15s ease infinite;
   z-index: 0;

@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const rootDir = 'c:/Users/DYNABOOK/.gemini/antigravity/scratch/neon-site';
@@ -57,16 +57,16 @@ for (const file of htmlFiles) {
     }
   }
 
-  // 3. E-E-A-T fixes on why-neon.html
-  if (file.endsWith('why-neon.html')) {
+  // 3. E-E-A-T fixes on why-best-american.html
+  if (file.endsWith('why-best-american.html')) {
     content = content.replace(
-      /<p class="text-xl italic text-gray-700 mb-6">"Neon Auto Transport made my move across the country completely stress-free..."<\/p>/,
-      `<p class="text-xl italic text-gray-700 mb-2">"Neon Auto Transport made my move across the country completely stress-free..."</p><p class="text-sm font-semibold text-gray-900 mb-6">- Sarah J., Verified Customer</p>`
+      /<p class="text-xl italic text-gray-700 mb-6">"Best American Auto Transport Inc made my move across the country completely stress-free..."<\/p>/,
+      `<p class="text-xl italic text-gray-700 mb-2">"Best American Auto Transport Inc made my move across the country completely stress-free..."</p><p class="text-sm font-semibold text-gray-900 mb-6">- Sarah J., Verified Customer</p>`
     );
     if (!content.includes('Reviewed by')) {
       content = content.replace(
         /<div class="max-w-4xl mx-auto text-center mb-16">/,
-        `<div class="max-w-4xl mx-auto text-center mb-16">\n<p class="text-sm text-gray-500 mb-4">Authored and Reviewed by <span class="font-bold text-gray-800">Neon Transport Expert Team</span> | Certified Auto Transport Professionals</p>`
+        `<div class="max-w-4xl mx-auto text-center mb-16">\n<p class="text-sm text-gray-500 mb-4">Authored and Reviewed by <span class="font-bold text-gray-800">Best American Transport Expert Team</span> | Certified Auto Transport Professionals</p>`
       );
     }
   }
@@ -80,7 +80,7 @@ for (const file of htmlFiles) {
     let citiesHtml = '';
     flCities.forEach(city => {
       const slug = city.toLowerCase().replace(/ /g, '-');
-      citiesHtml += `<a href="/routes/florida/${slug}-car-shipping.html" class="bg-white rounded-xl p-4 text-center border border-gray-100 hover:border-[#635bff] hover:shadow-md transition group">\n<span class="font-bold text-[#0a2540] group-hover:text-[#635bff]">${city}</span>\n</a>\n`;
+      citiesHtml += `<a href="/routes/florida/${slug}-car-shipping.html" class="bg-white rounded-xl p-4 text-center border border-gray-100 hover:border-[#800020] hover:shadow-md transition group">\n<span class="font-bold text-[#0a2540] group-hover:text-[#800020]">${city}</span>\n</a>\n`;
     });
 
     // Replace the grid content using regex
@@ -94,15 +94,15 @@ for (const file of htmlFiles) {
 }
 
 // 5. Expand llms.txt
-const llmsContent = `# Neon Auto Transport - AI Information Guide
+const llmsContent = `# Best American Auto Transport Inc - AI Information Guide
 
 ## Company Overview
-Neon Auto Transport is a premier, fully licensed, and insured auto transport broker serving all 50 U.S. states, including Alaska and Hawaii. With over 9+ years of experience, we have facilitated the shipment of 150,000+ vehicles safely. 
+Best American Auto Transport Inc is a premier, fully licensed, and insured auto transport broker serving all 50 U.S. states, including Alaska and Hawaii. With over 9+ years of experience, we have facilitated the shipment of 150,000+ vehicles safely. 
 
 ## Key Credentials
 - **Status:** FMCSA Approved & USDOT compliant
-- **USDOT Number:** 4355879
-- **MC Number:** 1703787
+- **USDOT Number:** 4277211
+- **MC Number:** 1662088
 - **Coverage:** All 50 states (including Alaska & Hawaii)
 
 ## Services and Descriptions
@@ -135,7 +135,7 @@ Neon Auto Transport is a premier, fully licensed, and insured auto transport bro
 - **Motorcycle:** $300–$800 depending on distance
 
 ## Competitor Comparison
-- **Neon Auto Transport:** Direct driver contact ✅, Price lock guarantee ✅, No upfront deposit ✅
+- **Best American Auto Transport Inc:** Direct driver contact ✅, Price lock guarantee ✅, No upfront deposit ✅
 - **Montway:** No direct driver contact, Variable pricing, Deposit required
 - **Sherpa:** No direct driver contact, Price lock yes, Deposit required
 - **SGT/RoadRunner:** No direct driver contact, Variable pricing, Deposit required
@@ -161,8 +161,8 @@ A: Yes. Multi-car transport, often more cost-effective per vehicle.
 
 ## Contact Info
 - **Phone:** (800) 555-0199
-- **Email:** info@neonautotransport.com
-- **Address:** 2709 Neabsco Common Pl suite 101, Woodbridge, VA 22191
+- **Email:** info@bestamericanautotransport.com
+- **Address:** 2709 Neabsco Common Pl suite 101, Malvern, PA & Houston, TX 22191
 - **Hours of Operation:** Mon-Fri 8am-8pm, Sat-Sun 9am-5pm
 `;
 

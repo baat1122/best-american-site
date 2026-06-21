@@ -1,4 +1,4 @@
-# Neon Auto Transport — robots.txt
+﻿# Best American Auto Transport Inc — robots.txt
 
 # Default: Allow all crawlers
 User-agent: *
@@ -62,4 +62,4 @@ Disallow: /node_modules/
 Disallow: /dashboard/
 
 # Sitemap
-Sitemap: https://neonautotransport.com/sitemap.xml
+Sitemap: https://bestamericanautotransport.com/sitemap.xml

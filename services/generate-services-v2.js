@@ -16,23 +16,27 @@ function generateSlug(name) {
 }
 
 // Read the base template (we use Virginia as the premium design base)
-const baseTemplatePath = path.join(__dirname, '../routes/virginia-car-shipping.html');
+const baseTemplatePath = path.join(__dirname, '../routes/virginia-car-shipping/index.html');
 const baseTemplate = fs.readFileSync(baseTemplatePath, 'utf-8');
 
 services.forEach(service => {
     const slug = generateSlug(service);
-    const outputPath = path.join(__dirname, `${slug}.html`);
+    const folderPath = path.join(__dirname, slug);
+    if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath, { recursive: true });
+    }
+    const outputPath = path.join(folderPath, 'index.html');
 
     let content = baseTemplate;
 
     // 1. Meta & Title
-    content = content.replace(/<title>.*?<\/title>/g, `<title>${service} | Fast & Reliable | Neon Auto Transport</title>`);
-    content = content.replace(/content="Ship your car to or from Virginia with Neon Auto Transport.*?">/g, `content="Get instant quotes for ${service} with Neon Auto Transport. Reliable, affordable, and safe vehicle shipping nationwide.">`);
+    content = content.replace(/<title>.*?<\/title>/g, `<title>${service} | Fast & Reliable | Best American Auto Transport Inc</title>`);
+    content = content.replace(/content="Ship your car to or from Virginia with Best American Auto Transport Inc.*?">/g, `content="Get instant quotes for ${service} with Best American Auto Transport Inc. Reliable, affordable, and safe vehicle shipping nationwide.">`);
 
     // 2. Hero Section
     const srvData = serviceDataMap[service] || { audience: "customers", benefit: "reliable transport", feature: "premium service", tip: "Book early to guarantee your dates." };
     content = content.replace(/Virginia Car Shipping/g, service);
-    const heroDesc = `Neon Auto Transport provides professional, secure, and reliable ${service}. Designed specifically for ${srvData.audience}, our logistics team ensures a smooth experience by focusing on ${srvData.benefit}. With ${srvData.feature}, you can trust us to handle your vehicle with the utmost care.`;
+    const heroDesc = `Best American Auto Transport Inc provides professional, secure, and reliable ${service}. Designed specifically for ${srvData.audience}, our logistics team ensures a smooth experience by focusing on ${srvData.benefit}. With ${srvData.feature}, you can trust us to handle your vehicle with the utmost care.`;
     
     const images = [
         "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=60",
@@ -45,19 +49,19 @@ services.forEach(service => {
     const imgUrl = images[service.length % images.length];
 
     const layoutA = `
-    <section class="bg-[#0a2540] text-white pt-24 pb-40 slant-bottom relative overflow-hidden">
+    <section class="stripe-gradient-bg text-white pt-24 pb-40 slant-bottom relative overflow-hidden">
         <div class="absolute inset-0 w-full h-full opacity-10">
             <img src="${imgUrl}" class="w-full h-full object-cover">
         </div>
         <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center relative z-10">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[rgba(255,255,255,0.3)] bg-[rgba(255,255,255,0.1)] text-xs font-bold mb-6">
-                <span class="w-2 h-2 rounded-full bg-[#39FF14]"></span>
-                FMSCA & US Dot Approved
+                <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+                FMCSA & US Dot Approved
             </div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">${service}</h1>
-            <p class="text-lg text-[#cdd5df] mb-10 max-w-3xl mx-auto leading-relaxed">${heroDesc}</p>
+            <p class="text-lg text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">${heroDesc}</p>
             <div class="flex justify-center gap-4">
-                <a href="/quote/" class="bg-[#39FF14] text-[#0a2540] px-8 py-4 rounded-full font-black text-lg hover:bg-[#32e011] transition shadow-lg flex items-center gap-2">
+                <a href="/quote/" class="bg-[#D4AF37] text-[#0a2540] px-8 py-4 rounded-full font-black text-lg hover:bg-[#b89326] transition shadow-lg flex items-center gap-2">
                     Calculate Your Rate Instantly 
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
@@ -66,20 +70,20 @@ services.forEach(service => {
     </section>`;
 
     const layoutB = `
-    <section class="relative pt-32 pb-48 flex items-center justify-center border-b-[8px] border-[#39FF14]">
+    <section class="relative pt-32 pb-48 flex items-center justify-center border-b-[8px] border-[#D4AF37]">
         <div class="absolute inset-0 w-full h-full">
             <img src="${imgUrl}" alt="${service}" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-[#0a2540]/85"></div>
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(26,0,6,0.95) 0%, rgba(0,0,0,0.95) 100%);"></div>
         </div>
-        <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white text-sm font-bold mb-8">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#39FF14] animate-pulse"></span>
+        <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center relative z-10 text-white">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white text-sm font-bold mb-8">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-pulse"></span>
                 Premium ${service}
             </div>
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight drop-shadow-lg">${service}</h1>
             <p class="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed font-medium drop-shadow-md">${heroDesc}</p>
             <div class="flex justify-center gap-4">
-                <a href="/quote/" class="bg-[#39FF14] text-[#0a2540] px-10 py-5 rounded-full font-black text-xl hover:bg-[#32e011] transition hover:-translate-y-1 shadow-[0_10px_30px_rgba(57,255,20,0.3)] flex items-center gap-2">
+                <a href="/quote/" class="bg-[#D4AF37] text-[#0a2540] px-10 py-5 rounded-full font-black text-xl hover:bg-[#b89326] transition hover:-translate-y-1 shadow-[0_10px_30px_rgba(212,175,55,0.4)] flex items-center gap-2">
                     Get an Instant Quote 
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
@@ -88,17 +92,17 @@ services.forEach(service => {
     </section>`;
 
     const layoutC = `
-    <section class="bg-[#f6f9fc] border-b border-[#e6e6e6]">
+    <section class="border-b border-[#3d000f] text-white" style="background: linear-gradient(135deg, #1a0006 0%, #3d000f 60%, #000000 100%);">
         <div class="flex flex-col lg:flex-row">
             <div class="lg:w-1/2 px-8 py-20 lg:py-32 lg:px-16 flex flex-col justify-center">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#e6e6e6] bg-white shadow-sm text-[#0a2540] text-xs font-bold mb-6 self-start">
-                    <span class="w-2 h-2 rounded-full bg-[#39FF14]"></span>
-                    FMSCA & US Dot Approved
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 bg-white/10 shadow-sm text-white text-xs font-bold mb-6 self-start">
+                    <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+                    FMCSA & US Dot Approved
                 </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#0a2540] mb-6 tracking-tight">${service}</h1>
-                <p class="text-lg text-[#425466] mb-10 leading-relaxed">${heroDesc}</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">${service}</h1>
+                <p class="text-lg text-white/85 mb-10 leading-relaxed">${heroDesc}</p>
                 <div class="flex">
-                    <a href="/quote/" class="bg-[#39FF14] text-[#0a2540] px-8 py-4 rounded-full font-black text-lg hover:bg-[#32e011] transition shadow-[0_0_15px_rgba(57,255,20,0.4)] flex items-center gap-2">
+                    <a href="/quote/" class="bg-[#D4AF37] text-[#0a2540] px-8 py-4 rounded-full font-black text-lg hover:bg-[#b89326] transition shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center gap-2">
                         Calculate Your Rate Instantly 
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
@@ -106,7 +110,7 @@ services.forEach(service => {
             </div>
             <div class="lg:w-1/2 relative min-h-[400px]">
                 <img src="${imgUrl}" alt="${service}" class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#f6f9fc] to-transparent w-32"></div>
+                <div class="absolute inset-0 w-32 hidden lg:block" style="background: linear-gradient(to right, #1a0006 0%, rgba(26, 0, 6, 0.3) 60%, transparent 100%);"></div>
             </div>
         </div>
     </section>`;
@@ -114,9 +118,59 @@ services.forEach(service => {
     const layouts = [layoutA, layoutB, layoutC];
     const selectedLayout = layouts[service.length % layouts.length];
 
-    const heroRegex = /<section class="bg-\[#0a2540\] text-white pt-24 pb-40 slant-bottom relative">[\s\S]*?<\/section>/;
-    content = content.replace(heroRegex, selectedLayout);
+    const heroRegex = /<!-- Hero Section -->\s*<section[\s\S]*?<\/section>/;
+    content = content.replace(heroRegex, '<!-- Hero Section -->\n    ' + selectedLayout);
     
+    // Inject new content sections: Description, Quick Facts, Why Choose Us
+    if (srvData.description) {
+        const descriptionSection = `
+    <!-- Service Description -->
+    <section class="py-16 bg-white border-b border-[#e6e6e6] relative z-10">
+        <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
+            <div class="prose max-w-none">
+                <h2 class="text-3xl md:text-4xl font-black text-[#0a2540] mb-6 tracking-tight">About ${service}</h2>
+                <p class="text-lg text-[#425466] leading-relaxed mb-8">${srvData.description}</p>
+                ${srvData.priceRange || srvData.transitTime ? `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    ${srvData.priceRange ? `
+                    <div class="bg-[#f6f9fc] rounded-2xl p-6 border border-[#e6e6e6]">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-[#800020] text-white flex items-center justify-center text-lg">💲</div>
+                            <h4 class="font-bold text-[#0a2540]">Estimated Cost</h4>
+                        </div>
+                        <p class="text-2xl font-black text-[#800020]">${srvData.priceRange}</p>
+                        <p class="text-xs text-[#425466] mt-1">Based on average shipping distance. Final price depends on route, vehicle type, and transport method.</p>
+                    </div>` : ''}
+                    ${srvData.transitTime ? `
+                    <div class="bg-[#f6f9fc] rounded-2xl p-6 border border-[#e6e6e6]">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-[#D4AF37] text-[#0a2540] flex items-center justify-center text-lg">⏱️</div>
+                            <h4 class="font-bold text-[#0a2540]">Estimated Transit Time</h4>
+                        </div>
+                        <p class="text-2xl font-black text-[#0a2540]">${srvData.transitTime}</p>
+                        <p class="text-xs text-[#425466] mt-1">Solo drivers cover 400-500 miles/day. Expedited team drivers cover up to 1,000 miles/day.</p>
+                    </div>` : ''}
+                </div>` : ''}
+                ${srvData.whyChooseUs ? `
+                <div class="mt-12 bg-gradient-to-br from-[#0a2540] to-[#1a3a5c] rounded-2xl p-8 text-white">
+                    <h3 class="text-2xl font-black text-white mb-4">Why Choose Best American Auto Transport Inc?</h3>
+                    <p class="text-white/85 leading-relaxed">${srvData.whyChooseUs}</p>
+                    <a href="/quote/" class="inline-flex items-center gap-2 mt-6 bg-[#D4AF37] text-[#0a2540] px-6 py-3 rounded-full font-bold hover:bg-[#b89326] transition shadow-lg">
+                        Get Your Free Quote
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>` : ''}
+            </div>
+        </div>
+    </section>`;
+
+        // Inject after the hero section
+        content = content.replace(
+            /(<\/section>\s*)(<!-- Two Column Layout|<!-- Factors Impacting|<section[^>]*id="transit)/m,
+            descriptionSection + '\n    $2'
+        );
+    }
+
     // Inject a unique tip into the "Tips & Tricks" section
     content = content.replace(
         /<h3 class="font-bold text-\[#0a2540\] text-lg mb-1">Off Season Savings<\/h3>\s*<p>Car shipping rates drop during the off-season\. Even shifting your shipment by a few weeks can lead to real savings\. Avoid peak moving seasons like summer and major holidays to get the best rates\.<\/p>/g,
@@ -182,7 +236,7 @@ services.forEach(service => {
     }
 
     fs.writeFileSync(outputPath, content);
-    console.log(`Generated ${slug}.html`);
+    console.log(`Generated ${slug}/index.html`);
 });
 
 console.log('All service pages generated successfully!');

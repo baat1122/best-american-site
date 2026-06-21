@@ -1,4 +1,4 @@
-// js/calculator.js
+﻿// js/calculator.js
 
 const coordinates = {
     pickup: null,
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const web3Payload = {
             access_key: calcForm.querySelector('[name="access_key"]').value,
             subject: calcForm.querySelector('[name="subject"]').value,
-            from_name: 'Neon Auto Transport Website',
+            from_name: 'Best American Auto Transport Inc Website',
             'First Name': firstName,
             'Last Name': lastName,
             'Email': email,
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(crmPayload)
             });
-            console.log('Calculator lead sent to Neon CRM database');
+            console.log('Calculator lead sent to Best American CRM database');
         } catch (err) {
             console.error('Calculator CRM database submission failed:', err);
         }
@@ -207,7 +207,7 @@ function addVehicle() {
 
     group.innerHTML = `
         <div class="flex items-center justify-between mb-2">
-            <span class="text-[11px] font-bold text-[#635bff] uppercase tracking-wide">Vehicle ${vehicleCount}</span>
+            <span class="text-[11px] font-bold text-[#800020] uppercase tracking-wide">Vehicle ${vehicleCount}</span>
             <button type="button" class="btn-remove-vehicle text-xs text-[#e31837] hover:text-[#c41530] font-bold flex items-center gap-1" title="Remove this vehicle">
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 Remove
@@ -252,7 +252,7 @@ function updateVehicleLabels() {
     const groups = document.querySelectorAll('.vehicle-group');
     vehicleCount = groups.length;
     groups.forEach((group, idx) => {
-        const label = group.querySelector('.text-\\[11px\\].font-bold.text-\\[\\#635bff\\]');
+        const label = group.querySelector('.text-\\[11px\\].font-bold.text-\\[\\#800020\\]');
         if (label) label.textContent = `Vehicle ${idx + 1}`;
     });
     // Update the "Vehicle 1" label on the original group
@@ -268,13 +268,13 @@ function showSuccessMessage(form) {
     // Replace form content with success message
     form.innerHTML = `
         <div class="text-center py-8">
-            <div class="w-16 h-16 rounded-full bg-[#39FF14]/20 flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-[#39FF14]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            <div class="w-16 h-16 rounded-full bg-[#D4AF37]/20 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
             </div>
             <h3 class="text-xl font-bold text-[#0a2540] mb-2">Quote Request Submitted!</h3>
-            <p class="text-[#425466] text-sm mb-6">Thank you! A Neon Auto Transport specialist will contact you within 1 hour with your custom quote.</p>
+            <p class="text-[#425466] text-sm mb-6">Thank you! A Best American Auto Transport Inc specialist will contact you within 1 hour with your custom quote.</p>
             <div class="space-y-3">
-                <a href="/contact/" class="inline-block w-full py-2.5 rounded-lg font-bold text-white bg-[#635bff] hover:bg-[#4b45cc] transition-colors shadow-md text-sm text-center">Contact Us Now</a>
+                <a href="/contact/" class="inline-block w-full py-2.5 rounded-lg font-bold text-white bg-[#800020] hover:bg-[#5c0017] transition-colors shadow-md text-sm text-center">Contact Us Now</a>
                 <a href="/" class="inline-block w-full py-2.5 rounded-lg font-bold text-[#0a2540] bg-[#f0f5fa] hover:bg-[#e6e6e6] transition-colors text-sm text-center">Back to Homepage</a>
             </div>
         </div>
@@ -310,7 +310,7 @@ function setupZipAutocomplete(inputId, dropdownId, type) {
 
                     dropdown.innerHTML = `
                         <li class="px-4 py-3 text-sm font-bold text-[#0a2540] hover:bg-[#f6f9fc] cursor-pointer transition flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-[#39FF14]"></span>
+                            <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
                             ${city}, ${state} (${zip})
                         </li>
                     `;

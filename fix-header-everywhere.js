@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
@@ -16,7 +16,7 @@ const HEADER_BODY = `
             <!-- Left: Logo + Desktop Nav -->
             <div class="flex items-center" style="gap:24px">
                 <a href="/" class="text-2xl font-black tracking-tight flex items-center gap-1 text-white" style="white-space:nowrap" id="logo-text">
-                    NEON <span style="color: #00D1FF">AUTO TRANSPORT</span>
+                    BEST AMERICAN <span style="color: #D4AF37">AUTO TRANSPORT</span>
                 </a>
                 <nav class="hidden lg:flex items-center font-semibold text-[15px] text-white" id="desktop-nav" style="white-space:nowrap;gap:24px">
                 <a href="/#how-it-works" class="hover:opacity-80 transition">How it works</a>
@@ -36,18 +36,18 @@ const HEADER_BODY = `
                             <div>
                                 <h3 class="font-bold text-lg text-[#0a2540] mb-2 border-b border-[#e6e6e6] pb-2">Individual</h3>
                                 <ul class="space-y-4 mt-4 text-[#425466] font-medium">
-                                    <li><a href="/services/snow-bird-car-shipping/" class="hover:text-[#635bff] flex items-center justify-between group/link">Snow Bird Car Shipping <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/military-car-shipping/" class="hover:text-[#635bff] flex items-center justify-between group/link">Military Car Shipping <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/college-car-shipping/" class="hover:text-[#635bff] flex items-center justify-between group/link">College Car Shipping <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/luxury-car-shipping/" class="hover:text-[#635bff] flex items-start justify-between group/link pr-2 leading-tight"><span>Luxury / Exotic Car Shipping<br>Services</span> <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
-                                    <li><a href="/services/car-shipping-to-another-state/" class="hover:text-[#635bff] flex items-start justify-between group/link pr-2 leading-tight"><span>Car Shipping to Another<br>State</span> <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
-                                    <li><a href="/services/truck-shipping-services/" class="hover:text-[#635bff] flex items-center justify-between group/link">Truck Shipping Services <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/door-to-door-car-shipping/" class="hover:text-[#635bff] flex items-center justify-between group/link">Door to Door Car Transport <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/enclosed-auto-transport/" class="hover:text-[#635bff] flex items-center justify-between group/link">Enclosed Transport <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/open-auto-transport/" class="hover:text-[#635bff] flex items-center justify-between group/link">Open Transport <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/car-buyer-auto-transport/" class="hover:text-[#635bff] flex items-center justify-between group/link">Car Buyer Auto Transport <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/expedited-auto-transport/" class="hover:text-[#635bff] flex items-center justify-between group/link">Expedited Auto Transport <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/car-resellers-auto-transport/" class="hover:text-[#635bff] flex items-start justify-between group/link pr-2 leading-tight"><span>Car Resellers Auto<br>Transport</span> <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
+                                    <li><a href="/services/snow-bird-car-shipping/" class="hover:text-[#800020] flex items-center justify-between group/link">Snow Bird Car Shipping <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/military-car-shipping/" class="hover:text-[#800020] flex items-center justify-between group/link">Military Car Shipping <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/college-car-shipping/" class="hover:text-[#800020] flex items-center justify-between group/link">College Car Shipping <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/luxury-car-shipping/" class="hover:text-[#800020] flex items-start justify-between group/link pr-2 leading-tight"><span>Luxury / Exotic Car Shipping<br>Services</span> <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
+                                    <li><a href="/services/car-shipping-to-another-state/" class="hover:text-[#800020] flex items-start justify-between group/link pr-2 leading-tight"><span>Car Shipping to Another<br>State</span> <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
+                                    <li><a href="/services/truck-shipping-services/" class="hover:text-[#800020] flex items-center justify-between group/link">Truck Shipping Services <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/door-to-door-car-shipping/" class="hover:text-[#800020] flex items-center justify-between group/link">Door to Door Car Transport <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/enclosed-auto-transport/" class="hover:text-[#800020] flex items-center justify-between group/link">Enclosed Transport <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/open-auto-transport/" class="hover:text-[#800020] flex items-center justify-between group/link">Open Transport <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/car-buyer-auto-transport/" class="hover:text-[#800020] flex items-center justify-between group/link">Car Buyer Auto Transport <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/expedited-auto-transport/" class="hover:text-[#800020] flex items-center justify-between group/link">Expedited Auto Transport <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/car-resellers-auto-transport/" class="hover:text-[#800020] flex items-start justify-between group/link pr-2 leading-tight"><span>Car Resellers Auto<br>Transport</span> <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
                                 </ul>
                             </div>
 
@@ -55,11 +55,11 @@ const HEADER_BODY = `
                             <div>
                                 <h3 class="font-bold text-lg text-[#0a2540] mb-2 border-b border-[#e6e6e6] pb-2">Business</h3>
                                 <ul class="space-y-4 mt-4 text-[#425466] font-medium">
-                                    <li><a href="/services/car-dealer-shipping/" class="hover:text-[#635bff] flex items-center justify-between group/link">Car Dealer Shipping <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/auto-auction-shipping/" class="hover:text-[#635bff] flex items-center justify-between group/link">Auto Auction Shipping <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/rental-car-shipping/" class="hover:text-[#635bff] flex items-center justify-between group/link">Rental Car Shipping <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/corporate-relocation/" class="hover:text-[#635bff] flex items-center justify-between group/link">Corporate Relocation <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/fleet-management-transportation-services/" class="hover:text-[#635bff] flex items-start justify-between group/link pr-2 leading-tight"><span>Fleet Management<br>Transportation Services</span> <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
+                                    <li><a href="/services/car-dealer-shipping/" class="hover:text-[#800020] flex items-center justify-between group/link">Car Dealer Shipping <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/auto-auction-shipping/" class="hover:text-[#800020] flex items-center justify-between group/link">Auto Auction Shipping <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/rental-car-shipping/" class="hover:text-[#800020] flex items-center justify-between group/link">Rental Car Shipping <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/corporate-relocation/" class="hover:text-[#800020] flex items-center justify-between group/link">Corporate Relocation <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/fleet-management-transportation-services/" class="hover:text-[#800020] flex items-start justify-between group/link pr-2 leading-tight"><span>Fleet Management<br>Transportation Services</span> <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
                                 </ul>
                             </div>
 
@@ -67,11 +67,11 @@ const HEADER_BODY = `
                             <div>
                                 <h3 class="font-bold text-lg text-[#0a2540] mb-2 border-b border-[#e6e6e6] pb-2">Specialized</h3>
                                 <ul class="space-y-4 mt-4 text-[#425466] font-medium">
-                                    <li><a href="/services/motorcycle-shipping/" class="hover:text-[#635bff] flex items-center justify-between group/link">Motorcycle Shipping <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/alaska-auto-transport/" class="hover:text-[#635bff] flex items-center justify-between group/link">Alaska Auto Transport <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/hawaii-auto-transport/" class="hover:text-[#635bff] flex items-center justify-between group/link">Hawaii Auto Transport <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
-                                    <li><a href="/services/international-overseas-car-shipping-services/" class="hover:text-[#635bff] flex items-start justify-between group/link pr-2 leading-tight"><span>International Overseas Car<br>Shipping Services</span> <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
-                                    <li><a href="/services/terminal-to-terminal-car-shipping/" class="hover:text-[#635bff] flex items-start justify-between group/link pr-2 leading-tight"><span>Terminal-to-Terminal Car<br>Shipping</span> <span class="text-[#00d4ff] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
+                                    <li><a href="/services/motorcycle-shipping/" class="hover:text-[#800020] flex items-center justify-between group/link">Motorcycle Shipping <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/alaska-auto-transport/" class="hover:text-[#800020] flex items-center justify-between group/link">Alaska Auto Transport <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/hawaii-auto-transport/" class="hover:text-[#800020] flex items-center justify-between group/link">Hawaii Auto Transport <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity">\u25B6</span></a></li>
+                                    <li><a href="/services/international-overseas-car-shipping-services/" class="hover:text-[#800020] flex items-start justify-between group/link pr-2 leading-tight"><span>International Overseas Car<br>Shipping Services</span> <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
+                                    <li><a href="/services/terminal-to-terminal-car-shipping/" class="hover:text-[#800020] flex items-start justify-between group/link pr-2 leading-tight"><span>Terminal-to-Terminal Car<br>Shipping</span> <span class="text-[#D4AF37] text-[10px] opacity-0 group-hover/link:opacity-100 transition-opacity mt-1">\u25B6</span></a></li>
                                 </ul>
                             </div>
                             
@@ -79,15 +79,15 @@ const HEADER_BODY = `
                     </div>
                 </div>
 
-                <a href="/why-neon/" class="hover:opacity-80 transition">Why Neon</a>
+                <a href="/why-best-american/" class="hover:opacity-80 transition">Why Best American</a>
                 <a href="/contact/" class="hover:opacity-80 transition">Contact Us</a>
                 </nav>
             </div>
 
             <div class="hidden lg:flex items-center gap-6">
-                <a href="tel:5715767711" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#39FF14] text-[#0a2540] font-black hover:bg-[#32e612] transition-colors shadow-[0_0_15px_rgba(57,255,20,0.4)]" id="header-phone-btn" style="white-space:nowrap">
+                <a href="tel:3023555544" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#D4AF37] text-[#0a2540] font-black hover:bg-[#b89326] transition-colors shadow-[0_0_15px_rgba(212,175,55,0.4)]" id="header-phone-btn" style="white-space:nowrap">
                     <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-                    (571) 576-7711
+                    (302) 355-5544
                 </a>
                 <a href="/quote/" class="btn-outline" style="white-space:nowrap">Cost Calculator</a>
             </div>
@@ -100,12 +100,12 @@ const HEADER_BODY = `
         
         <!-- Mobile Nav -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 flex flex-col p-4 space-y-4 text-center font-semibold text-[#425466] shadow-xl">
-            <a href="/#how-it-works" class="hover:text-[#635bff]">How it works</a>
-            <a href="/services/" class="hover:text-[#635bff]">Transport Options</a>
-            <a href="/why-neon/" class="hover:text-[#635bff]">Why Neon</a>
-            <a href="/contact/" class="hover:text-[#635bff]">Contact Us</a>
+            <a href="/#how-it-works" class="hover:text-[#800020]">How it works</a>
+            <a href="/services/" class="hover:text-[#800020]">Transport Options</a>
+            <a href="/why-best-american/" class="hover:text-[#800020]">Why Best American</a>
+            <a href="/contact/" class="hover:text-[#800020]">Contact Us</a>
             <hr>
-            <a href="tel:5715767711" class="bg-[#39FF14] text-[#0a2540] py-3 rounded-xl font-black text-lg shadow-lg">(571) 576-7711</a>
+            <a href="tel:3023555544" class="bg-[#D4AF37] text-[#0a2540] py-3 rounded-xl font-black text-lg shadow-lg">(302) 355-5544</a>
             <a href="/quote/" class="btn-primary inline-block mx-auto mt-4">Cost Calculator</a>
         </div>
     </header>`;

@@ -1,4 +1,4 @@
-(function(){
+﻿(function(){
 function initParticles() {
     // Skip on mobile — canvas animation is decorative and expensive
     if (window.innerWidth < 768) return;
@@ -102,7 +102,7 @@ function initParticles() {
                     ctx.lineTo(p2.x, p2.y);
                     // Fade line based on distance
                     const opacity = 1 - (dist / connectionDistance);
-                    ctx.strokeStyle = `rgba(0, 212, 255, ${opacity * 0.3})`; // Neon blue tint
+                    ctx.strokeStyle = `rgba(0, 212, 255, ${opacity * 0.3})`; // Best American blue tint
                     ctx.lineWidth = 1;
                     ctx.stroke();
                 }

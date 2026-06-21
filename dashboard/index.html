@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dispatcher Dashboard | Neon Auto Transport</title>
+    <title>Dispatcher Dashboard | Best American Auto Transport Inc</title>
     <meta name="robots" content="noindex, nofollow">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,9 +34,9 @@
             --dark-border: #1e4976;
             --slate: #a1b0c0;
             --white: #ffffff;
-            --primary: #635bff;
-            --cyan: #00d4ff;
-            --green: #39FF14;
+            --primary: #800020;
+            --cyan: #D4AF37;
+            --green: #D4AF37;
             --red: #e31837;
             --amber: #f59e0b;
         }
@@ -321,7 +321,7 @@
         }
 
         .status-new { background: rgba(57, 255, 20, 0.15); color: var(--green); }
-        .status-contacted { background: rgba(99, 91, 255, 0.15); color: var(--primary); }
+        .status-contacted { background: rgba(128, 0, 32, 0.15); color: var(--primary); }
         .status-quoted { background: rgba(245, 158, 11, 0.15); color: var(--amber); }
         .status-booked { background: rgba(0, 212, 255, 0.15); color: var(--cyan); }
         .status-delivered { background: rgba(57, 255, 20, 0.3); color: var(--green); }
@@ -537,7 +537,7 @@
     <!-- Login Gate -->
     <div id="login-gate">
         <div class="login-card">
-            <h1>NEON <span>DISPATCH</span></h1>
+            <h1>BEST AMERICAN <span>DISPATCH</span></h1>
             <p>Enter dispatcher password to access the lead dashboard</p>
             <input type="password" id="login-password" placeholder="Password" autofocus>
             <button id="login-btn" onclick="attemptLogin()">Access Dashboard</button>
@@ -551,7 +551,7 @@
         <!-- Header -->
         <div class="dash-header">
             <div class="dash-header-left">
-                <h1>NEON <span>DISPATCH</span></h1>
+                <h1>BEST AMERICAN <span>DISPATCH</span></h1>
             </div>
             <div class="dash-header-right">
                 <button class="dash-btn" onclick="refreshLeads()">↻ Refresh</button>
@@ -824,9 +824,9 @@
                 '<button class="modal-save-btn" onclick="saveLead(\'' + lead.id + '\')">Save Changes</button>';
 
             if (lead.syncedWithCRM) {
-                document.getElementById('modal-body').innerHTML += '<div class="modal-synced-badge">✓ Synced with Neon CRM</div>';
+                document.getElementById('modal-body').innerHTML += '<div class="modal-synced-badge">✓ Synced with Best American CRM</div>';
             } else {
-                document.getElementById('modal-body').innerHTML += '<button class="modal-crm-btn" id="modal-crm-btn" onclick="sendToCRM(\'' + lead.id + '\')">📤 Send to Neon CRM</button>';
+                document.getElementById('modal-body').innerHTML += '<button class="modal-crm-btn" id="modal-crm-btn" onclick="sendToCRM(\'' + lead.id + '\')">📤 Send to Best American CRM</button>';
             }
 
             document.getElementById('modal-overlay').classList.add('active');
@@ -878,14 +878,14 @@
                     lead.syncedWithCRM = true;
                     // Update main database leads state
                     localStorage.setItem('neon_ai_leads', JSON.stringify(leads));
-                    alert('Success! Lead has been exported to Neon CRM Database.');
+                    alert('Success! Lead has been exported to Best American CRM Database.');
                     closeModal();
                     refreshLeads();
                 } else {
                     alert('Error saving to CRM: ' + (data.message || 'Unknown error'));
                     if (btn) {
                         btn.disabled = false;
-                        btn.textContent = '📤 Send to Neon CRM';
+                        btn.textContent = '📤 Send to Best American CRM';
                     }
                 }
             })
@@ -893,7 +893,7 @@
                 alert('Connection failure to CRM API: ' + err.message);
                 if (btn) {
                     btn.disabled = false;
-                    btn.textContent = '📤 Send to Neon CRM';
+                    btn.textContent = '📤 Send to Best American CRM';
                 }
             });
         }

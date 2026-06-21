@@ -1,9 +1,9 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const OLD = 'https://www.neonautotransport.com';
-const NEW = 'https://neonautotransport.com';
+const OLD = 'https://www.bestamericanautotransport.com';
+const NEW = 'https://bestamericanautotransport.com';
 
 function walk(dir) {
   let results = [];

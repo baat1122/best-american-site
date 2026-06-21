@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const rootDir = 'c:/Users/DYNABOOK/.gemini/antigravity/scratch/neon-site';
@@ -24,12 +24,12 @@ for (const file of htmlFiles) {
   let originalContent = content;
 
   // Extract page title to use for the alt tag
-  const titleMatch = content.match(/<title>([^|]+?)\s*\|.*Neon Auto Transport<\/title>/);
+  const titleMatch = content.match(/<title>([^|]+?)\s*\|.*Best American Auto Transport Inc<\/title>/);
   if (titleMatch) {
     const pageTitle = titleMatch[1].trim();
     
     // Replace Unsplash image without alt
-    content = content.replace(/(<img\s+loading="lazy"\s+src="https:\/\/images\.unsplash\.com\/[^"]+"\s+class="w-full\s+h-full\s+object-cover")>/g, `$1 alt="${pageTitle} — Neon Auto Transport">`);
+    content = content.replace(/(<img\s+loading="lazy"\s+src="https:\/\/images\.unsplash\.com\/[^"]+"\s+class="w-full\s+h-full\s+object-cover")>/g, `$1 alt="${pageTitle} — Best American Auto Transport Inc">`);
   }
 
   if (content !== originalContent) {

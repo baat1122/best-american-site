@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 
 const data = JSON.parse(fs.readFileSync('services/service-data.json', 'utf8'));
 
@@ -40,9 +40,9 @@ for (const [title, details] of Object.entries(data)) {
     const desc = details.benefit.charAt(0).toUpperCase() + details.benefit.slice(1) + '. ' + details.feature.charAt(0).toUpperCase() + details.feature.slice(1) + '.';
     
     html += `                <!-- Service ${count} -->\n`;
-    html += `                <div class="stripe-card p-8 flex flex-col items-start bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-[#635bff] group">\n`;
-    html += `                    <div class="w-14 h-14 rounded-2xl bg-[#e0e7ff] text-[#635bff] flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform shadow-inner">${emoji}</div>\n`;
-    html += `                    <h2 class="text-2xl font-black mb-4 text-[#0a2540] group-hover:text-[#635bff] transition-colors">${title}</h2>\n`;
+    html += `                <div class="stripe-card p-8 flex flex-col items-start bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-[#800020] group">\n`;
+    html += `                    <div class="w-14 h-14 rounded-2xl bg-[#e0e7ff] text-[#800020] flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform shadow-inner">${emoji}</div>\n`;
+    html += `                    <h2 class="text-2xl font-black mb-4 text-[#0a2540] group-hover:text-[#800020] transition-colors">${title}</h2>\n`;
     html += `                    <p class="text-[#425466] mb-8 leading-relaxed flex-grow">${desc}</p>\n`;
     html += `                    <a href="/services/${slug}.html" class="btn-outline w-full text-center mt-auto">Learn More</a>\n`;
     html += `                </div>\n`;

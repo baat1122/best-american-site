@@ -22,20 +22,20 @@ let terms = headToHeader;
 
 // Replace head meta tags
 terms = terms.replace(
-  '<title>Privacy Policy | Neon Auto Transport | Data Protection &amp; SMS Consent</title>',
-  '<title>Terms & Conditions | Neon Auto Transport | Auto Shipping Agreement</title>'
+  '<title>Privacy Policy | Best American Auto Transport Inc | Data Protection &amp; SMS Consent</title>',
+  '<title>Terms & Conditions | Best American Auto Transport Inc | Auto Shipping Agreement</title>'
 );
 terms = terms.replace(
-  '<meta name="description" content="Read the Neon Auto Transport Privacy Policy. Learn how we collect, use, and protect your personal data, SMS consent, and contact information.">',
-  '<meta name="description" content="Read the Neon Auto Transport Terms and Conditions. Understand our auto shipping service agreement, liability coverage, and cancellation policies.">'
+  '<meta name="description" content="Read the Best American Auto Transport Inc Privacy Policy. Learn how we collect, use, and protect your personal data, SMS consent, and contact information.">',
+  '<meta name="description" content="Read the Best American Auto Transport Inc Terms and Conditions. Understand our auto shipping service agreement, liability coverage, and cancellation policies.">'
 );
 terms = terms.replace(
-  '<link rel="canonical" href="https://neonautotransport.com/privacy/" />',
-  '<link rel="canonical" href="https://neonautotransport.com/terms/" />'
+  '<link rel="canonical" href="https://bestamericanautotransport.com/privacy/" />',
+  '<link rel="canonical" href="https://bestamericanautotransport.com/terms/" />'
 );
-terms = terms.replace(/og:url.*content="[^"]*"/, 'og:url" content="https://neonautotransport.com/terms/"');
-terms = terms.replace(/og:title.*content="[^"]*"/, 'og:title" content="Terms & Conditions | Neon Auto Transport"');
-terms = terms.replace(/og:description.*content="[^"]*"/, 'og:description" content="Neon Auto Transport Terms and Conditions cover our service agreement, liability, payment terms, and cancellation policies."');
+terms = terms.replace(/og:url.*content="[^"]*"/, 'og:url" content="https://bestamericanautotransport.com/terms/"');
+terms = terms.replace(/og:title.*content="[^"]*"/, 'og:title" content="Terms & Conditions | Best American Auto Transport Inc"');
+terms = terms.replace(/og:description.*content="[^"]*"/, 'og:description" content="Best American Auto Transport Inc Terms and Conditions cover our service agreement, liability, payment terms, and cancellation policies."');
 
 // Replace hero
 const heroStart = terms.indexOf('<main>');
@@ -52,7 +52,7 @@ const newHero = `<main>
                     Terms & Conditions
                 </h1>
                 <p class="text-lg md:text-xl text-[rgba(255,255,255,0.9)] max-w-2xl mx-auto leading-relaxed">
-                    Please review our terms of service carefully. These terms govern your use of Neon Auto Transport's vehicle shipping services.
+                    Please review our terms of service carefully. These terms govern your use of Best American Auto Transport Inc's vehicle shipping services.
                 </p>
             </div>
         </section>`;
@@ -70,8 +70,8 @@ const termsContent = `
 
                 <div class="stripe-card p-8 md:p-12 rounded-2xl mb-8">
                     <h2 class="text-2xl font-bold text-[#0a2540] mb-4">1. Service Agreement</h2>
-                    <p class="text-[#425466] text-sm leading-relaxed mb-4">By booking a vehicle transport service with Neon Auto Transport ("Company", "we", "us", "our"), you ("Customer") agree to the following terms and conditions. This agreement constitutes a legally binding contract between you and Neon Auto Transport.</p>
-                    <p class="text-[#425466] text-sm leading-relaxed">Neon Auto Transport acts as a licensed auto transport broker (MC# 1703787, DOT# 4355879) and arranges for the transportation of your vehicle through our network of vetted, FMCSA-approved carriers.</p>
+                    <p class="text-[#425466] text-sm leading-relaxed mb-4">By booking a vehicle transport service with Best American Auto Transport Inc ("Company", "we", "us", "our"), you ("Customer") agree to the following terms and conditions. This agreement constitutes a legally binding contract between you and Best American Auto Transport Inc.</p>
+                    <p class="text-[#425466] text-sm leading-relaxed">Best American Auto Transport Inc acts as a licensed auto transport broker (MC# 1662088, DOT# 4277211) and arranges for the transportation of your vehicle through our network of vetted, FMCSA-approved carriers.</p>
                 </div>
 
                 <div class="stripe-card p-8 md:p-12 rounded-2xl mb-8">
@@ -90,7 +90,7 @@ const termsContent = `
                         <li>Orders may be cancelled with a full deposit refund if cancelled before a carrier has been dispatched to your pickup location.</li>
                         <li>Once a carrier has been dispatched, a cancellation fee of up to $200 may apply to cover the carrier's deadhead mileage.</li>
                         <li>After the vehicle has been picked up, no refunds will be issued for the transport portion of the service.</li>
-                        <li>Cancellation requests must be made in writing via email to <a href="mailto:info@neonautotransport.com" class="text-[#635bff] font-bold hover:underline">info@neonautotransport.com</a>.</li>
+                        <li>Cancellation requests must be made in writing via email to <a href="mailto:info@bestamericanautotransport.com" class="text-[#800020] font-bold hover:underline">info@bestamericanautotransport.com</a>.</li>
                     </ul>
                 </div>
 
@@ -109,7 +109,7 @@ const termsContent = `
                     <ul class="text-[#425466] text-sm leading-relaxed space-y-3 list-disc list-inside">
                         <li>All carriers in our network carry active cargo insurance that covers your vehicle during loading, transit, and unloading.</li>
                         <li>In the event of damage during transport, claims must be filed within 48 hours of delivery and documented on the Bill of Lading at the time of delivery.</li>
-                        <li>Neon Auto Transport's liability as a broker is limited to arranging transport with insured carriers. The carrier's cargo insurance is the primary coverage for your vehicle.</li>
+                        <li>Best American Auto Transport Inc's liability as a broker is limited to arranging transport with insured carriers. The carrier's cargo insurance is the primary coverage for your vehicle.</li>
                         <li>We recommend maintaining your own comprehensive auto insurance policy for additional coverage.</li>
                     </ul>
                 </div>
@@ -122,7 +122,7 @@ const termsContent = `
 
                 <div class="stripe-card p-8 md:p-12 rounded-2xl mb-8">
                     <h2 class="text-2xl font-bold text-[#0a2540] mb-4">7. Limitation of Liability</h2>
-                    <p class="text-[#425466] text-sm leading-relaxed">Neon Auto Transport shall not be liable for any indirect, incidental, special, or consequential damages arising from the transportation of your vehicle. Our total liability shall not exceed the cost of the transport service. Delays caused by acts of God, weather events, government actions, or other force majeure events are beyond our control.</p>
+                    <p class="text-[#425466] text-sm leading-relaxed">Best American Auto Transport Inc shall not be liable for any indirect, incidental, special, or consequential damages arising from the transportation of your vehicle. Our total liability shall not exceed the cost of the transport service. Delays caused by acts of God, weather events, government actions, or other force majeure events are beyond our control.</p>
                 </div>
 
                 <div class="stripe-card p-8 md:p-12 rounded-2xl mb-8">
@@ -136,10 +136,10 @@ const termsContent = `
                     <p class="text-[#425466] text-sm leading-relaxed mb-4">We reserve the right to update these terms at any time. Material changes will be communicated via our website. Continued use of our services after changes constitutes acceptance of the updated terms.</p>
                     <p class="text-[#425466] text-sm leading-relaxed mb-4">For questions about these terms, contact us:</p>
                     <div class="bg-[#f6f9fc] rounded-xl p-6">
-                        <p class="text-[#0a2540] font-bold mb-2">Neon Auto Transport</p>
-                        <p class="text-[#425466] text-sm">2709 Neabsco Common Pl Suite 101, Woodbridge, VA 22191</p>
-                        <p class="text-[#425466] text-sm">Phone: <a href="tel:5715767711" class="text-[#635bff] font-bold hover:underline">(571) 576-7711</a></p>
-                        <p class="text-[#425466] text-sm">Email: <a href="mailto:info@neonautotransport.com" class="text-[#635bff] font-bold hover:underline">info@neonautotransport.com</a></p>
+                        <p class="text-[#0a2540] font-bold mb-2">Best American Auto Transport Inc</p>
+                        <p class="text-[#425466] text-sm">2709 Neabsco Common Pl Suite 101, Malvern, PA & Houston, TX 22191</p>
+                        <p class="text-[#425466] text-sm">Phone: <a href="tel:3023555544" class="text-[#800020] font-bold hover:underline">(302) 355-5544</a></p>
+                        <p class="text-[#425466] text-sm">Email: <a href="mailto:info@bestamericanautotransport.com" class="text-[#800020] font-bold hover:underline">info@bestamericanautotransport.com</a></p>
                         <p class="text-[#425466] text-xs mt-3 text-[#a3b8cc]">Last updated: June 2026</p>
                     </div>
                 </div>
@@ -152,8 +152,8 @@ terms = terms.substring(0, contentStart) + termsContent + terms.substring(conten
 
 // Fix the footer Terms link in terms.html
 let footerFixed = footer.replace(
-  '<a href="#" class="hover:text-[#635bff] transition">Terms & Conditions</a>',
-  '<a href="/terms/" class="hover:text-[#635bff] transition text-[#635bff]">Terms & Conditions</a>'
+  '<a href="#" class="hover:text-[#800020] transition">Terms & Conditions</a>',
+  '<a href="/terms/" class="hover:text-[#800020] transition text-[#800020]">Terms & Conditions</a>'
 );
 
 terms = terms.replace('</main>', '    </main>\n\n' + footerFixed);
@@ -161,8 +161,8 @@ terms += '\n\n' + scripts;
 
 // Fix footer Terms link in the Terms page too
 terms = terms.replace(
-  '<a href="#" class="hover:text-[#635bff] transition">Terms & Conditions</a>',
-  '<a href="/terms/" class="hover:text-[#635bff] transition text-[#635bff]">Terms & Conditions</a>'
+  '<a href="#" class="hover:text-[#800020] transition">Terms & Conditions</a>',
+  '<a href="/terms/" class="hover:text-[#800020] transition text-[#800020]">Terms & Conditions</a>'
 );
 
 fs.writeFileSync(path.join(__dirname, 'terms.html'), terms, 'utf8');
@@ -191,10 +191,10 @@ let fixedCount = 0;
 for (const filePath of allHtml) {
   if (path.basename(filePath) === 'terms.html') continue;
   let content = fs.readFileSync(filePath, 'utf8');
-  if (content.includes('<a href="#" class="hover:text-[#635bff] transition">Terms & Conditions</a>')) {
+  if (content.includes('<a href="#" class="hover:text-[#800020] transition">Terms & Conditions</a>')) {
     content = content.replace(
-      '<a href="#" class="hover:text-[#635bff] transition">Terms & Conditions</a>',
-      '<a href="/terms/" class="hover:text-[#635bff] transition">Terms & Conditions</a>'
+      '<a href="#" class="hover:text-[#800020] transition">Terms & Conditions</a>',
+      '<a href="/terms/" class="hover:text-[#800020] transition">Terms & Conditions</a>'
     );
     fs.writeFileSync(filePath, content, 'utf8');
     fixedCount++;
@@ -208,7 +208,7 @@ const sitemapPath = path.join(__dirname, 'sitemap.xml');
 let sitemap = fs.readFileSync(sitemapPath, 'utf8');
 const termsEntry = `
   <url>
-    <loc>https://neonautotransport.com/terms/</loc>
+    <loc>https://bestamericanautotransport.com/terms/</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

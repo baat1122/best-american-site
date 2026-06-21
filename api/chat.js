@@ -1,7 +1,7 @@
-// api/chat.js — Vercel Serverless Function
+﻿// api/chat.js — Vercel Serverless Function
 // Proxies chat to OpenAI and extracts structured lead data
 
-const SYSTEM_PROMPT = `You are the AI Sales Assistant for Neon Auto Transport — a top-rated, FMCSA & US DOT approved nationwide car shipping company based in Woodbridge, VA. You are a friendly, professional, and knowledgeable auto transport specialist.
+const SYSTEM_PROMPT = `You are the AI Sales Assistant for Best American Auto Transport Inc — a top-rated, FMCSA & US DOT approved nationwide car shipping company with offices in Malvern, PA and Houston, TX. You are a friendly, professional, and knowledgeable auto transport specialist.
 
 YOUR GOAL:
 Naturally guide customers through a conversational quote request. Collect all required information through friendly dialogue — do NOT present a form. Ask one or two questions at a time to keep it natural.
@@ -52,13 +52,13 @@ PRICING RULES:
 
 HIGH-INTENT SIGNALS:
 If the customer mentions urgency, a deadline, asks about expedited service, or seems ready to book:
-- Suggest they call directly for fastest service: (571) 576-7711
+- Suggest they call directly for fastest service: (302) 355-5544
 - Mark intent as high in your extraction
 
 COMPANY FACTS:
-- Phone: (571) 576-7711
-- Email: info@neonautotransport.com
-- Address: 2709 Neabsco Common Pl Suite 101, Woodbridge, VA 22191
+- Phone: (302) 355-5544
+- Email: info@bestamericanautotransport.com
+- Address: 2709 Neabsco Common Pl Suite 101, Malvern, PA & Houston, TX 22191
 - Hours: Mon-Fri 8AM-8PM, Sat-Sun 9AM-5PM
 - Service: Door-to-door auto transport across all 50 states
 - Insurance: All carriers carry active cargo insurance
@@ -132,7 +132,7 @@ module.exports = async function handler(req, res) {
 
     // Rate limiting: max 60 messages per conversation
     if (messages.length > 60) {
-      return res.status(429).json({ error: 'Conversation limit reached. Please call (571) 576-7711 for assistance.' });
+      return res.status(429).json({ error: 'Conversation limit reached. Please call (302) 355-5544 for assistance.' });
     }
 
     // Sanitize messages

@@ -1,4 +1,4 @@
-// inject-chatbot.js — Adds chatbot CSS+JS to all HTML files
+﻿// inject-chatbot.js — Adds chatbot CSS+JS to all HTML files
 const fs = require('fs');
 const path = require('path');
 
@@ -8,7 +8,7 @@ const SKIP_FILES = ['route-template.html'];
 
 const CSS_TAG = '    <link rel="stylesheet" href="/css/chatbot.css">';
 const JS_TAG = '    <script src="/js/chatbot.js"><\/script>';
-const INJECT_MARKER = '<!-- Neon AI Chat Widget -->';
+const INJECT_MARKER = '<!-- Best American AI Chat Widget -->';
 
 function walkDir(dir, files = []) {
     const entries = fs.readdirSync(dir);

@@ -56,7 +56,7 @@ const statesData = [
     { name: "Wyoming", abbr: "WY", cities: ["Cheyenne", "Casper", "Laramie", "Gillette"] }
 ];
 
-const templatePath = path.join(__dirname, 'virginia-car-shipping.html');
+const templatePath = path.join(__dirname, 'virginia-car-shipping', 'index.html');
 const template = fs.readFileSync(templatePath, 'utf-8');
 
 function getRandomInt(min, max) {
@@ -259,9 +259,9 @@ function generateCitiesHTML(stateName, cities) {
     
     return `<div class="stripe-card p-8 lg:p-10 bg-white">
                         <h2 class="text-3xl font-bold mb-4 text-[#0a2540] tracking-tight">Cities We Serve in ${stateName}</h2>
-                        <p class="text-[#425466] mb-8 leading-relaxed">Neon Auto Transport provides car shipping services to cities throughout ${stateName}. Click on any city below to learn more about auto transport options in that area.</p>
+                        <p class="text-[#425466] mb-8 leading-relaxed">Best American Auto Transport Inc provides car shipping services to cities throughout ${stateName}. Click on any city below to learn more about auto transport options in that area.</p>
                         
-                        <div class="font-bold text-[#635bff] mb-4 text-sm uppercase tracking-wider">${cities.length} cities served in ${stateName}</div>
+                        <div class="font-bold text-[#800020] mb-4 text-sm uppercase tracking-wider">${cities.length} cities served in ${stateName}</div>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-2 text-sm text-[#468de6] font-semibold">
                             ${citiesLinks}
                         </div>
@@ -271,7 +271,11 @@ function generateCitiesHTML(stateName, cities) {
 statesData.forEach(state => {
     // Generate safe slug
     let slug = state.name.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '');
-    const outputPath = path.join(__dirname, `${slug}-car-shipping.html`);
+    const folderPath = path.join(__dirname, `${slug}-car-shipping`);
+    if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath, { recursive: true });
+    }
+    const outputPath = path.join(folderPath, 'index.html');
 
     // Skip virginia since it's the template
     if (state.name === "Virginia") return;
@@ -284,7 +288,7 @@ statesData.forEach(state => {
     // 2. Replace "VA" abbreviations
     content = content.replace(/\bVA\b/g, state.abbr);
     
-    // 2.1 Restore provider.address.addressRegion to VA (company is in Woodbridge, VA)
+    // 2.1 Restore provider.address.addressRegion to VA (company is in Malvern, PA & Houston, TX)
     content = content.replace(/"addressRegion":\s*"[^"]*"/, '"addressRegion": "VA"');
     
     // 3. Replace Richmond, Norfolk
@@ -295,20 +299,20 @@ statesData.forEach(state => {
 
     // 3.2 Rebuild meta description with state-specific data
     const metaDescRegex = /<meta name="description" content="[^"]*">/;
-    content = content.replace(metaDescRegex, `<meta name="description" content="Ship your car to or from ${state.name} with Neon Auto Transport. Fully insured door-to-door vehicle transport serving ${state.cities[0]} and all of ${state.name}. FMCSA approved. Get a free instant quote.">`);
+    content = content.replace(metaDescRegex, `<meta name="description" content="Ship your car to or from ${state.name} with Best American Auto Transport Inc. Fully insured door-to-door vehicle transport serving ${state.cities[0]} and all of ${state.name}. FMCSA approved. Get a free instant quote.">`);
 
     // 3.3 Rebuild OG description
     const ogDescRegex = /<meta property="og:description" content="[^"]*">/;
-    content = content.replace(ogDescRegex, `<meta property="og:description" content="Reliable, FMCSA approved car shipping to and from ${state.name}. Serving ${state.cities[0]} and all cities in ${state.name}. Door-to-door auto transport. Call (571) 576-7711.">`);
+    content = content.replace(ogDescRegex, `<meta property="og:description" content="Reliable, FMCSA approved car shipping to and from ${state.name}. Serving ${state.cities[0]} and all cities in ${state.name}. Door-to-door auto transport. Call (302) 355-5544.">`);
 
     // 3.4 Rebuild Twitter description
     const twitterDescRegex = /<meta name="twitter:description" content="[^"]*">/;
-    content = content.replace(twitterDescRegex, `<meta name="twitter:description" content="Ship your car to or from ${state.name} with Neon Auto Transport. Door-to-door delivery serving ${state.cities[0]}. Instant quote available.">`);
+    content = content.replace(twitterDescRegex, `<meta name="twitter:description" content="Ship your car to or from ${state.name} with Best American Auto Transport Inc. Door-to-door delivery serving ${state.cities[0]}. Instant quote available.">`);
 
     // 3.5 Inject unique state data into Hero paragraph and Multi-Layout Engine
     const sData = stateDataMap[state.name];
     if (sData) {
-        const heroDesc = `Planning to ship a car to or from ${state.name}? Whether you're relocating to ${sData.nickname} or sending a vehicle across the country, navigating ${sData.highway} and dealing with ${sData.climate} can be challenging. Neon Auto Transport ensures a stress-free experience tailored for ${sData.terrain}, with upfront pricing and a highly vetted carrier network ready to handle ${sData.challenge}.`;
+        const heroDesc = `Planning to ship a car to or from ${state.name}? Whether you're relocating to ${sData.nickname} or sending a vehicle across the country, navigating ${sData.highway} and dealing with ${sData.climate} can be challenging. Best American Auto Transport Inc ensures a stress-free experience tailored for ${sData.terrain}, with upfront pricing and a highly vetted carrier network ready to handle ${sData.challenge}.`;
         
                 const stateImages = {
   "Alabama": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Alabama.svg/1280px-Flag_of_Alabama.svg.png",
@@ -368,19 +372,19 @@ statesData.forEach(state => {
         
         // Layouts
         const layoutA = `
-        <section class="bg-[#0a2540] text-white pt-24 pb-40 slant-bottom relative overflow-hidden">
+        <section class="stripe-gradient-bg text-white pt-24 pb-40 slant-bottom relative overflow-hidden">
             <div class="absolute inset-0 w-full h-full opacity-10">
                 <img src="${imgUrl}" class="w-full h-full object-cover">
             </div>
             <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center relative z-10">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[rgba(255,255,255,0.3)] bg-[rgba(255,255,255,0.1)] text-xs font-bold mb-6">
-                    <span class="w-2 h-2 rounded-full bg-[#39FF14]"></span>
-                    FMSCA & US Dot Approved
+                    <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+                    FMCSA & US Dot Approved
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">${state.name} Car Shipping</h1>
-                <p class="text-lg text-[#cdd5df] mb-10 max-w-3xl mx-auto leading-relaxed">${heroDesc}</p>
+                <p class="text-lg text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">${heroDesc}</p>
                 <div class="flex justify-center gap-4">
-                    <a href="/quote/" class="bg-[#39FF14] text-[#0a2540] px-8 py-4 rounded-full font-black text-lg hover:bg-[#32e011] transition shadow-lg flex items-center gap-2">
+                    <a href="/quote/" class="bg-[#D4AF37] text-[#0a2540] px-8 py-4 rounded-full font-black text-lg hover:bg-[#b89326] transition shadow-lg flex items-center gap-2">
                         Calculate Your Rate Instantly 
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
@@ -389,20 +393,20 @@ statesData.forEach(state => {
         </section>`;
 
         const layoutB = `
-        <section class="relative pt-32 pb-48 flex items-center justify-center border-b-[8px] border-[#39FF14]">
+        <section class="relative pt-32 pb-48 flex items-center justify-center border-b-[8px] border-[#D4AF37]">
             <div class="absolute inset-0 w-full h-full">
                 <img src="${imgUrl}" alt="${state.name} Car Shipping" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-[#0a2540]/85"></div>
+                <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(26,0,6,0.95) 0%, rgba(0,0,0,0.95) 100%);"></div>
             </div>
-            <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center relative z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white text-sm font-bold mb-8">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#39FF14] animate-pulse"></span>
+            <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center relative z-10 text-white">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white text-sm font-bold mb-8">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-pulse"></span>
                     Premium ${state.name} Auto Transport
                 </div>
                 <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight drop-shadow-lg">${state.name} Car Shipping</h1>
                 <p class="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed font-medium drop-shadow-md">${heroDesc}</p>
                 <div class="flex justify-center gap-4">
-                    <a href="/quote/" class="bg-[#39FF14] text-[#0a2540] px-10 py-5 rounded-full font-black text-xl hover:bg-[#32e011] transition hover:-translate-y-1 shadow-[0_10px_30px_rgba(57,255,20,0.3)] flex items-center gap-2">
+                    <a href="/quote/" class="bg-[#D4AF37] text-[#0a2540] px-10 py-5 rounded-full font-black text-xl hover:bg-[#b89326] transition hover:-translate-y-1 shadow-[0_10px_30px_rgba(212,175,55,0.4)] flex items-center gap-2">
                         Get an Instant Quote 
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
@@ -411,17 +415,17 @@ statesData.forEach(state => {
         </section>`;
 
         const layoutC = `
-        <section class="bg-[#f6f9fc] border-b border-[#e6e6e6]">
+        <section class="border-b border-[#3d000f] text-white" style="background: linear-gradient(135deg, #1a0006 0%, #3d000f 60%, #000000 100%);">
             <div class="flex flex-col lg:flex-row">
                 <div class="lg:w-1/2 px-8 py-20 lg:py-32 lg:px-16 flex flex-col justify-center">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#e6e6e6] bg-white shadow-sm text-[#0a2540] text-xs font-bold mb-6 self-start">
-                        <span class="w-2 h-2 rounded-full bg-[#39FF14]"></span>
-                        FMSCA & US Dot Approved
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 bg-white/10 shadow-sm text-white text-xs font-bold mb-6 self-start">
+                        <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+                        FMCSA & US Dot Approved
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#0a2540] mb-6 tracking-tight">${state.name} Car Shipping</h1>
-                    <p class="text-lg text-[#425466] mb-10 leading-relaxed">${heroDesc}</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">${state.name} Car Shipping</h1>
+                    <p class="text-lg text-white/85 mb-10 leading-relaxed">${heroDesc}</p>
                     <div class="flex">
-                        <a href="/quote/" class="bg-[#39FF14] text-[#0a2540] px-8 py-4 rounded-full font-black text-lg hover:bg-[#32e011] transition shadow-[0_0_15px_rgba(57,255,20,0.4)] flex items-center gap-2">
+                        <a href="/quote/" class="bg-[#D4AF37] text-[#0a2540] px-8 py-4 rounded-full font-black text-lg hover:bg-[#b89326] transition shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center gap-2">
                             Calculate Your Rate Instantly 
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
@@ -429,7 +433,7 @@ statesData.forEach(state => {
                 </div>
                 <div class="lg:w-1/2 relative min-h-[400px]">
                     <img src="${imgUrl}" alt="${state.name} Auto Transport" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#f6f9fc] to-transparent w-32"></div>
+                    <div class="absolute inset-0 w-32 hidden lg:block" style="background: linear-gradient(to right, #1a0006 0%, rgba(26, 0, 6, 0.3) 60%, transparent 100%);"></div>
                 </div>
             </div>
         </section>`;
@@ -501,7 +505,7 @@ statesData.forEach(state => {
     // (Cities replacement moved before component shuffle above)
 
     fs.writeFileSync(outputPath, content);
-    console.log(`Generated ${slug}-car-shipping.html`);
+    console.log(`Generated ${slug}-car-shipping/index.html`);
 });
 
 console.log('All state pages generated successfully!');

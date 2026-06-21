@@ -144,7 +144,7 @@ const server = http.createServer((req, res) => {
         if (urlPath === '/' || urlPath === '') {
             filePath = path.join(DIR, 'index.html');
         }
-        // 2. Check root (e.g., /why-neon)
+        // 2. Check root (e.g., /why-best-american)
         else if (fs.existsSync(filePath + '.html')) {
             filePath += '.html';
         }

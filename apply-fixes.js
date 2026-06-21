@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const siteDir = __dirname;
@@ -38,7 +38,7 @@ function processDir(dir) {
                 // Change H2 to H3 for "Get a Free Quote"
                 content = content.replace('<h2 class="text-xl font-bold mb-1 text-[#0a2540]">Get a Free Quote</h2>', '<h3 class="text-xl font-bold mb-1 text-[#0a2540]">Get a Free Quote</h3>');
                 // Change "Global Scale" H2 to span, and the H3 below it to H2
-                content = content.replace('<h2 class="text-[#00d4ff] font-bold tracking-wide uppercase text-sm mb-4 reveal">Global Scale</h2>', '<span class="block text-[#00d4ff] font-bold tracking-wide uppercase text-sm mb-4 reveal">Global Scale</span>');
+                content = content.replace('<h2 class="text-[#D4AF37] font-bold tracking-wide uppercase text-sm mb-4 reveal">Global Scale</h2>', '<span class="block text-[#D4AF37] font-bold tracking-wide uppercase text-sm mb-4 reveal">Global Scale</span>');
                 content = content.replace('<h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter mb-8 reveal">The backbone of nationwide auto logistics.</h3>', '<h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter mb-8 reveal">The backbone of nationwide auto logistics.</h2>');
                 
                 // Form autocomplete
@@ -58,15 +58,15 @@ function processDir(dir) {
                 modified = true;
             }
 
-            // Inject Competitor Comparison into why-neon.html
-            if (file === 'why-neon.html' && !content.includes('id="competitor-comparison"')) {
+            // Inject Competitor Comparison into why-best-american.html
+            if (file === 'why-best-american.html' && !content.includes('id="competitor-comparison"')) {
                 const comparisonSection = `
         <!-- Competitor Comparison Section -->
         <section class="py-24 bg-white relative z-10 border-b border-[#e6e6e6]" id="competitor-comparison">
             <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
                 <div class="text-center mb-16 reveal">
-                    <h2 class="text-[#635bff] font-bold tracking-wide uppercase text-sm mb-4">Compare Us</h2>
-                    <h3 class="text-4xl font-black text-[#0a2540] tracking-tight mb-6">Why Neon Auto Transport Leads the Industry</h3>
+                    <h2 class="text-[#800020] font-bold tracking-wide uppercase text-sm mb-4">Compare Us</h2>
+                    <h3 class="text-4xl font-black text-[#0a2540] tracking-tight mb-6">Why Best American Auto Transport Inc Leads the Industry</h3>
                     <p class="text-lg text-[#425466]">See how we stack up against Montway, Sherpa, SGT Auto Transport, and RoadRunner.</p>
                 </div>
                 <div class="overflow-x-auto">
@@ -74,7 +74,7 @@ function processDir(dir) {
                         <thead>
                             <tr class="bg-[#f0f5fa] border-b-2 border-[#e6e6e6]">
                                 <th class="p-6 font-bold text-[#0a2540] whitespace-nowrap">Feature</th>
-                                <th class="p-6 font-black text-[#635bff] text-xl whitespace-nowrap">Neon Auto Transport</th>
+                                <th class="p-6 font-black text-[#800020] text-xl whitespace-nowrap">Best American Auto Transport Inc</th>
                                 <th class="p-6 font-medium text-[#425466] whitespace-nowrap">Montway</th>
                                 <th class="p-6 font-medium text-[#425466] whitespace-nowrap">Sherpa</th>
                                 <th class="p-6 font-medium text-[#425466] whitespace-nowrap">SGT / RoadRunner</th>
@@ -120,8 +120,8 @@ function processDir(dir) {
         <section class="py-24 bg-white relative z-10 border-t border-[#e6e6e6]" id="competitor-comparison">
             <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
                 <div class="text-center mb-16 reveal">
-                    <h2 class="text-[#635bff] font-bold tracking-wide uppercase text-sm mb-4">Compare Us</h2>
-                    <h3 class="text-4xl font-black text-[#0a2540] tracking-tight mb-6">Why Neon Auto Transport Leads the Industry</h3>
+                    <h2 class="text-[#800020] font-bold tracking-wide uppercase text-sm mb-4">Compare Us</h2>
+                    <h3 class="text-4xl font-black text-[#0a2540] tracking-tight mb-6">Why Best American Auto Transport Inc Leads the Industry</h3>
                     <p class="text-lg text-[#425466]">See how we stack up against Montway, Sherpa, SGT Auto Transport, and RoadRunner.</p>
                 </div>
                 <div class="overflow-x-auto">
@@ -129,7 +129,7 @@ function processDir(dir) {
                         <thead>
                             <tr class="bg-[#f0f5fa] border-b-2 border-[#e6e6e6]">
                                 <th class="p-6 font-bold text-[#0a2540] whitespace-nowrap">Feature</th>
-                                <th class="p-6 font-black text-[#635bff] text-xl whitespace-nowrap">Neon Auto Transport</th>
+                                <th class="p-6 font-black text-[#800020] text-xl whitespace-nowrap">Best American Auto Transport Inc</th>
                                 <th class="p-6 font-medium text-[#425466] whitespace-nowrap">Montway</th>
                                 <th class="p-6 font-medium text-[#425466] whitespace-nowrap">Sherpa</th>
                                 <th class="p-6 font-medium text-[#425466] whitespace-nowrap">SGT / RoadRunner</th>

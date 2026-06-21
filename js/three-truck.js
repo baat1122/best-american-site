@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+﻿document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("truck-canvas-container");
     if (!container || typeof THREE === "undefined") return;
 
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Add some abstract "Cars" on the trailer
-    const carMat1 = new THREE.MeshStandardMaterial({ color: 0x39FF14, roughness: 0.3, metalness: 0.6 }); // Neon Green
+    const carMat1 = new THREE.MeshStandardMaterial({ color: 0x39FF14, roughness: 0.3, metalness: 0.6 }); // Best American Green
     const carMat2 = new THREE.MeshStandardMaterial({ color: 0x635bff, roughness: 0.3, metalness: 0.6 }); // Purple
     
     function createAbstractCar(mat, x, y, z) {

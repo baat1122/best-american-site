@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const rootDir = 'c:/Users/DYNABOOK/.gemini/antigravity/scratch/neon-site';
@@ -56,7 +56,7 @@ const allTemplateFiles = [...serviceFiles, ...routeFiles];
 
 const authorName = 'Marcus Reid';
 const authorTitle = 'Senior Logistics Coordinator';
-const authorBio = `${authorName} is a ${authorTitle} at Neon Auto Transport with over a decade of experience coordinating cross-country freight and specialized vehicle transport for individual, military, and corporate clients.`;
+const authorBio = `${authorName} is a ${authorTitle} at Best American Auto Transport Inc with over a decade of experience coordinating cross-country freight and specialized vehicle transport for individual, military, and corporate clients.`;
 
 let updatedCount = 0;
 
@@ -90,11 +90,11 @@ for (const file of allTemplateFiles) {
     const authorSection = `
     <!-- Author Byline -->
     <section class="container mx-auto px-4 lg:px-8 max-w-6xl pb-16" id="author-byline">
-        <div class="stripe-card p-8 flex items-start gap-6 border-l-4 border-l-[#635bff]">
-            <div class="w-16 h-16 rounded-full bg-[#e0e7ff] flex items-center justify-center text-[#635bff] font-black text-2xl flex-shrink-0">MR</div>
+        <div class="stripe-card p-8 flex items-start gap-6 border-l-4 border-l-[#800020]">
+            <div class="w-16 h-16 rounded-full bg-[#e0e7ff] flex items-center justify-center text-[#800020] font-black text-2xl flex-shrink-0">MR</div>
             <div>
                 <div class="font-bold text-[#0a2540] text-lg">${authorName}</div>
-                <div class="text-[#635bff] text-sm font-semibold mb-2">${authorTitle} at Neon Auto Transport</div>
+                <div class="text-[#800020] text-sm font-semibold mb-2">${authorTitle} at Best American Auto Transport Inc</div>
                 <p class="text-[#425466] text-sm leading-relaxed">${authorBio}</p>
             </div>
         </div>
@@ -110,19 +110,19 @@ for (const file of allTemplateFiles) {
     <section class="container mx-auto px-4 lg:px-8 max-w-6xl pb-12" id="customer-reviews-section">
         <h2 class="text-3xl font-bold mb-8 text-[#0a2540] tracking-tight text-center">What Our Customers Say</h2>
         <div class="grid md:grid-cols-3 gap-6">
-            <div class="stripe-card p-6 border-t-4 border-t-[#39FF14]">
+            <div class="stripe-card p-6 border-t-4 border-t-[#D4AF37]">
                 <div class="flex items-center gap-1 mb-3 text-yellow-400 text-lg">★★★★★</div>
-                <p class="text-[#425466] text-sm leading-relaxed mb-4">"Neon Auto Transport shipped my vehicle from Virginia to California in just 5 days. The driver was professional, communication was excellent, and the price was exactly what was quoted. Highly recommend!"</p>
+                <p class="text-[#425466] text-sm leading-relaxed mb-4">"Best American Auto Transport Inc shipped my vehicle from Virginia to California in just 5 days. The driver was professional, communication was excellent, and the price was exactly what was quoted. Highly recommend!"</p>
                 <div class="font-bold text-[#0a2540] text-sm">— Sarah M.</div>
                 <div class="text-xs text-[#425466]">Verified Customer · Google Reviews</div>
             </div>
-            <div class="stripe-card p-6 border-t-4 border-t-[#39FF14]">
+            <div class="stripe-card p-6 border-t-4 border-t-[#D4AF37]">
                 <div class="flex items-center gap-1 mb-3 text-yellow-400 text-lg">★★★★★</div>
-                <p class="text-[#425466] text-sm leading-relaxed mb-4">"As a military family doing a PCS move, we needed reliable transport. Neon gave us a military discount and handled everything seamlessly. Our car arrived in perfect condition. Will use again for our next move."</p>
+                <p class="text-[#425466] text-sm leading-relaxed mb-4">"As a military family doing a PCS move, we needed reliable transport. Best American gave us a military discount and handled everything seamlessly. Our car arrived in perfect condition. Will use again for our next move."</p>
                 <div class="font-bold text-[#0a2540] text-sm">— James T.</div>
                 <div class="text-xs text-[#425466]">Verified Customer · Trustpilot</div>
             </div>
-            <div class="stripe-card p-6 border-t-4 border-t-[#39FF14]">
+            <div class="stripe-card p-6 border-t-4 border-t-[#D4AF37]">
                 <div class="flex items-center gap-1 mb-3 text-yellow-400 text-lg">★★★★★</div>
                 <p class="text-[#425466] text-sm leading-relaxed mb-4">"I was nervous about shipping my classic Mustang but the enclosed transport option gave me peace of mind. Zero scratches, delivered on time. The no-deposit policy sealed the deal for me."</p>
                 <div class="font-bold text-[#0a2540] text-sm">— David R.</div>
@@ -130,7 +130,7 @@ for (const file of allTemplateFiles) {
             </div>
         </div>
         <div class="text-center mt-6">
-            <span class="text-[#635bff] font-bold text-sm">★ 4.9 out of 5</span>
+            <span class="text-[#800020] font-bold text-sm">★ 4.9 out of 5</span>
             <span class="text-[#425466] text-sm"> based on 1,247 verified reviews</span>
         </div>
     </section>
@@ -156,10 +156,10 @@ if (fs.existsSync(sitemapPath)) {
   if (!sitemap.includes('/blog/')) {
     const blogEntries = `
   <!-- Blog Pages -->
-  <url><loc>https://neonautotransport.com/blog/</loc><lastmod>2026-06-06</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://neonautotransport.com/blog/open-vs-enclosed-auto-transport/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://neonautotransport.com/blog/how-to-prepare-car-for-shipping/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://neonautotransport.com/blog/true-cost-of-car-shipping-2026/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bestamericanautotransport.com/blog/</loc><lastmod>2026-06-06</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bestamericanautotransport.com/blog/open-vs-enclosed-auto-transport/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bestamericanautotransport.com/blog/how-to-prepare-car-for-shipping/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bestamericanautotransport.com/blog/true-cost-of-car-shipping-2026/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 `;
     sitemap = sitemap.replace('</urlset>', `${blogEntries}\n</urlset>`);
     fs.writeFileSync(sitemapPath, sitemap, 'utf8');

@@ -29,8 +29,8 @@ for (const file of htmlFiles) {
   content = content.replace(/<link rel="canonical" href="([^"]+)\.html"\s*\/>/g, '<link rel="canonical" href="$1/" />');
 
   // 2. Breadcrumbs
-  content = content.replace(/"@id":\s*"https:\/\/neonautotransport\.com\/services\/index\.html"/g, '"@id": "https://neonautotransport.com/services/"');
-  content = content.replace(/"item":\s*"https:\/\/neonautotransport\.com\/services\/index\.html"/g, '"item": "https://neonautotransport.com/services/"');
+  content = content.replace(/"@id":\s*"https:\/\/bestamericanautotransport\.com\/services\/index\.html"/g, '"@id": "https://bestamericanautotransport.com/services/"');
+  content = content.replace(/"item":\s*"https:\/\/bestamericanautotransport\.com\/services\/index\.html"/g, '"item": "https://bestamericanautotransport.com/services/"');
 
   // 3. Favicon
   if (!content.includes('rel="icon"')) {
@@ -39,9 +39,9 @@ for (const file of htmlFiles) {
 
   // 4. Titles (mostly in routes/ and services/)
   if (file.includes('routes') || file.includes('services')) {
-    // Current typical title: <title>Virginia Car Shipping | Auto Transport to & from Virginia | Neon Auto Transport</title>
-    // We want: <title>Virginia Car Shipping | Neon Auto Transport</title>
-    content = content.replace(/<title>([^|]+?)\s*\|.*?Neon Auto Transport<\/title>/g, '<title>$1 | Neon Auto Transport</title>');
+    // Current typical title: <title>Virginia Car Shipping | Auto Transport to & from Virginia | Best American Auto Transport Inc</title>
+    // We want: <title>Virginia Car Shipping | Best American Auto Transport Inc</title>
+    content = content.replace(/<title>([^|]+?)\s*\|.*?Best American Auto Transport Inc<\/title>/g, '<title>$1 | Best American Auto Transport Inc</title>');
   }
 
   // 5. Dual URL Structure in index.html (and any other pages with the mega menu)
@@ -50,7 +50,7 @@ for (const file of htmlFiles) {
   
   // Fix Mega Menu links: /xxx-shipping/ to /services/xxx-shipping/
   // The mega menu had links like href="/snow-bird-car-shipping/"
-  // We should be careful not to replace root links like /quote/, /why-neon/, /contact/
+  // We should be careful not to replace root links like /quote/, /why-best-american/, /contact/
   const servicesList = [
     'snow-bird-car-shipping', 'military-car-shipping', 'college-car-shipping',
     'luxury-car-shipping', 'car-shipping-to-another-state', 'truck-shipping-services',

@@ -1,4 +1,4 @@
-(function(){
+﻿(function(){
 function initUsMap() {
     const container = document.getElementById("us-map-container");
     const tooltip = document.getElementById("map-tooltip");
@@ -39,7 +39,7 @@ function initUsMap() {
                 cursor: pointer;
             }
             #us-map-container path:hover, #us-map-container circle:hover { 
-                fill: #00d4ff; 
+                fill: #D4AF37; 
                 stroke-width: 2.5; 
             }
             #us-map-container .separator1 { fill: none !important; stroke: #e6e6e6 !important; stroke-width: 2 !important; cursor: default; pointer-events: none; }

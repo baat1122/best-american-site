@@ -1,8 +1,8 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, 'services');
-const SITE = 'https://neonautotransport.com';
+const SITE = 'https://bestamericanautotransport.com';
 
 // Service-specific descriptions for better schema
 const SERVICE_DESCRIPTIONS = {
@@ -69,8 +69,8 @@ for (const [filename, customDesc] of Object.entries(SERVICE_DESCRIPTIONS)) {
   const canonical = extractCanonical(content);
   const desc = customDesc || metaDesc || title;
   
-  // Extract service name from title (remove " | Neon Auto Transport" suffix)
-  const serviceName = title ? title.replace(/ \| Neon Auto Transport/i, '').trim() : filename.replace('.html', '');
+  // Extract service name from title (remove " | Best American Auto Transport Inc" suffix)
+  const serviceName = title ? title.replace(/ \| Best American Auto Transport Inc/i, '').trim() : filename.replace('.html', '');
 
   const schema = {
     "@context": "https://schema.org",
@@ -80,17 +80,27 @@ for (const [filename, customDesc] of Object.entries(SERVICE_DESCRIPTIONS)) {
     "url": canonical || `${SITE}/services/${filename.replace('.html', '/')}`,
     "provider": {
       "@type": "Organization",
-      "name": "Neon Auto Transport",
+      "name": "Best American Auto Transport Inc",
       "url": SITE,
-      "telephone": "+15715767711",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2709 Neabsco Common Pl Suite 101",
-        "addressLocality": "Woodbridge",
-        "addressRegion": "VA",
-        "postalCode": "22191",
-        "addressCountry": "US"
-      }
+      "telephone": "+13023555544",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "5 Great Valley Pkwy",
+          "addressLocality": "Malvern",
+          "addressRegion": "PA",
+          "postalCode": "19355",
+          "addressCountry": "US"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "6464 Savoy Dr",
+          "addressLocality": "Houston",
+          "addressRegion": "TX",
+          "postalCode": "77036",
+          "addressCountry": "US"
+        }
+      ]
     },
     "areaServed": { "@type": "Country", "name": "United States" },
     "serviceType": "Auto Transport"
