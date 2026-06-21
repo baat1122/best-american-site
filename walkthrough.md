@@ -150,6 +150,11 @@ All 50 states + Washington DC route pages were regenerated with Best American br
 ---
 
 ## Clean URL Routing & Chatbot Injection (June 21) ✅
-- **Explicit Vercel Rewrite Rules**: Configured `vercel.json` with explicit rewrite rules for extensionless clean URLs (`/about`, `/faq`, `/reviews`, `/contact`, `/locations`, `/privacy`, `/terms`, `/why-best-american`, and `/blog/:slug`) routing to their corresponding flat `.html` files. Combined with `"trailingSlash": false`, this automatically and gracefully handles redirecting `/blog/slug/` -> `/blog/slug` -> `/blog/slug.html` without breaking layouts or displaying 404s.
+- **Explicit Vercel Rewrite Rules**: Configured [vercel.json](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/vercel.json) with explicit rewrite rules for extensionless clean URLs (`/about`, `/faq`, `/reviews`, `/contact`, `/locations`, `/privacy`, `/terms`, `/why-best-american`, and `/blog/:slug`) routing to their corresponding flat `.html` files.
+- **State Pages Routing Fix**: Fixed the state page rewrite rule inside [vercel.json](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/vercel.json) to target the clean directory route path `/routes/:slug` instead of `/routes/:slug/index.html`. This ensures that Vercel's clean URLs engine correctly maps extensionless requests (like `/texas-car-shipping`) to the underlying directory contents without returning a 404.
+- **Validation**: Executed an automated validation script against the deployed production site `https://best-american-site.vercel.app` testing all **51 state route pages** (both direct clean URLs and trailing slash redirects). Confirmed 100% success rate:
+  - Clean URLs (e.g. `/texas-car-shipping`) resolve with `200 OK`.
+  - Trailing slash URLs (e.g. `/texas-car-shipping/`) redirect with `308 Permanent Redirect` to the clean URL.
 - **Chatbot Injection**: Scanned and injected the Best American AI Chatbot CSS/JS code blocks before `</body>` in the remaining 9 pages that were missing them (`about.html`, `faq.html`, `reviews.html`, `blog/index.html`, and 5 blog subpages) as well as the generator template `routes/route-template.html` to ensure full coverage.
-- **Committed & Pushed**: staged, committed, and pushed these updates to the remote GitHub repository (`baat1122/best-american-site`) on the `main` branch.
+- **Committed & Pushed**: Staged, committed, and pushed these updates to the remote GitHub repository (`baat1122/best-american-site`) on the `main` branch.
+
