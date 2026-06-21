@@ -133,3 +133,16 @@ All 50 states + Washington DC route pages were regenerated with Best American br
 - **Vercel Deployment Optimization**: Created [vercel.json](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/vercel.json) to bypass package installation (skipping `npm install` for heavy dependencies like `puppeteer` and `sharp` that are only used locally). This ensures Vercel deploys the static files instantly in 5 seconds and avoids build timeouts or memory exhaustion errors on Vercel's servers.
 - **DNS Conflict Identification**: Discovered a conflicting `AAAA` record pointing to Hostinger (`2a02:4780:1:572:0:1f2d:fd18:3`) on the root domain `bestamericanautotransport.com`. Because modern web browsers prioritize IPv6 (`AAAA`) over IPv4 (`A`), visits to the root domain were bypassing Vercel and connecting directly to Hostinger's servers, which served the old site with the old NEON logo/favicon.
 - **Guides Created**: Copied detailed guides ([deployment_guide.md](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/deployment_guide.md), [hostinger_dns_guide.md](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/hostinger_dns_guide.md), and [godaddy_dns_guide.md](file:///c:/Users/faddi/Downloads/neon-site-20260615T222253Z-3-001/neon-site/godaddy_dns_guide.md)) to the workspace and pushed them to the client's GitHub repository.
+
+---
+
+## Phase 7: Mobile Responsiveness Audit & Enhancements ✅
+- **Global Overflow Prevention**: Enforced strict `max-width: 100%; overflow-x: hidden;` bounds on `html` and `body` across all 170+ pages via `css/styles.css` (both static and generated) to guarantee zero horizontal scroll.
+- **Logo Wrapping Fix**: Configured responsive font scaling for `#logo-text` down to `1.15rem` (under 480px) and `1.0rem` (under 360px) to prevent wrapping or overflowing on small screens.
+- **iOS Safari Form Zoom Prevention**: Added media query forcing `font-size: 16px !important` on inputs, selects, and textareas on mobile devices to prevent Safari's intrusive viewport zoom on text focus.
+- **Mobile Menu Max-Height & Scrolling**: Limited the mobile menu dropdown to `calc(100vh - 80px)` and enabled vertical scrolling (`overflow-y: auto`) to support landscape orientations and shorter displays.
+- **Responsive Hero Spacing**: Tightened padding on the animated gradient hero section `#hero-section` to `6rem` top / `8rem` bottom on screens under 768px for immediate form visibility.
+- **Responsive Mobile Chatbot**: Optimized the AI chatbot widget (`css/chatbot.css`):
+  - Resized floating bubble launcher to `56x56px` with a snug `16px` margin on mobile screens.
+  - Configured the chat window when opened to adapt to a clean, native full-screen view (`100%` width/height, `0` border radius) on screens under 640px.
+  - Scaled up the close button to `40x40px` and adjusted margins to ensure tap compatibility.
