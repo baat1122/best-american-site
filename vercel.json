@@ -11,6 +11,6 @@
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/why-best-american", "destination": "/why-best-american.html" },
     { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
-    { "source": "/:slug([a-z-]+-car-shipping)", "destination": "/routes/:slug/index.html" }
+    { "source": "/:slug([a-z-]+-car-shipping)", "destination": "/routes/:slug" }
   ]
 }
