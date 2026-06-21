@@ -11,6 +11,5 @@
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/why-best-american", "destination": "/why-best-american.html" },
     { "source": "/blog/:slug", "destination": "/blog/:slug.html" }
-  ],
-  "installCommand": "npm install --omit=dev"
+  ]
 }
