@@ -1,6 +1,13 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/routes/:slug", "destination": "/:slug", "permanent": true },
+    { "source": "/services/open-transport", "destination": "/services/open-auto-transport", "permanent": true },
+    { "source": "/services/enclosed-transport", "destination": "/services/enclosed-auto-transport", "permanent": true },
+    { "source": "/services/luxury-exotic-car-shipping-services", "destination": "/services/luxury-car-shipping", "permanent": true },
+    { "source": "/services/door-to-door-car-transport", "destination": "/services/door-to-door-car-shipping", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/about", "destination": "/about.html" },
     { "source": "/faq", "destination": "/faq.html" },
