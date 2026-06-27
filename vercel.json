@@ -2,6 +2,12 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "bestamericanautotransport.com" }],
+      "destination": "https://www.bestamericanautotransport.com/:path*",
+      "permanent": true
+    },
     { "source": "/routes/:slug", "destination": "/:slug", "permanent": true },
     { "source": "/services/open-transport", "destination": "/services/open-auto-transport", "permanent": true },
     { "source": "/services/enclosed-transport", "destination": "/services/enclosed-auto-transport", "permanent": true },
