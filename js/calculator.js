@@ -1,4 +1,4 @@
-﻿// js/calculator.js
+// js/calculator.js
 
 const coordinates = {
     pickup: null,
@@ -122,60 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
             'Vehicle Count': vehicles.length,
             'Estimated Price': estimatedPrice
         };
-
-        // Build CRM payload (first vehicle as primary)
-        const primaryVehicle = vehicles[0] || {};
-        const crmPayload = {
-            fields: {
-                firstName,
-                lastName,
-                email,
-                phone,
-                vehicleYear: primaryVehicle.year,
-                vehicleMake: primaryVehicle.make,
-                vehicleModel: primaryVehicle.model,
-                vehicleType: primaryVehicle.type,
-                vehicleCondition: primaryVehicle.condition,
-                pickupZip,
-                deliveryZip,
-                desiredPickupDate: pickupDate,
-                transportType: transportType === 'enclosed' ? 'Enclosed' : 'Open',
-                source: 'Quote Calculator',
-                vehicleCount: vehicles.length,
-                additionalVehicles: vehicles.length > 1 ? vehicleSummary : ''
-            }
-        };
-
-        // Post to local storage (for dashboard compatibility)
-        try {
-            const existing = localStorage.getItem('neon_ai_leads');
-            const leads = existing ? JSON.parse(existing) : [];
-            leads.unshift({
-                id: 'lead_' + Date.now(),
-                createdAt: new Date().toISOString(),
-                status: 'New Lead',
-                leadScore: '🔥 Hot',
-                source: '/quote/',
-                dispatcherNotes: '',
-                aiNotes: `Lead captured via Quote Calculator form. ${vehicles.length} vehicle(s).`,
-                fields: crmPayload.fields
-            });
-            localStorage.setItem('neon_ai_leads', JSON.stringify(leads));
-        } catch (err) {
-            console.error('LocalStorage save error:', err);
-        }
-
-        // Post to custom CRM database
-        try {
-            await fetch('/api/leads', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(crmPayload)
-            });
-            console.log('Calculator lead sent to Best American CRM database');
-        } catch (err) {
-            console.error('Calculator CRM database submission failed:', err);
-        }
 
         // Send Web3Forms email via AJAX (no redirect)
         try {
