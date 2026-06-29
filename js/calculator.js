@@ -10,7 +10,7 @@ let vehicleCount = 1;
 // CRM API call handler (CORS-enabled)
 async function submitLeadToCRM(formData) {
   // CRM live URL (replace with your Vercel URL when deployed)
-  const crmEndpoint = 'http://localhost:3001/api/leads'; 
+  const crmEndpoint = 'https://baat-s-crm.vercel.app/api/leads'; 
 
   const payload = {
     customer_name: formData.name,
