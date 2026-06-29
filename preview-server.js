@@ -149,8 +149,8 @@ const server = http.createServer((req, res) => {
             filePath += '.html';
         }
         // 3. Check /routes/ (e.g., /california-car-shipping)
-        else if (fs.existsSync(path.join(DIR, 'routes', urlPath + '.html'))) {
-            filePath = path.join(DIR, 'routes', urlPath + '.html');
+        else if (fs.existsSync(path.join(DIR, 'routes', urlPath, 'index.html'))) {
+            filePath = path.join(DIR, 'routes', urlPath, 'index.html');
         }
         // 4. Check /services/ (e.g., /open-auto-transport)
         else if (fs.existsSync(path.join(DIR, 'services', urlPath + '.html'))) {
