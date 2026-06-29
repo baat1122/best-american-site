@@ -7,6 +7,44 @@ const coordinates = {
 
 let vehicleCount = 1;
 
+// CRM API call handler (CORS-enabled)
+async function submitLeadToCRM(formData) {
+  // CRM live URL (replace with your Vercel URL when deployed)
+  const crmEndpoint = 'http://localhost:3001/api/leads'; 
+
+  const payload = {
+    customer_name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    pickup_location: formData.pickup,
+    dropoff_location: formData.delivery,
+    estimated_price: formData.calculatedCost || 0,
+    est_pickup_date: formData.pickupDate || null,
+    notes: formData.additionalNotes || '',
+    vehicles: [
+      {
+        year: formData.vehicleYear || '',
+        make: formData.vehicleMake || '',
+        model: formData.vehicleModel || '',
+        operable: formData.isRunning !== false, // true = Running, false = Non-Running
+        trailer_type: formData.transportType || 'Open' // Open or Enclosed
+      }
+    ]
+  };
+
+  try {
+    const response = await fetch(crmEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return response.ok;
+  } catch (error) {
+    console.error('CRM lead sync failed:', error);
+    return false;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const calcForm = document.getElementById('advancedCalcForm');
     if (!calcForm) return;
@@ -123,17 +161,38 @@ document.addEventListener('DOMContentLoaded', () => {
             'Estimated Price': estimatedPrice
         };
 
-        // Send Web3Forms email via AJAX (no redirect)
+        // Build CRM formData payload
+        const firstVehicle = vehicles[0] || {};
+        const crmFormData = {
+            name: `${firstName} ${lastName}`.trim(),
+            email: email,
+            phone: phone,
+            pickup: pickupZip,
+            delivery: deliveryZip,
+            calculatedCost: parseFloat(estimatedPrice) || 0,
+            pickupDate: pickupDate,
+            additionalNotes: vehicleSummary,
+            vehicleYear: firstVehicle.year || '',
+            vehicleMake: firstVehicle.make || '',
+            vehicleModel: firstVehicle.model || '',
+            isRunning: firstVehicle.condition === 'Running',
+            transportType: transportType === 'enclosed' ? 'Enclosed' : 'Open'
+        };
+
+        // Run both dispatches in parallel
+        const web3Promise = fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(web3Payload)
+        }).then(r => r.json()).catch(err => { console.error('Web3Forms error:', err); return null; });
+
+        const crmPromise = submitLeadToCRM(crmFormData);
+
         try {
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(web3Payload)
-            });
-            const result = await response.json();
-            console.log('Web3Forms response:', result);
+            const [web3Result, crmSuccess] = await Promise.all([web3Promise, crmPromise]);
+            console.log('Submission status:', { web3Success: !!web3Result, crmSuccess });
         } catch (err) {
-            console.error('Web3Forms submission failed:', err);
+            console.error('Submission dispatch failed:', err);
         }
 
         // Show inline success message
